@@ -4,8 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOLTIX | หมวดหมู่สินค้า</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0c14;
+            --card-glass: rgba(18, 24, 38, 0.85);
+            --card-border: rgba(0, 243, 255, 0.25);
+            --neon-cyan: #00f3ff;
+            --neon-purple: #9d00ff;
+            --text-main: #f0f4f8;
+            --text-muted: #8a99ad;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, #050b14, #121c2e);
+            color: var(--neon-cyan);
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 13px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 12, 20, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i { color: var(--neon-cyan); }
+
+        nav { display: flex; gap: 25px; }
+        nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: 0.3s; }
+        nav a:hover, nav a.active { color: var(--neon-cyan); }
+
+        .cart-icon { position: relative; color: #fff; font-size: 20px; text-decoration: none; }
+        .cart-badge {
+            position: absolute; top: -8px; right: -10px;
+            background: var(--neon-purple); color: #fff;
+            font-size: 11px; padding: 2px 6px; border-radius: 10px; font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .text-center { text-align: center; }
+        .page-header { margin-bottom: 30px; }
+        .page-header h1 { font-size: 36px; margin-bottom: 10px; }
+        .page-header p { color: var(--text-muted); }
+
+        /* Area สายฟ้าผ่าด้านหลัง */
+        .category-wrapper {
+            position: relative;
+            padding: 20px 0;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        #lightning-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        /* Grid การ์ดสี่เหลี่ยมพอดีๆ */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ตัวการ์ด + ไฟนีออนรอบกรอบ */
+        .category-card {
+            background: rgba(12, 16, 28, 0.85);
+            border: 2px solid rgba(0, 243, 255, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.5),
+                        0 0 50px rgba(157, 0, 255, 0.3);
+        }
+
+        /* กรอบรูปภาพสี่เหลี่ยมจัตุรัสแบบพอดีๆ */
+        .category-img-box {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .category-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover .category-img-box img {
+            transform: scale(1.08);
+        }
+
+        .category-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .category-info h3 {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .category-info p {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .btn-link {
+            color: var(--neon-cyan);
+            font-weight: bold;
+            font-size: 13px;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Footer */
+        footer {
+            background: #06080f;
+            border-top: 1px solid var(--card-border);
+            padding: 40px 5% 20px 5%;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col p { color: var(--text-muted); font-size: 13px; margin-top: 10px; }
+        .footer-col h4 { color: #fff; margin-bottom: 15px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 8px; }
+        .footer-col ul li a { color: var(--text-muted); text-decoration: none; font-size: 13px; }
+        .footer-col ul li a:hover { color: var(--neon-cyan); }
+        .footer-bottom { text-align: center; padding-top: 20px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 12px; }
+        .text-neon { color: var(--neon-cyan); }
+    </style>
 </head>
 <body>
 
@@ -32,16 +241,15 @@
             <p>ค้นหานวัตกรรมอัจฉริยะที่เหมาะกับบ้านของคุณ พร้อมการรับประกันศูนย์แท้ 100%</p>
         </div>
 
-        <!-- โซนการ์ดหมวดหมู่ + เอฟเฟกต์สายฟ้าด้านหลัง -->
         <div class="category-wrapper">
             <!-- Canvas วาดสายฟ้า -->
             <canvas id="lightning-bg"></canvas>
 
             <div class="category-grid">
                 <!-- Card 1 -->
-                <div class="category-card" onclick="filterCategory('tv')">
+                <div class="category-card">
                     <div class="category-img-box">
-                        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80" alt="TV & Smart Display">
+                        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80" alt="TV">
                     </div>
                     <div class="category-info">
                         <h3><i class="fa-solid fa-tv text-neon"></i> ทีวีและสมาร์ตดิสเพลย์</h3>
@@ -51,9 +259,9 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="category-card" onclick="filterCategory('mouse')">
+                <div class="category-card">
                     <div class="category-img-box">
-                        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" alt="Smart Gadgets">
+                        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" alt="Mouse">
                     </div>
                     <div class="category-info">
                         <h3><i class="fa-solid fa-computer-mouse text-neon"></i> เกมมิ่ง & ไอทีแกดเจ็ต</h3>
@@ -63,9 +271,9 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="category-card" onclick="filterCategory('coffee')">
+                <div class="category-card">
                     <div class="category-img-box">
-                        <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80" alt="Coffee Maker">
+                        <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80" alt="Coffee">
                     </div>
                     <div class="category-info">
                         <h3><i class="fa-solid fa-mug-hot text-neon"></i> เครื่องใช้ไฟฟ้าในครัว</h3>
@@ -74,12 +282,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- รายการสินค้าจะโชว์ตรงนี้เมื่อกดเลือกหมวดหมู่ -->
-        <div id="product-display-section" style="margin-top: 50px; display: none;">
-            <h2 id="category-title" class="text-neon" style="margin-bottom: 20px;"></h2>
-            <div id="products-list" class="product-grid"></div>
         </div>
     </div>
 
@@ -106,9 +308,7 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
-
-    <!-- สคริปต์สุ่มวาดเอฟเฟกต์สายฟ้านีออนวิ่งด้านหลัง -->
+    <!-- Script สายฟ้าผ่าวิ่งหลังการ์ด -->
     <script>
         const canvas = document.getElementById('lightning-bg');
         const ctx = canvas.getContext('2d');
@@ -126,7 +326,7 @@
         function createLightning() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            if (Math.random() < 0.3) { // ความถี่สายฟ้าผ่า
+            if (Math.random() < 0.35) { // ความถี่สายฟ้าผ่า
                 let startX = Math.random() * canvas.width;
                 let startY = 0;
                 let endX = startX + (Math.random() - 0.5) * 100;
@@ -154,40 +354,7 @@
             }
             requestAnimationFrame(createLightning);
         }
-
         createLightning();
-
-        function filterCategory(cat) {
-            const section = document.getElementById('product-display-section');
-            const title = document.getElementById('category-title');
-            const list = document.getElementById('products-list');
-            
-            section.style.display = 'block';
-            list.innerHTML = '';
-            
-            const categoryNames = {
-                'tv': 'ทีวีและสมาร์ตดิสเพลย์',
-                'mouse': 'เกมมิ่ง & ไอทีแกดเจ็ต',
-                'coffee': 'เครื่องใช้ไฟฟ้าในครัว'
-            };
-            
-            title.innerText = 'สินค้าในหมวด: ' + categoryNames[cat];
-            
-            const filtered = productsData.filter(p => p.category === cat);
-            filtered.forEach(p => {
-                list.innerHTML += `
-                    <div class="product-card">
-                        <img src="${p.img}" alt="${p.name}">
-                        <div class="product-details">
-                            <h3>${p.name}</h3>
-                            <p class="price">฿${p.price.toLocaleString()}</p>
-                            <button class="btn btn-primary btn-block" onclick="addToCart(${p.id})"><i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า</button>
-                        </div>
-                    </div>
-                `;
-            });
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
     </script>
 </body>
 </html>
