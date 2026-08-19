@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg-dark: #050508;
-    --card-glass: rgba(18, 20, 29, 0.65);
-    --card-border: rgba(0, 243, 255, 0.15);
+    --bg-dark: #090a0f;
+    --card-glass: rgba(18, 22, 33, 0.75);
+    --card-border: rgba(0, 243, 255, 0.18);
     --neon-cyan: #00f3ff;
     --neon-purple: #9d4edd;
     --neon-pink: #ff007f;
     --text-main: #ffffff;
     --text-muted: #a0a5c0;
     --glow-cyan: 0 0 20px rgba(0, 243, 255, 0.4);
-    --glow-purple: 0 0 20px rgba(157, 78, 221, 0.4);
 }
 
 * {
@@ -28,31 +27,30 @@ body {
     flex-direction: column;
     overflow-x: hidden;
     background-image: 
-        radial-gradient(circle at 10% 10%, rgba(157, 78, 221, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.12) 0%, transparent 40%);
+        radial-gradient(circle at 15% 15%, rgba(157, 78, 221, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(0, 243, 255, 0.12) 0%, transparent 45%);
     background-attachment: fixed;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(8, 9, 14, 0.8);
+    background: rgba(9, 10, 15, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 18px 8%;
+    padding: 16px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-family: 'Orbitron', sans-serif;
     font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 2px;
+    font-weight: 700;
+    letter-spacing: 1px;
     background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -73,29 +71,23 @@ nav a {
     font-weight: 500;
     font-size: 16px;
     transition: all 0.3s ease;
+    padding: 6px 0;
     position: relative;
-    padding: 5px 0;
 }
 
 nav a:hover, nav a.active {
     color: var(--neon-cyan);
-    text-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
 }
 
-nav a::after {
+nav a.active::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0%;
+    width: 100%;
     height: 2px;
     background: var(--neon-cyan);
     box-shadow: var(--glow-cyan);
-    transition: 0.3s ease;
-}
-
-nav a:hover::after, nav a.active::after {
-    width: 100%;
 }
 
 .cart-icon {
@@ -108,12 +100,6 @@ nav a:hover::after, nav a.active::after {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: 0.3s;
-}
-
-.cart-icon:hover {
-    border-color: var(--neon-cyan);
-    box-shadow: var(--glow-cyan);
-    color: var(--neon-cyan);
 }
 
 .cart-badge {
@@ -130,17 +116,16 @@ nav a:hover::after, nav a.active::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
 }
 
-/* ================= CONTAINER & BUTTONS ================= */
+/* CONTAINER & BUTTONS */
 .container {
-    padding: 60px 8%;
+    padding: 50px 8%;
     flex: 1;
 }
 
 .btn {
-    padding: 12px 32px;
+    padding: 12px 28px;
     border-radius: 12px;
     font-weight: 600;
     font-size: 15px;
@@ -150,8 +135,8 @@ nav a:hover::after, nav a.active::after {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    gap: 8px;
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
@@ -162,63 +147,84 @@ nav a:hover::after, nav a.active::after {
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(0, 243, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 243, 255, 0.5);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text-main);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--neon-purple);
-    box-shadow: var(--glow-purple);
-    transform: translateY(-3px);
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
 }
 
-/* ================= CARDS & GRID ================= */
+/* CATEGORY TAB BUTTONS */
+.category-menu {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.cat-btn {
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-muted);
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cat-btn:hover, .cat-btn.active {
+    background: var(--neon-cyan);
+    color: #000;
+    font-weight: 600;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
+/* PRODUCT GRID & CARDS */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 25px;
 }
 
 .product-card {
     background: var(--card-glass);
     backdrop-filter: blur(12px);
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 18px;
+    padding: 18px;
     border: 1px solid var(--card-border);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     border-color: var(--neon-cyan);
-    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 243, 255, 0.25);
 }
 
 .product-card img {
     width: 100%;
-    height: 200px;
+    height: 190px;
     object-fit: cover;
-    border-radius: 14px;
-    margin-bottom: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    background-color: #121520;
 }
 
 footer {
-    background: rgba(3, 4, 6, 0.95);
+    background: rgba(5, 6, 10, 0.95);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 25px 8%;
     text-align: center;
     color: var(--text-muted);
     font-size: 14px;
-    font-family: 'Orbitron', sans-serif;
 }
