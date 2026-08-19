@@ -32,38 +32,46 @@
             <p>ค้นหานวัตกรรมอัจฉริยะที่เหมาะกับบ้านของคุณ พร้อมการรับประกันศูนย์แท้ 100%</p>
         </div>
 
-        <!-- Grid หมวดหมู่แบบปรับรูปให้เท่ากันเป๊ะ -->
-        <div class="category-grid">
-            <div class="category-card" onclick="filterCategory('tv')">
-                <div class="category-img-box">
-                    <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80" alt="TV & Smart Display">
-                </div>
-                <div class="category-info">
-                    <h3><i class="fa-solid fa-tv text-neon"></i> ทีวีและสมาร์ตดิสเพลย์</h3>
-                    <p>สมาร์ตทีวี OLED, QLED 8K/4K คมชัดระดับพรีเมียม AI ปรับแสงอัตโนมัติ</p>
-                    <span class="btn-link">เลือกดูสินค้าในหมวดนี้ <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
-            </div>
+        <!-- โซนการ์ดหมวดหมู่ + เอฟเฟกต์สายฟ้าด้านหลัง -->
+        <div class="category-wrapper">
+            <!-- Canvas วาดสายฟ้า -->
+            <canvas id="lightning-bg"></canvas>
 
-            <div class="category-card" onclick="filterCategory('mouse')">
-                <div class="category-img-box">
-                    <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" alt="Smart Gadgets">
+            <div class="category-grid">
+                <!-- Card 1 -->
+                <div class="category-card" onclick="filterCategory('tv')">
+                    <div class="category-img-box">
+                        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80" alt="TV & Smart Display">
+                    </div>
+                    <div class="category-info">
+                        <h3><i class="fa-solid fa-tv text-neon"></i> ทีวีและสมาร์ตดิสเพลย์</h3>
+                        <p>สมาร์ตทีวี OLED, QLED 8K/4K คมชัดระดับพรีเมียม AI ปรับแสงอัตโนมัติ</p>
+                        <span class="btn-link">เลือกดูสินค้า <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
                 </div>
-                <div class="category-info">
-                    <h3><i class="fa-solid fa-computer-mouse text-neon"></i> เกมมิ่ง & ไอทีแกดเจ็ต</h3>
-                    <p>เมาส์ไร้สายความเร็วสูง คีย์บอร์ด และอุปกรณ์ทำงานอัจฉริยะ</p>
-                    <span class="btn-link">เลือกดูสินค้าในหมวดนี้ <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
-            </div>
 
-            <div class="category-card" onclick="filterCategory('coffee')">
-                <div class="category-img-box">
-                    <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80" alt="Coffee Maker">
+                <!-- Card 2 -->
+                <div class="category-card" onclick="filterCategory('mouse')">
+                    <div class="category-img-box">
+                        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" alt="Smart Gadgets">
+                    </div>
+                    <div class="category-info">
+                        <h3><i class="fa-solid fa-computer-mouse text-neon"></i> เกมมิ่ง & ไอทีแกดเจ็ต</h3>
+                        <p>เมาส์ไร้สายความเร็วสูง คีย์บอร์ด และอุปกรณ์ทำงานอัจฉริยะ</p>
+                        <span class="btn-link">เลือกดูสินค้า <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
                 </div>
-                <div class="category-info">
-                    <h3><i class="fa-solid fa-mug-hot text-neon"></i> เครื่องใช้ไฟฟ้าในครัว</h3>
-                    <p>เครื่องชงกาแฟสดแรงดันสูง ตู้เย็น Inverter และเครื่องครัวอัจฉริยะ</p>
-                    <span class="btn-link">เลือกดูสินค้าในหมวดนี้ <i class="fa-solid fa-arrow-right"></i></span>
+
+                <!-- Card 3 -->
+                <div class="category-card" onclick="filterCategory('coffee')">
+                    <div class="category-img-box">
+                        <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80" alt="Coffee Maker">
+                    </div>
+                    <div class="category-info">
+                        <h3><i class="fa-solid fa-mug-hot text-neon"></i> เครื่องใช้ไฟฟ้าในครัว</h3>
+                        <p>เครื่องชงกาแฟสดแรงดันสูง ตู้เย็น Inverter และเครื่องครัวอัจฉริยะ</p>
+                        <span class="btn-link">เลือกดูสินค้า <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,7 +107,56 @@
     </footer>
 
     <script src="main.js"></script>
+
+    <!-- สคริปต์สุ่มวาดเอฟเฟกต์สายฟ้านีออนวิ่งด้านหลัง -->
     <script>
+        const canvas = document.getElementById('lightning-bg');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            const wrapper = document.querySelector('.category-wrapper');
+            if(wrapper) {
+                canvas.width = wrapper.offsetWidth;
+                canvas.height = wrapper.offsetHeight;
+            }
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function createLightning() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            if (Math.random() < 0.3) { // ความถี่สายฟ้าผ่า
+                let startX = Math.random() * canvas.width;
+                let startY = 0;
+                let endX = startX + (Math.random() - 0.5) * 100;
+                let endY = canvas.height;
+
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+
+                let currentX = startX;
+                let currentY = startY;
+
+                while (currentY < endY) {
+                    let nextX = currentX + (Math.random() - 0.5) * 40;
+                    let nextY = currentY + Math.random() * 30 + 10;
+                    ctx.lineTo(nextX, nextY);
+                    currentX = nextX;
+                    currentY = nextY;
+                }
+
+                ctx.strokeStyle = Math.random() > 0.5 ? '#00f3ff' : '#9d00ff';
+                ctx.lineWidth = Math.random() * 2 + 1;
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = ctx.strokeStyle;
+                ctx.stroke();
+            }
+            requestAnimationFrame(createLightning);
+        }
+
+        createLightning();
+
         function filterCategory(cat) {
             const section = document.getElementById('product-display-section');
             const title = document.getElementById('category-title');
