@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOLTIX | หมวดหมู่สินค้า</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <div class="top-bar">
+        <p><i class="fa-solid fa-truck-fast"></i> จัดส่งฟรีทั่วไทย เมื่อช็อปครบ 1,500.- | <i class="fa-solid fa-credit-card"></i> ผ่อน 0% นานสูงสุด 10 เดือน</p>
+    </div>
+
     <header>
         <a href="index.html" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
         <nav>
             <a href="index.html">หน้าแรก</a>
             <a href="products.html" class="active">หมวดหมู่สินค้า</a>
-            <a href="technology.html">แนะนำเทคโนโลยี</a>
+            <a href="technology.html">นวัตกรรม AI</a>
         </nav>
         <a href="cart.html" class="cart-icon">
             <i class="fa-solid fa-bag-shopping"></i>
@@ -22,119 +27,109 @@
     </header>
 
     <div class="container">
-        <!-- ส่วนหัวหน้า -->
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 30px;">
-            <div>
-                <h1 id="pageTitle" style="color: var(--neon-cyan); font-size: 32px;">เลือกหมวดหมู่สินค้า</h1>
-                <p id="pageSubTitle" style="color: var(--text-muted);">คลิกเลือกหมวดหมู่ที่ต้องการ เพื่อดูรายการสินค้าภายในหมวดหมู่นั้น</p>
-            </div>
-            <button id="backBtn" class="btn btn-secondary" onclick="showCategories()" style="display: none;">
-                <i class="fa-solid fa-arrow-left"></i> ย้อนกลับไปหน้าหมวดหมู่
-            </button>
+        <div class="page-header text-center">
+            <h1>เลือกหมวดหมู่เครื่องใช้ไฟฟ้า</h1>
+            <p>ค้นหานวัตกรรมอัจฉริยะที่เหมาะกับบ้านของคุณ พร้อมการรับประกันศูนย์แท้ 100%</p>
         </div>
 
-        <!-- 1. หน้าแสดงการ์ดหมวดหมู่ (แสดงตอนแรก) -->
-        <div id="categoryGrid" class="product-grid">
-            
-            <!-- หมวด TV -->
-            <div class="category-card" onclick="openCategory('tv', 'ทีวีและสมาร์ตดิสเพลย์')">
-                <div class="cat-img-box">
-                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&auto=format&fit=crop&q=80" alt="TV">
+        <!-- Grid หมวดหมู่แบบปรับรูปให้เท่ากันเป๊ะ -->
+        <div class="category-grid">
+            <div class="category-card" onclick="filterCategory('tv')">
+                <div class="category-img-box">
+                    <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80" alt="TV & Smart Display">
                 </div>
-                <div class="cat-info">
-                    <h3><i class="fa-solid fa-tv" style="color: var(--neon-cyan);"></i> ทีวีและสมาร์ตดิสเพลย์</h3>
-                    <p>สมาร์ททีวี OLED, QLED 8K/4K คมชัดระดับพรีเมียม</p>
-                    <span class="view-more">คลิกดูสินค้า TV ทั้งหมด <i class="fa-solid fa-chevron-right"></i></span>
+                <div class="category-info">
+                    <h3><i class="fa-solid fa-tv text-neon"></i> ทีวีและสมาร์ตดิสเพลย์</h3>
+                    <p>สมาร์ตทีวี OLED, QLED 8K/4K คมชัดระดับพรีเมียม AI ปรับแสงอัตโนมัติ</p>
+                    <span class="btn-link">เลือกดูสินค้าในหมวดนี้ <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
-            <!-- หมวด เมาส์/เกมมิ่ง -->
-            <div class="category-card" onclick="openCategory('mouse', 'เมาส์และอุปกรณ์เกมมิ่ง')">
-                <div class="cat-img-box">
-                    <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80" alt="Mouse">
+            <div class="category-card" onclick="filterCategory('mouse')">
+                <div class="category-img-box">
+                    <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" alt="Smart Gadgets">
                 </div>
-                <div class="cat-info">
-                    <h3><i class="fa-solid fa-computer-mouse" style="color: var(--neon-cyan);"></i> เมาส์และอุปกรณ์เกมมิ่ง</h3>
-                    <p>เมาส์ไร้สาย Gaming RGB และ Ergonomic เพื่อสุขภาพ</p>
-                    <span class="view-more">คลิกดูสินค้าเมาส์ทั้งหมด <i class="fa-solid fa-chevron-right"></i></span>
-                </div>
-            </div>
-
-            <!-- หมวด เครื่องชงกาแฟ/เครื่องใช้ไฟฟ้า -->
-            <div class="category-card" onclick="openCategory('coffee', 'เครื่องชงกาแฟสดอัจฉริยะ')">
-                <div class="cat-img-box">
-                    <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80" alt="Coffee Machine">
-                </div>
-                <div class="cat-info">
-                    <h3><i class="fa-solid fa-mug-hot" style="color: var(--neon-cyan);"></i> เครื่องชงกาแฟสด</h3>
-                    <p>เครื่องชงกาแฟสด Touchscreen ระบบแรงดันไอน้ำอัจฉริยะ</p>
-                    <span class="view-more">คลิกดูเครื่องชงกาแฟทั้งหมด <i class="fa-solid fa-chevron-right"></i></span>
+                <div class="category-info">
+                    <h3><i class="fa-solid fa-computer-mouse text-neon"></i> เกมมิ่ง & ไอทีแกดเจ็ต</h3>
+                    <p>เมาส์ไร้สายความเร็วสูง คีย์บอร์ด และอุปกรณ์ทำงานอัจฉริยะ</p>
+                    <span class="btn-link">เลือกดูสินค้าในหมวดนี้ <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
-            <!-- หมวด สมาร์ตโฮม/ดิจิทัลล็อค -->
-            <div class="category-card" onclick="openCategory('smart', 'อุปกรณ์สมาร์ตโฮม')">
-                <div class="cat-img-box">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80" alt="Smart Home">
+            <div class="category-card" onclick="filterCategory('coffee')">
+                <div class="category-img-box">
+                    <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80" alt="Coffee Maker">
                 </div>
-                <div class="cat-info">
-                    <h3><i class="fa-solid fa-house-signal" style="color: var(--neon-cyan);"></i> อุปกรณ์สมาร์ตโฮม</h3>
-                    <p>ระบบดิจิทัลล็อค และอุปกรณ์ควบคุมบ้านผ่านมือถือ</p>
-                    <span class="view-more">คลิกดูสมาร์ตโฮมทั้งหมด <i class="fa-solid fa-chevron-right"></i></span>
+                <div class="category-info">
+                    <h3><i class="fa-solid fa-mug-hot text-neon"></i> เครื่องใช้ไฟฟ้าในครัว</h3>
+                    <p>เครื่องชงกาแฟสดแรงดันสูง ตู้เย็น Inverter และเครื่องครัวอัจฉริยะ</p>
+                    <span class="btn-link">เลือกดูสินค้าในหมวดนี้ <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
-
         </div>
 
-        <!-- 2. หน้าแสดงรายการสินค้าเฉพาะหมวดที่เลือก (จะซ่อนไว้ก่อน) -->
-        <div id="productList" class="product-grid" style="display: none;"></div>
-
+        <!-- รายการสินค้าจะโชว์ตรงนี้เมื่อกดเลือกหมวดหมู่ -->
+        <div id="product-display-section" style="margin-top: 50px; display: none;">
+            <h2 id="category-title" class="text-neon" style="margin-bottom: 20px;"></h2>
+            <div id="products-list" class="product-grid"></div>
+        </div>
     </div>
 
-    <footer>© 2026 VOLTIX ELECTRONICS. สงวนลิขสิทธิ์ทั้งหมด</footer>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
+                <p>ผู้นำด้านเครื่องใช้ไฟฟ้าอัจฉริยะ นวัตกรรม AI ยกระดับคุณภาพชีวิต</p>
+            </div>
+            <div class="footer-col">
+                <h4>บริการลูกค้า</h4>
+                <ul>
+                    <li><a href="#">การรับประกันสินค้า</a></li>
+                    <li><a href="#">นโยบายการจัดส่ง</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>ติดต่อเรา</h4>
+                <p><i class="fa-solid fa-phone"></i> Call Center: 02-123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 VOLTIX ELECTRONICS CO., LTD.</p>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
     <script>
-        // ฟังก์ชันเมื่อคลิกที่รูปหมวดหมู่
-        function openCategory(catKey, catTitle) {
-            document.getElementById('categoryGrid').style.display = 'none';
-            document.getElementById('productList').style.display = 'grid';
-            document.getElementById('backBtn').style.display = 'inline-flex';
+        function filterCategory(cat) {
+            const section = document.getElementById('product-display-section');
+            const title = document.getElementById('category-title');
+            const list = document.getElementById('products-list');
             
-            document.getElementById('pageTitle').innerText = 'หมวดหมู่: ' + catTitle;
-            document.getElementById('pageSubTitle').innerText = 'รายการสินค้าทั้งหมดในหมวดหมู่นี้';
-
-            const filteredProducts = productsData.filter(p => p.category === catKey);
-            const grid = document.getElementById('productList');
-            grid.innerHTML = '';
-
-            if (filteredProducts.length === 0) {
-                grid.innerHTML = `<p style="color: var(--text-muted); grid-column: 1/-1; text-align: center; padding: 50px;">ไม่พบสินค้าในหมวดหมู่นี้</p>`;
-                return;
-            }
-
-            filteredProducts.forEach(p => {
-                grid.innerHTML += `
+            section.style.display = 'block';
+            list.innerHTML = '';
+            
+            const categoryNames = {
+                'tv': 'ทีวีและสมาร์ตดิสเพลย์',
+                'mouse': 'เกมมิ่ง & ไอทีแกดเจ็ต',
+                'coffee': 'เครื่องใช้ไฟฟ้าในครัว'
+            };
+            
+            title.innerText = 'สินค้าในหมวด: ' + categoryNames[cat];
+            
+            const filtered = productsData.filter(p => p.category === cat);
+            filtered.forEach(p => {
+                list.innerHTML += `
                     <div class="product-card">
                         <img src="${p.img}" alt="${p.name}">
-                        <h3 style="font-size: 17px; margin: 10px 0;">${p.name}</h3>
-                        <p style="color: var(--neon-cyan); font-size: 20px; font-weight: bold; margin-bottom: 12px;">฿${p.price.toLocaleString()}</p>
-                        <button class="btn btn-primary" onclick="addToCart(${p.id})" style="width: 100%;">
-                            <i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า
-                        </button>
+                        <div class="product-details">
+                            <h3>${p.name}</h3>
+                            <p class="price">฿${p.price.toLocaleString()}</p>
+                            <button class="btn btn-primary btn-block" onclick="addToCart(${p.id})"><i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า</button>
+                        </div>
                     </div>
                 `;
             });
-        }
-
-        // ฟังก์ชันย้อนกลับมาหน้าหมวดหมู่
-        function showCategories() {
-            document.getElementById('categoryGrid').style.display = 'grid';
-            document.getElementById('productList').style.display = 'none';
-            document.getElementById('backBtn').style.display = 'none';
-            
-            document.getElementById('pageTitle').innerText = 'เลือกหมวดหมู่สินค้า';
-            document.getElementById('pageSubTitle').innerText = 'คลิกเลือกหมวดหมู่ที่ต้องการ เพื่อดูรายการสินค้าภายในหมวดหมู่นั้น';
+            section.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
