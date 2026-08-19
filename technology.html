@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOLTIX | แนะนำเทคโนโลยี</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>VOLTIX | นวัตกรรมเทคโนโลยีแห่งอนาคต</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <div class="top-bar">
+        <p><i class="fa-solid fa-shield-halved"></i> VOLTIX Smart Tech - นวัตกรรมเพื่อชีวิตที่สมาร์ตกว่าเดิม</p>
+    </div>
+
     <header>
         <a href="index.html" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
         <nav>
             <a href="index.html">หน้าแรก</a>
             <a href="products.html">หมวดหมู่สินค้า</a>
-            <a href="technology.html" class="active">แนะนำเทคโนโลยี</a>
+            <a href="technology.html" class="active">นวัตกรรม AI</a>
         </nav>
         <a href="cart.html" class="cart-icon">
             <i class="fa-solid fa-bag-shopping"></i>
@@ -22,31 +27,88 @@
     </header>
 
     <div class="container">
-        <div style="text-align: center; max-width: 800px; margin: 20px auto 50px auto;">
-            <h1 style="font-size: 36px; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                แนะนำนวัตกรรมเทคโนโลยี VOLTIX
-            </h1>
-            <p style="color: var(--text-muted); font-size: 17px; margin-top: 12px;">
-                ก้าวข้ามขีดจำกัดเครื่องใช้ไฟฟ้าแบบเดิมด้วยระบบ AI อัจฉริยะประจำปี 2026
-            </p>
+        <div class="page-header text-center">
+            <span class="badge-tag"><i class="fa-solid fa-microchip"></i> AI-POWERED ECOSYSTEM</span>
+            <h1>นวัตกรรมเทคโนโลยี <span class="gradient-text">VOLTIX 2026</span></h1>
+            <p>ก้าวข้ามขีดจำกัดเครื่องใช้ไฟฟ้าแบบเดิมด้วยระบบ AI อัจฉริยะ ปลอดภัย และประหยัดพลังงานระดับโลก</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-            <div class="product-card" style="padding: 30px;">
-                <i class="fa-solid fa-brain" style="font-size: 40px; color: var(--neon-cyan); margin-bottom: 20px;"></i>
-                <h3 style="font-size: 22px; margin-bottom: 10px;">ระบบประมวลผลพลังงาน Neural Energy</h3>
-                <p style="color: var(--text-muted); line-height: 1.6;">ชิป AI ประมวลผลพฤติกรรมการใช้งานในบ้านแบบ Real-time ช่วยลดการสิ้นเปลืองพลังงานลงถึง 40% โดยอัตโนมัติ</p>
+        <!-- Grid นวัตกรรม 4 อย่างแบบแน่นๆ -->
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fa-solid fa-brain"></i></div>
+                <h3>Neural Energy™ AI</h3>
+                <p>ระบบประมวลผลพฤติกรรมการใช้งานในบ้านแบบ Real-time วิเคราะห์และปรับการใช้พลังงานอัตโนมัติ ช่วยลดค่าไฟได้สูงสุดถึง 40%</p>
+                <ul class="tech-list">
+                    <li><i class="fa-solid fa-check text-neon"></i> เรียนรู้เวลาเปิด-ปิดตามกิจวัตร</li>
+                    <li><i class="fa-solid fa-check text-neon"></i> ตัดไฟอัตโนมัติเมื่อไม่มีคนอยู่</li>
+                </ul>
             </div>
 
-            <div class="product-card" style="padding: 30px;">
-                <i class="fa-solid fa-network-wired" style="font-size: 40px; color: var(--neon-purple); margin-bottom: 20px;"></i>
-                <h3 style="font-size: 22px; margin-bottom: 10px;">โปรโตคอลการเชื่อมต่อ Quantum Sync</h3>
-                <p style="color: var(--text-muted); line-height: 1.6;">ระบบเชื่อมต่อไร้สายความเร็วสูงระหว่าง Smart TV, เครื่องใช้ไฟฟ้า และสมาร์ตโฟนของคุณอย่างไร้รอยต่อ</p>
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h3>Quantum Sync 2.0</h3>
+                <p>การเชื่อมต่อไร้สายความเร็วสูง ไร้รอยต่อระหว่าง Smart TV, เครื่องใช้ไฟฟ้า และสมาร์ตโฟน สั่งงานได้ผ่านแอปเดียว</p>
+                <ul class="tech-list">
+                    <li><i class="fa-solid fa-check text-neon"></i> ควบคุมผ่าน iOS / Android / Voice Assistant</li>
+                    <li><i class="fa-solid fa-check text-neon"></i> ระบบแจ้งเตือนบำรุงรักษาล่วงหน้า</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                <h3>EcoClean & Pure Air</h3>
+                <p>เทคโนโลยีปล่อยไอออนล้างเชื้อโรคและฆ่าเชื้อแบคทีเรียในอากาศได้ 99.9% ที่มีอยู่ในตู้เย็นและเครื่องใช้ไฟฟ้า VOLTIX</p>
+                <ul class="tech-list">
+                    <li><i class="fa-solid fa-check text-neon"></i> ยับยั้งไวรัสและกลิ่นอับชื้น</li>
+                    <li><i class="fa-solid fa-check text-neon"></i> มาตรฐานรับประกันความปลอดภัยระดับสากล</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>BioShield Security</h3>
+                <p>ระบบรักษาความปลอดภัยไบโอเมตริกซ์ สแกนลายนิ้วมือและจดจำใบหน้าด้วย AI แม่นยำ รวดเร็วใน 0.2 วินาที</p>
+                <ul class="tech-list">
+                    <li><i class="fa-solid fa-check text-neon"></i> เข้ารหัสข้อมูลขั้นสูง ป้องกันการแฮก</li>
+                    <li><i class="fa-solid fa-check text-neon"></i> ปลอดภัยสำหรับการใช้งานทุกวัย</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Banner รับประกันความน่าเชื่อถือ -->
+        <div class="trust-banner">
+            <h2><i class="fa-solid fa-award text-neon"></i> มั่นใจในคุณภาพระดับสากล</h2>
+            <p>สินค้า VOLTIX ทุกชิ้นผ่านการทดสอบมาตรฐานความปลอดภัย TISI (มอก.) และได้รับการรับรองประหยัดไฟเบอร์ 5 สูงสุด</p>
+            <div class="hero-buttons" style="justify-content: center; margin-top: 20px;">
+                <a href="products.html" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> เลือกชมสินค้าเทคโนโลยีทั้งหมด</a>
             </div>
         </div>
     </div>
 
-    <footer>© 2026 VOLTIX ELECTRONICS. สงวนลิขสิทธิ์ทั้งหมด</footer>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
+                <p>ผู้นำด้านเครื่องใช้ไฟฟ้าอัจฉริยะ นวัตกรรม AI ยกระดับคุณภาพชีวิต</p>
+            </div>
+            <div class="footer-col">
+                <h4>บริการลูกค้า</h4>
+                <ul>
+                    <li><a href="#">การรับประกันสินค้า</a></li>
+                    <li><a href="#">นโยบายการจัดส่ง</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>ติดต่อเรา</h4>
+                <p><i class="fa-solid fa-phone"></i> Call Center: 02-123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 VOLTIX ELECTRONICS CO., LTD.</p>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
