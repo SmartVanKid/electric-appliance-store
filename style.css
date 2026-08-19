@@ -1,230 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
-
-:root {
-    --bg-dark: #090a0f;
-    --card-glass: rgba(18, 22, 33, 0.75);
-    --card-border: rgba(0, 243, 255, 0.18);
-    --neon-cyan: #00f3ff;
-    --neon-purple: #9d4edd;
-    --neon-pink: #ff007f;
-    --text-main: #ffffff;
-    --text-muted: #a0a5c0;
-    --glow-cyan: 0 0 20px rgba(0, 243, 255, 0.4);
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Kanit', sans-serif;
-}
-
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    min-height: 100vh;
+/* การ์ดเลือกหมวดหมู่สินค้า */
+.category-card {
+    background: var(--card-glass);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-    background-image: 
-        radial-gradient(circle at 15% 15%, rgba(157, 78, 221, 0.15) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(0, 243, 255, 0.12) 0%, transparent 45%);
-    background-attachment: fixed;
 }
 
-/* NAVBAR */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(9, 10, 15, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 16px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    padding: 6px 0;
-    position: relative;
-}
-
-nav a:hover, nav a.active {
-    color: var(--neon-cyan);
-}
-
-nav a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--neon-cyan);
-    box-shadow: var(--glow-cyan);
-}
-
-.cart-icon {
-    position: relative;
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: 0.3s;
-}
-
-.cart-badge {
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
-    color: #fff;
-    font-size: 11px;
-    font-weight: bold;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* CONTAINER & BUTTONS */
-.container {
-    padding: 50px 8%;
-    flex: 1;
-}
-
-.btn {
-    padding: 12px 28px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--neon-cyan), #0072ff);
-    color: #000;
-    font-weight: 700;
-    box-shadow: 0 4px 15px rgba(0, 243, 255, 0.3);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 243, 255, 0.5);
-}
-
-.btn-secondary {
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.btn-secondary:hover {
-    border-color: var(--neon-cyan);
-    color: var(--neon-cyan);
-}
-
-/* CATEGORY TAB BUTTONS */
-.category-menu {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin: 25px 0;
-}
-
-.cat-btn {
-    padding: 10px 22px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: var(--text-muted);
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.cat-btn:hover, .cat-btn.active {
-    background: var(--neon-cyan);
-    color: #000;
-    font-weight: 600;
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
-}
-
-/* PRODUCT GRID & CARDS */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 25px;
-}
-
-.product-card {
-    background: var(--card-glass);
-    backdrop-filter: blur(12px);
-    border-radius: 18px;
-    padding: 18px;
-    border: 1px solid var(--card-border);
-    transition: all 0.3s ease;
-}
-
-.product-card:hover {
+.category-card:hover {
     transform: translateY(-8px);
     border-color: var(--neon-cyan);
-    box-shadow: 0 8px 25px rgba(0, 243, 255, 0.25);
+    box-shadow: 0 10px 25px rgba(0, 243, 255, 0.25);
 }
 
-.product-card img {
+.cat-img-box {
     width: 100%;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    background-color: #121520;
+    height: 180px;
+    overflow: hidden;
+    background: #101420;
 }
 
-footer {
-    background: rgba(5, 6, 10, 0.95);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 25px 8%;
-    text-align: center;
+.cat-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover .cat-img-box img {
+    transform: scale(1.08);
+}
+
+.cat-info {
+    padding: 20px;
+}
+
+.cat-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.cat-info p {
     color: var(--text-muted);
     font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.view-more {
+    color: var(--neon-cyan);
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
