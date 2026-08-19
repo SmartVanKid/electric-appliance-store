@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>VOLTIX | สินค้าทั้งหมด</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> VOLTIX</a>
+        <a href="index.html" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
         <nav>
             <a href="index.html">หน้าแรก</a>
             <a href="products.html" class="active">สินค้าทั้งหมด</a>
@@ -22,15 +21,18 @@
     </header>
 
     <div class="container">
-        <h2>คลังสินค้าทั้งหมด</h2>
-        <br>
-        <!-- ช่องค้นหา -->
-        <input type="text" id="searchInput" placeholder="พิมพ์ชื่อสินค้าเพื่อค้นหา (เช่น TV, Mouse)..." onkeyup="filterProducts()" style="width: 100%; max-width: 400px; padding: 10px 15px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: #161b22; color: #fff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <h1 style="font-family: 'Orbitron'; color: var(--neon-cyan);">ALL PRODUCTS</h1>
+                <p style="color: var(--text-muted);">เลือกชมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ตโฮมสุดล้ำ</p>
+            </div>
+            <input type="text" id="searchInput" placeholder="🔍 ค้นหาสินค้า (เช่น TV, Mouse)..." onkeyup="filterProducts()" style="padding: 12px 20px; border-radius: 12px; width: 300px;">
+        </div>
 
         <div class="product-grid" id="productGrid"></div>
     </div>
 
-    <footer>© 2026 VOLTIX Electronics. All rights reserved.</footer>
+    <footer>© 2026 VOLTIX ELECTRONICS. ALL RIGHTS RESERVED.</footer>
     <script src="main.js"></script>
     <script>
         function displayProducts(items) {
@@ -41,8 +43,8 @@
                     <div class="product-card">
                         <img src="${p.img}">
                         <h3>${p.name}</h3>
-                        <p style="color: var(--accent-color); font-weight: bold; margin: 10px 0;">฿${p.price.toLocaleString()}</p>
-                        <button class="btn btn-primary" onclick="addToCart(${p.id})" style="width: 100%;">ใส่ตะกร้า</button>
+                        <p style="color: var(--neon-cyan); font-family: 'Orbitron'; font-size: 20px; font-weight: bold; margin: 10px 0;">฿${p.price.toLocaleString()}</p>
+                        <button class="btn btn-primary" onclick="addToCart(${p.id})" style="width: 100%;"><i class="fa-solid fa-plus"></i> เพิ่มลงตะกร้า</button>
                     </div>
                 `;
             });
