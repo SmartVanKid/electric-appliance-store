@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>VOLTIX | ตะกร้าสินค้า</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> VOLTIX</a>
+        <nav>
+            <a href="index.html">หน้าแรก</a>
+            <a href="products.html">สินค้าทั้งหมด</a>
+            <a href="technology.html">เทคโนโลยีใหม่</a>
+        </nav>
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge">0</span>
+        </a>
+    </header>
+
+    <div class="container">
+        <h2>ตะกร้าสินค้าของคุณ</h2>
+        <br>
+        <div id="cartList" style="display: flex; flex-direction: column; gap: 15px;"></div>
+        <br>
+        <h3 id="totalPrice" style="color: var(--accent-color);">ราคารวม: ฿0</h3>
+        <br>
+        <button class="btn btn-primary" onclick="clearCart()">ชำระเงิน / ล้างตะกร้า</button>
+    </div>
+
+    <footer>© 2026 VOLTIX Electronics. All rights reserved.</footer>
+    <script src="main.js"></script>
+    <script>
+        function renderCart() {
+            const list = document.getElementById('cartList');
+            list.innerHTML = '';
+            let total = 0;
+
+            if(cart.length === 0) {
+                list.innerHTML = `<p style="color: var(--text-muted);">ไม่มีสินค้าในตะกร้า</p>`;
+                document.getElementById('totalPrice').innerText = 'ราคารวม: ฿0';
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                list.innerHTML += `
+                    <div style="background: var(--card-bg); padding: 15px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h4>${item.name}</h4>
+                            <span style="color: var(--accent-color);">฿${item.price.toLocaleString()}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('totalPrice').innerText = `ราคารวมทั้งสิ้น: ฿${total.toLocaleString()}`;
+        }
+
+        function clearCart() {
+            alert('ขอบคุณที่สั่งซื้อ!');
+            localStorage.removeItem('voltix_cart');
+            cart = [];
+            renderCart();
+            updateCartCount();
+        }
+
+        renderCart();
+    </script>
+</body>
+</html>
