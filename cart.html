@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>VOLTIX | ตะกร้าสินค้า</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> VOLTIX</a>
+        <a href="index.html" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
         <nav>
             <a href="index.html">หน้าแรก</a>
             <a href="products.html">สินค้าทั้งหมด</a>
@@ -21,17 +20,18 @@
         </a>
     </header>
 
-    <div class="container">
-        <h2>ตะกร้าสินค้าของคุณ</h2>
-        <br>
+    <div class="container" style="max-width: 800px;">
+        <h1 style="font-family: 'Orbitron'; color: var(--neon-cyan); margin-bottom: 20px;"><i class="fa-solid fa-cart-shopping"></i> MY CART</h1>
+        
         <div id="cartList" style="display: flex; flex-direction: column; gap: 15px;"></div>
-        <br>
-        <h3 id="totalPrice" style="color: var(--accent-color);">ราคารวม: ฿0</h3>
-        <br>
-        <button class="btn btn-primary" onclick="clearCart()">ชำระเงิน / ล้างตะกร้า</button>
+        
+        <div style="margin-top: 30px; padding: 20px; background: var(--card-glass); border-radius: 16px; border: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center;">
+            <h2 id="totalPrice" style="font-family: 'Orbitron'; color: var(--text-main);">TOTAL: ฿0</h2>
+            <button class="btn btn-primary" onclick="clearCart()"><i class="fa-solid fa-credit-card"></i> ชำระเงิน</button>
+        </div>
     </div>
 
-    <footer>© 2026 VOLTIX Electronics. All rights reserved.</footer>
+    <footer>© 2026 VOLTIX ELECTRONICS. ALL RIGHTS RESERVED.</footer>
     <script src="main.js"></script>
     <script>
         function renderCart() {
@@ -40,27 +40,29 @@
             let total = 0;
 
             if(cart.length === 0) {
-                list.innerHTML = `<p style="color: var(--text-muted);">ไม่มีสินค้าในตะกร้า</p>`;
-                document.getElementById('totalPrice').innerText = 'ราคารวม: ฿0';
+                list.innerHTML = `<p style="color: var(--text-muted); text-align: center; padding: 40px 0;">ไม่มีสินค้าในตะกร้าของคุณ</p>`;
+                document.getElementById('totalPrice').innerText = 'TOTAL: ฿0';
                 return;
             }
 
-            cart.forEach((item, index) => {
+            cart.forEach((item) => {
                 total += item.price;
                 list.innerHTML += `
-                    <div style="background: var(--card-bg); padding: 15px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
+                    <div style="background: var(--card-glass); border: 1px solid var(--card-border); padding: 15px 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <img src="${item.img}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
                             <h4>${item.name}</h4>
-                            <span style="color: var(--accent-color);">฿${item.price.toLocaleString()}</span>
                         </div>
+                        <span style="color: var(--neon-cyan); font-family: 'Orbitron'; font-weight: bold;">฿${item.price.toLocaleString()}</span>
                     </div>
                 `;
             });
-            document.getElementById('totalPrice').innerText = `ราคารวมทั้งสิ้น: ฿${total.toLocaleString()}`;
+            document.getElementById('totalPrice').innerText = `TOTAL: ฿${total.toLocaleString()}`;
         }
 
         function clearCart() {
-            alert('ขอบคุณที่สั่งซื้อ!');
+            if(cart.length === 0) return;
+            alert('ขอบคุณสำหรับการสั่งซื้อสินค้า VOLTIX!');
             localStorage.removeItem('voltix_cart');
             cart = [];
             renderCart();
