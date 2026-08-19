@@ -2,74 +2,408 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOLTIX | ตะกร้าสินค้าของคุณ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0c14;
+            --card-glass: rgba(18, 24, 38, 0.85);
+            --card-border: rgba(0, 243, 255, 0.25);
+            --neon-cyan: #00f3ff;
+            --neon-purple: #9d00ff;
+            --text-main: #f0f4f8;
+            --text-muted: #8a99ad;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, #050b14, #121c2e);
+            color: var(--neon-cyan);
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 13px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 12, 20, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i { color: var(--neon-cyan); }
+
+        nav { display: flex; gap: 25px; }
+        nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: 0.3s; }
+        nav a:hover, nav a.active { color: var(--neon-cyan); }
+
+        .cart-icon { position: relative; color: var(--neon-cyan); font-size: 20px; text-decoration: none; }
+        .cart-badge {
+            position: absolute; top: -8px; right: -10px;
+            background: var(--neon-purple); color: #fff;
+            font-size: 11px; padding: 2px 6px; border-radius: 10px; font-weight: bold;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .page-header h1 {
+            font-size: 32px;
+            color: #fff;
+        }
+
+        /* Cart Layout */
+        .cart-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 850px) {
+            .cart-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Items Container */
+        .cart-items {
+            background: var(--card-glass);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .cart-item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid var(--card-border);
+        }
+
+        .cart-item-details h3 {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-details .price {
+            color: var(--neon-cyan);
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            color: var(--neon-cyan);
+            cursor: pointer;
+            font-size: 14px;
+            padding: 0 5px;
+        }
+
+        .qty-number {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .remove-btn {
+            color: #ff4d4d;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .remove-btn:hover {
+            color: #ff0000;
+            transform: scale(1.1);
+        }
+
+        /* Order Summary Card */
+        .order-summary {
+            background: var(--card-glass);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 25px;
+            height: fit-content;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .order-summary h2 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .summary-row.total {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .total-price {
+            color: var(--neon-cyan);
+            font-size: 22px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-cyan), #00a8ff);
+            color: #000;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            color: #fff;
+            border-color: var(--neon-cyan);
+        }
+
+        /* Footer */
+        footer {
+            background: #06080f;
+            border-top: 1px solid var(--card-border);
+            padding: 40px 5% 20px 5%;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col p { color: var(--text-muted); font-size: 13px; margin-top: 10px; }
+        .footer-col h4 { color: #fff; margin-bottom: 15px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 8px; }
+        .footer-col ul li a { color: var(--text-muted); text-decoration: none; font-size: 13px; }
+        .footer-col ul li a:hover { color: var(--neon-cyan); }
+        .footer-bottom { text-align: center; padding-top: 20px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 12px; }
+        .text-neon { color: var(--neon-cyan); }
+    </style>
 </head>
 <body>
+
+    <div class="top-bar">
+        <p><i class="fa-solid fa-truck-fast"></i> จัดส่งฟรีทั่วไทย เมื่อช็อปครบ 1,500.- | <i class="fa-solid fa-shield-halved"></i> ชำระเงินปลอดภัย 100%</p>
+    </div>
+
     <header>
         <a href="index.html" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
         <nav>
             <a href="index.html">หน้าแรก</a>
-            <a href="products.html">สินค้าทั้งหมด</a>
-            <a href="technology.html">แนะนำเทคโนโลยี</a>
+            <a href="products.html">หมวดหมู่สินค้า</a>
+            <a href="technology.html">นวัตกรรม AI</a>
         </nav>
         <a href="cart.html" class="cart-icon">
             <i class="fa-solid fa-bag-shopping"></i>
-            <span class="cart-badge">0</span>
+            <span class="cart-badge">1</span>
         </a>
     </header>
 
-    <div class="container" style="max-width: 800px;">
-        <h1 style="color: var(--neon-cyan); margin-bottom: 25px;"><i class="fa-solid fa-cart-shopping"></i> ตะกร้าสินค้าของคุณ</h1>
-        
-        <div id="cartList" style="display: flex; flex-direction: column; gap: 15px;"></div>
-        
-        <div style="margin-top: 30px; padding: 20px; background: var(--card-glass); border-radius: 16px; border: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center;">
-            <h2 id="totalPrice" style="color: var(--text-main); font-size: 22px;">ราคารวมทั้งหมด: ฿0</h2>
-            <button class="btn btn-primary" onclick="clearCart()"><i class="fa-solid fa-credit-card"></i> ดำเนินการชำระเงิน</button>
+    <div class="container">
+        <div class="page-header">
+            <i class="fa-solid fa-cart-shopping text-neon" style="font-size: 28px;"></i>
+            <h1>ตะกร้าสินค้าของคุณ</h1>
+        </div>
+
+        <div class="cart-layout">
+            <!-- รายการสินค้า -->
+            <div class="cart-items">
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=300&q=80" alt="Smart TV" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <h3>VOLTIX Neo OLED 4K Smart TV 65"</h3>
+                            <p class="price">฿32,900</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quantity-control">
+                        <button class="qty-btn"><i class="fa-solid fa-minus"></i></button>
+                        <span class="qty-number">1</span>
+                        <button class="qty-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+
+                    <button class="remove-btn" title="ลบรายการ"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            </div>
+
+            <!-- สรุปยอดเงิน -->
+            <div class="order-summary">
+                <h2>สรุปการสั่งซื้อ</h2>
+                
+                <div class="summary-row">
+                    <span>ราคาสินค้า</span>
+                    <span>฿32,900</span>
+                </div>
+                <div class="summary-row">
+                    <span>ค่าจัดส่ง</span>
+                    <span class="text-neon">ฟรี</span>
+                </div>
+                <div class="summary-row">
+                    <span>ส่วนลดโปรโมชัน</span>
+                    <span>-฿0</span>
+                </div>
+
+                <div class="summary-row total">
+                    <span>ราคารวมทั้งหมด</span>
+                    <span class="total-price">฿32,900</span>
+                </div>
+
+                <button class="btn btn-primary"><i class="fa-solid fa-credit-card"></i> ดำเนินการชำระเงิน</button>
+                <a href="products.html" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> เลือกซื้อสินค้าเพิ่ม</a>
+            </div>
         </div>
     </div>
 
-    <footer>© 2026 VOLTIX ELECTRONICS. สงวนลิขสิทธิ์ทั้งหมด</footer>
-    <script src="main.js"></script>
-    <script>
-        function renderCart() {
-            const list = document.getElementById('cartList');
-            list.innerHTML = '';
-            let total = 0;
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
+                <p>ผู้นำด้านเครื่องใช้ไฟฟ้าอัจฉริยะ นวัตกรรม AI ยกระดับคุณภาพชีวิต</p>
+            </div>
+            <div class="footer-col">
+                <h4>บริการลูกค้า</h4>
+                <ul>
+                    <li><a href="#">การรับประกันสินค้า</a></li>
+                    <li><a href="#">นโยบายการจัดส่ง</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>ติดต่อเรา</h4>
+                <p><i class="fa-solid fa-phone"></i> Call Center: 02-123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 VOLTIX ELECTRONICS CO., LTD. สงวนลิขสิทธิ์ทั้งหมด</p>
+        </div>
+    </footer>
 
-            if(cart.length === 0) {
-                list.innerHTML = `<p style="color: var(--text-muted); text-align: center; padding: 40px 0;">ไม่มีสินค้าอยู่ในตะกร้าของคุณขณะนี้</p>`;
-                document.getElementById('totalPrice').innerText = 'ราคารวมทั้งหมด: ฿0';
-                return;
-            }
-
-            cart.forEach((item) => {
-                total += item.price;
-                list.innerHTML += `
-                    <div style="background: var(--card-glass); border: 1px solid var(--card-border); padding: 15px 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <img src="${item.img}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;">
-                            <h4>${item.name}</h4>
-                        </div>
-                        <span style="color: var(--neon-cyan); font-size: 18px; font-weight: bold;">฿${item.price.toLocaleString()}</span>
-                    </div>
-                `;
-            });
-            document.getElementById('totalPrice').innerText = `ราคารวมทั้งหมด: ฿${total.toLocaleString()}`;
-        }
-
-        function clearCart() {
-            if(cart.length === 0) return;
-            alert('ขอบคุณสำหรับการสั่งซื้อสินค้ากับ VOLTIX!');
-            localStorage.removeItem('voltix_cart');
-            cart = [];
-            renderCart();
-            updateCartCount();
-        }
-
-        renderCart();
-    </script>
 </body>
 </html>
