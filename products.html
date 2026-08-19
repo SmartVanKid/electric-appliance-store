@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>VOLTIX | สินค้าทั้งหมด</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> VOLTIX</a>
+        <nav>
+            <a href="index.html">หน้าแรก</a>
+            <a href="products.html" class="active">สินค้าทั้งหมด</a>
+            <a href="technology.html">เทคโนโลยีใหม่</a>
+        </nav>
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge">0</span>
+        </a>
+    </header>
+
+    <div class="container">
+        <h2>คลังสินค้าทั้งหมด</h2>
+        <br>
+        <!-- ช่องค้นหา -->
+        <input type="text" id="searchInput" placeholder="พิมพ์ชื่อสินค้าเพื่อค้นหา (เช่น TV, Mouse)..." onkeyup="filterProducts()" style="width: 100%; max-width: 400px; padding: 10px 15px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: #161b22; color: #fff;">
+
+        <div class="product-grid" id="productGrid"></div>
+    </div>
+
+    <footer>© 2026 VOLTIX Electronics. All rights reserved.</footer>
+    <script src="main.js"></script>
+    <script>
+        function displayProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            items.forEach(p => {
+                grid.innerHTML += `
+                    <div class="product-card">
+                        <img src="${p.img}">
+                        <h3>${p.name}</h3>
+                        <p style="color: var(--accent-color); font-weight: bold; margin: 10px 0;">฿${p.price.toLocaleString()}</p>
+                        <button class="btn btn-primary" onclick="addToCart(${p.id})" style="width: 100%;">ใส่ตะกร้า</button>
+                    </div>
+                `;
+            });
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = productsData.filter(p => p.name.toLowerCase().includes(query) || p.category.includes(query));
+            displayProducts(filtered);
+        }
+
+        displayProducts(productsData);
+    </script>
+</body>
+</html>
