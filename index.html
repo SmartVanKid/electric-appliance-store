@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOLTIX | Next-Gen Electronics & Appliances</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Kanit', 'sans-serif'],
+                        tech: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#00f3ff',
+                            purple: '#7000ff',
+                            dark: '#0a0a0f',
+                            card: '#12121a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0f;
+            color: #ffffff;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        .glow-box {
+            box-shadow: 0 0 20px rgba(112, 0, 255, 0.2);
+        }
+        .glow-box:hover {
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
+        }
+        .glass {
+            background: rgba(18, 18, 26, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-cyan selection:text-black">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <i data-lucide="zap" class="w-8 h-8 text-brand-cyan animate-pulse"></i>
+                <span class="font-tech text-3xl font-extrabold tracking-wider bg-gradient-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">VOLTIX</span>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="hidden md:flex flex-1 max-w-md mx-8 relative">
+                <input type="text" placeholder="ค้นหาเครื่องใช้ไฟฟ้าสุดล้ำ..." class="w-full bg-black/50 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-brand-cyan transition-all text-white placeholder-gray-500">
+                <i data-lucide="search" class="w-4 h-4 absolute left-3 top-3 text-gray-400"></i>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-6">
+                <a href="#products" class="hover:text-brand-cyan transition-colors hidden sm:block">สินค้าทั้งหมด</a>
+                <button onclick="toggleCart()" class="relative p-2 hover:bg-white/5 rounded-full transition-all">
+                    <i data-lucide="shopping-bag" class="w-6 h-6 text-brand-cyan"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-purple text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-24 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-purple/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-brand-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <span class="text-brand-cyan text-sm font-tech tracking-widest uppercase mb-2 block">// The Future of Home Tech</span>
+                <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-6">
+                    เปลี่ยนบ้านคุณ ให้เป็น <span class="bg-gradient-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">สมาร์ตโฮมยุคใหม่</span>
+                </h1>
+                <p class="text-gray-400 text-lg mb-8">
+                    สัมผัสประสบการณ์เครื่องใช้ไฟฟ้าระดับพรีเมียม นวัตกรรม AI อัจฉริยะ ประหยัดพลังงาน ประสิทธิภาพสูงสุด
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#products" class="bg-gradient-to-r from-brand-cyan to-blue-600 text-black font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-cyan/20 hover:scale-105 transition-all">ช้อปเลยตอนนี้</a>
+                    <button class="glass px-8 py-4 rounded-xl font-semibold hover:border-brand-cyan/50 transition-all">ดูเทคโนโลยีใหม่</button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="w-full h-[400px] glass rounded-3xl overflow-hidden relative border border-white/10 glow-box flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Smart Home Appliance" class="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <span class="bg-brand-purple/80 text-white text-xs px-3 py-1 rounded-full uppercase font-tech">Featured Product</span>
+                        <h3 class="text-xl font-bold mt-2">Smart Neo Refrigerator X9</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="py-12 border-y border-white/5 bg-black/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="flex items-center space-x-4 p-4 glass rounded-xl">
+                <i data-lucide="shield-check" class="w-10 h-10 text-brand-cyan"></i>
+                <div>
+                    <h4 class="font-bold">รับประกัน 5 ปี</h4>
+                    <p class="text-xs text-gray-400">ดูแลดียิ่งกว่าใคร</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 p-4 glass rounded-xl">
+                <i data-lucide="truck" class="w-10 h-10 text-brand-cyan"></i>
+                <div>
+                    <h4 class="font-bold">ส่งฟรีทั่วไทย</h4>
+                    <p class="text-xs text-gray-400">ส่งด่วนภายใน 24 ชม.</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 p-4 glass rounded-xl">
+                <i data-lucide="cpu" class="w-10 h-10 text-brand-cyan"></i>
+                <div>
+                    <h4 class="font-bold">AI Smart Control</h4>
+                    <p class="text-xs text-gray-400">รองรับสั่งการผ่านมือถือ</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 p-4 glass rounded-xl">
+                <i data-lucide="credit-card" class="w-10 h-10 text-brand-cyan"></i>
+                <div>
+                    <h4 class="font-bold">ผ่อน 0% นาน 10 เดือน</h4>
+                    <p class="text-xs text-gray-400">รองรับทุกธนาคาร</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-extrabold tracking-tight">สินค้ายอดนิยม <span class="text-brand-cyan">.</span></h2>
+                <p class="text-gray-400 mt-2">เลือกสรรอุปกรณ์เครื่องใช้ไฟฟ้าที่ดีที่สุดเพื่อบ้านคุณ</p>
+            </div>
+            <!-- Filter Category -->
+            <div class="flex space-x-2 mt-4 md:mt-0 overflow-x-auto w-full md:w-auto pb-2">
+                <button class="bg-brand-cyan text-black font-bold px-4 py-2 rounded-lg text-sm transition-all">ทั้งหมด</button>
+                <button class="glass hover:text-brand-cyan px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap">ห้องครัว</button>
+                <button class="glass hover:text-brand-cyan px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap">ความบันเทิง</button>
+                <button class="glass hover:text-brand-cyan px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap">ปรับอากาศ</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+            <!-- Product Item 1 -->
+            <div class="glass rounded-2xl p-5 border border-white/5 hover:border-brand-cyan/40 transition-all duration-300 glow-box group">
+                <div class="relative h-56 rounded-xl overflow-hidden mb-4 bg-black/40">
+                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 bg-red-500/80 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded">-20%</span>
+                </div>
+                <div class="text-xs text-brand-cyan font-tech mb-1">SMART TV</div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-brand-cyan transition-colors">Neo OLED 8K Smart TV 65"</h3>
+                <p class="text-gray-400 text-sm mb-4 line-clamp-2">คมชัดระดับ 8K พร้อมระบบ AI Upscaling ภาพสมจริง เสียงรอบทิศทาง</p>
+                <div class="flex items-center justify-between mt-auto">
+                    <div>
+                        <span class="text-xs text-gray-500 line-through">฿49,900</span>
+                        <div class="text-xl font-bold text-white">฿39,900</div>
+                    </div>
+                    <button onclick="addToCart('Neo OLED 8K Smart TV 65\"', 39900)" class="bg-white/10 hover:bg-brand-cyan hover:text-black p-3 rounded-xl transition-all">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Item 2 -->
+            <div class="glass rounded-2xl p-5 border border-white/5 hover:border-brand-cyan/40 transition-all duration-300 glow-box group">
+                <div class="relative h-56 rounded-xl overflow-hidden mb-4 bg-black/40">
+                    <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="text-xs text-brand-cyan font-tech mb-1">AIR PURIFIER</div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-brand-cyan transition-colors">CyberClean Air Pro</h3>
+                <p class="text-gray-400 text-sm mb-4 line-clamp-2">เครื่องฟอกอากาศดักจับ PM 2.5 และกรองแบคทีเรีย 99.9% ครอบคลุม 60 ตร.ม.</p>
+                <div class="flex items-center justify-between mt-auto">
+                    <div>
+                        <div class="text-xl font-bold text-white">฿8,900</div>
+                    </div>
+                    <button onclick="addToCart('CyberClean Air Pro', 8900)" class="bg-white/10 hover:bg-brand-cyan hover:text-black p-3 rounded-xl transition-all">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Item 3 -->
+            <div class="glass rounded-2xl p-5 border border-white/5 hover:border-brand-cyan/40 transition-all duration-300 glow-box group">
+                <div class="relative h-56 rounded-xl overflow-hidden mb-4 bg-black/40">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="text-xs text-brand-cyan font-tech mb-1">KITCHEN</div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-brand-cyan transition-colors">Quantum Espresso Maker</h3>
+                <p class="text-gray-400 text-sm mb-4 line-clamp-2">เครื่องชงกาแฟแรงดันสูง สกัดรสชาติกาแฟได้เข้มข้นสไตล์บาริสต้ามืออาชีพ</p>
+                <div class="flex items-center justify-between mt-auto">
+                    <div>
+                        <div class="text-xl font-bold text-white">฿15,500</div>
+                    </div>
+                    <button onclick="addToCart('Quantum Espresso Maker', 15500)" class="bg-white/10 hover:bg-brand-cyan hover:text-black p-3 rounded-xl transition-all">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOPPING CART SLIDE-OVER -->
+    <div id="cart-drawer" class="fixed inset-y-0 right-0 max-w-md w-full glass bg-brand-dark/95 border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col">
+        <div class="flex justify-between items-center pb-4 border-b border-white/10">
+            <h3 class="font-bold text-lg flex items-center gap-2"><i data-lucide="shopping-cart"></i> ตะกร้าสินค้าของคุณ</h3>
+            <button onclick="toggleCart()" class="p-1 hover:text-brand-cyan"><i data-lucide="x"></i></button>
+        </div>
+
+        <div id="cart-items" class="flex-1 overflow-y-auto py-4 space-y-4">
+            <p class="text-gray-500 text-center py-8">ไม่มีสินค้าในตะกร้า</p>
+        </div>
+
+        <div class="border-t border-white/10 pt-4 mt-auto">
+            <div class="flex justify-between mb-4">
+                <span class="text-gray-400">ราคารวมทั้งสิ้น:</span>
+                <span id="cart-total" class="font-bold text-xl text-brand-cyan">฿0</span>
+            </div>
+            <button onclick="alert('ขอบคุณที่ร่วมสั่งซื้อ! ระบบชำระเงินพร้อมใช้งานในขั้นตอนต่อไป')" class="w-full bg-gradient-to-r from-brand-cyan to-brand-purple text-white font-bold py-3 rounded-xl shadow-lg hover:opacity-90 transition-all">
+                ดำเนินการชำระเงิน
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-black py-10 mt-20 text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>© 2026 VOLTIX Store Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FOR CART INTERACTION -->
+    <script>
+        lucide.createIcons();
+
+        let cart = [];
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('translate-x-full');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+            // Open Cart Drawer
+            document.getElementById('cart-drawer').classList.remove('translate-x-full');
+        }
+
+        function updateCart() {
+            document.getElementById('cart-count').innerText = cart.length;
+            const container = document.getElementById('cart-items');
+            
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-gray-500 text-center py-8">ไม่มีสินค้าในตะกร้า</p>`;
+                document.getElementById('cart-total').innerText = '฿0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5">
+                        <div>
+                            <div class="font-bold text-sm text-white">${item.name}</div>
+                            <div class="text-xs text-brand-cyan">฿${item.price.toLocaleString()}</div>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-300 p-1">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            document.getElementById('cart-total').innerText = `฿${total.toLocaleString()}`;
+            lucide.createIcons();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+    </script>
+</body>
+</html>
