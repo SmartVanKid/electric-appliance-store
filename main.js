@@ -1,18 +1,11 @@
 const productsData = [
-    // รายการสินค้าในหมวด TV
-    { id: 1, name: 'Neo OLED 8K Smart TV 65"', category: 'tv', price: 45900, img: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&auto=format&fit=crop&q=80' },
-    { id: 2, name: 'Crystal QLED 4K TV 55"', category: 'tv', price: 21900, img: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&auto=format&fit=crop&q=80' },
-    { id: 3, name: 'Ultra Slim Frame Smart TV 43"', category: 'tv', price: 14500, img: 'https://images.unsplash.com/photo-1571415060716-baff5f7179e6?w=600&auto=format&fit=crop&q=80' },
-    
-    // รายการสินค้าในหมวด เมาส์
-    { id: 4, name: 'Voltix CyberMouse Gaming RGB', category: 'mouse', price: 2590, img: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80' },
-    { id: 5, name: 'Voltix Silent Ergonomic Mouse', category: 'mouse', price: 1290, img: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&auto=format&fit=crop&q=80' },
-    
-    // รายการสินค้าในหมวด เครื่องชงกาแฟ (แก้ไขรูปภาพใหม่ตรงปก 100%)
-    { id: 6, name: 'Quantum Espresso เครื่องชงกาแฟสด Touchscreen', category: 'coffee', price: 15900, img: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80' },
-    
-    // รายการสินค้าในหมวด สมาร์ตโฮม
-    { id: 7, name: 'Voltix Smart Lock ดิจิทัลล็อคประตูอัจฉริยะ', category: 'smart', price: 8900, img: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80' }
+    { id: 1, name: 'VOLTIX Neo OLED 4K Smart TV 65"', category: 'tv', price: 32900, img: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600' },
+    { id: 2, name: 'VOLTIX Cinema Soundbar 5.1ch', category: 'tv', price: 8900, img: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600' },
+    { id: 3, name: 'VOLTIX Smart Inverter Refrigerator', category: 'coffee', price: 24500, img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600' },
+    { id: 4, name: 'VOLTIX CyberMouse Gaming RGB', category: 'mouse', price: 2590, img: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600' },
+    { id: 5, name: 'VOLTIX Silent Ergonomic Mouse', category: 'mouse', price: 1290, img: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600' },
+    { id: 6, name: 'Quantum Espresso เครื่องชงกาแฟสด', category: 'coffee', price: 15900, img: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600' },
+    { id: 7, name: 'VOLTIX Smart Lock ดิจิทัลสแกนนิ้ว', category: 'smart', price: 8900, img: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600' }
 ];
 
 let cart = JSON.parse(localStorage.getItem('voltix_cart')) || [];
