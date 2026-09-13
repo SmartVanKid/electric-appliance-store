@@ -7,110 +7,80 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">หน้าแรก</a></li>
                 <li><a href="products.html" class="active">สินค้าทั้งหมด</a></li>
-                <li><a href="technology.html">เทคโนโลยี</a></li>
+                <li><a href="tv.html">ทีวี</a></li>
+                <li><a href="fridge.html">ตู้เย็น</a></li>
+                <li><a href="ac.html">แอร์</a></li>
+                <li><a href="washing.html">เครื่องซักผ้า</a></li>
+                <li><a href="kitchen.html">เครื่องครัว IH</a></li>
             </ul>
-            <a href="cart.html" class="cart-btn">🛒 ตะกร้าสินค้า <span id="cart-count">0</span></a>
+            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
         </div>
     </header>
 
     <div class="container">
         <div class="section-title">
-            <h2>รายการสินค้าเครื่องใช้ไฟฟ้าทั้งหมด</h2>
+            <h2>รายการสินค้าทั้งหมดในร้าน</h2>
         </div>
-        
         <div class="product-grid">
+            <!-- ดึงตัวแทนสินค้าทุกหมวดมารวมกัน -->
             <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80" alt="Robot Vacuum">
-                </div>
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80" alt="TV"></div>
                 <div class="product-info">
-                    <h3>Smart Robot Vacuum X10</h3>
-                    <p>หุ่นยนต์ดูดฝุ่นและถูพื้นอัจฉริยะ</p>
-                    <div class="product-footer">
-                        <span class="price">฿12,900</span>
-                        <button class="btn-sm" onclick="addToCart('Smart Robot Vacuum X10', 12900)">Add</button>
-                    </div>
+                    <h3>Samsung Neo QLED 4K 55"</h3>
+                    <p>ทีวี 4K คมชัดสูง</p>
+                    <div class="product-footer"><span class="price">฿24,900</span><button class="btn-sm" onclick="addToCart('Samsung Neo QLED 4K 55', 24900)">Add</button></div>
                 </div>
             </div>
             <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1615873968403-89e0676297c6?auto=format&fit=crop&w=500&q=80" alt="Air Conditioner">
-                </div>
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80" alt="Fridge"></div>
                 <div class="product-info">
-                    <h3>Inverter Air Conditioner</h3>
-                    <p>แอร์ประหยัดไฟเบอร์ 5</p>
-                    <div class="product-footer">
-                        <span class="price">฿18,500</span>
-                        <button class="btn-sm" onclick="addToCart('Inverter Air Conditioner', 18500)">Add</button>
-                    </div>
+                    <h3>Mitsubishi Multi-Door 18 คิว</h3>
+                    <p>ตู้เย็นอินเวอร์เตอร์</p>
+                    <div class="product-footer"><span class="price">฿21,900</span><button class="btn-sm" onclick="addToCart('Mitsubishi Multi-Door 18Q', 21900)">Add</button></div>
                 </div>
             </div>
             <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" alt="Coffee Maker">
-                </div>
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1615873968403-89e0676297c6?auto=format&fit=crop&w=500&q=80" alt="AC"></div>
                 <div class="product-info">
-                    <h3>IoT Coffee Maker Pro</h3>
-                    <p>เครื่องชงกาแฟอัตโนมัติ</p>
-                    <div class="product-footer">
-                        <span class="price">฿5,900</span>
-                        <button class="btn-sm" onclick="addToCart('IoT Coffee Maker Pro', 5900)">Add</button>
-                    </div>
+                    <h3>Daikin Inverter 12000 BTU</h3>
+                    <p>เครื่องปรับอากาศประหยัดไฟ</p>
+                    <div class="product-footer"><span class="price">฿18,900</span><button class="btn-sm" onclick="addToCart('Daikin Inverter 12000 BTU', 18900)">Add</button></div>
                 </div>
             </div>
             <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80" alt="Smart TV">
-                </div>
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=500&q=80" alt="Washer"></div>
                 <div class="product-info">
-                    <h3>4K OLED Smart TV 55"</h3>
-                    <p>ทีวีจอคมชัดระดับ 4K สีสันสมจริง</p>
-                    <div class="product-footer">
-                        <span class="price">฿22,000</span>
-                        <button class="btn-sm" onclick="addToCart('4K OLED Smart TV 55', 22000)">Add</button>
-                    </div>
+                    <h3>LG AI DD Washer 10.5kg</h3>
+                    <p>เครื่องซักผ้าฝาหน้าอัจฉริยะ</p>
+                    <div class="product-footer"><span class="price">฿15,900</span><button class="btn-sm" onclick="addToCart('LG AI DD Washer 10.5kg', 15900)">Add</button></div>
                 </div>
             </div>
             <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=500&q=80" alt="Washing Machine">
-                </div>
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&w=500&q=80" alt="Rice Cooker"></div>
                 <div class="product-info">
-                    <h3>AI Front-Load Washer</h3>
-                    <p>เครื่องซักผ้าฝาหน้า ระบบ AI ควบคุมอัจฉริยะ</p>
-                    <div class="product-footer">
-                        <span class="price">฿14,900</span>
-                        <button class="btn-sm" onclick="addToCart('AI Front-Load Washer', 14900)">Add</button>
-                    </div>
+                    <h3>Zojirushi หม้อหุงข้าวระบบ IH</h3>
+                    <p>หม้อหุงข้าวพรีเมียมจากญี่ปุ่น</p>
+                    <div class="product-footer"><span class="price">฿8,900</span><button class="btn-sm" onclick="addToCart('Zojirushi IH Rice Cooker', 8900)">Add</button></div>
                 </div>
             </div>
             <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1550985616-11610c81223e?auto=format&fit=crop&w=500&q=80" alt="Smart Bulb">
-                </div>
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=500&q=80" alt="Vacuum"></div>
                 <div class="product-info">
-                    <h3>Smart LED Bulb Set</h3>
-                    <p>หลอดไฟเปลี่ยนสีได้ 16 ล้านสีผ่านแอป</p>
-                    <div class="product-footer">
-                        <span class="price">฿990</span>
-                        <button class="btn-sm" onclick="addToCart('Smart LED Bulb Set', 990)">Add</button>
-                    </div>
+                    <h3>Dyson V12 Detect Slim</h3>
+                    <p>เครื่องดูดฝุ่นไร้สายไฮเทค</p>
+                    <div class="product-footer"><span class="price">฿21,900</span><button class="btn-sm" onclick="addToCart('Dyson V12 Detect Slim', 21900)">Add</button></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
-    </footer>
-
+    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
     <script src="main.js"></script>
 </body>
 </html>
