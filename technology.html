@@ -3,41 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เทคโนโลยี - SmartTech</title>
+    <title>Smart Tech - Electric Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">หน้าแรก</a></li>
                 <li><a href="products.html">สินค้าทั้งหมด</a></li>
-                <li><a href="technology.html" class="active">เทคโนโลยี</a></li>
+                <li><a href="tv.html">ทีวี</a></li>
+                <li><a href="fridge.html">ตู้เย็น</a></li>
+                <li><a href="ac.html">แอร์</a></li>
+                <li><a href="washing.html">เครื่องซักผ้า</a></li>
+                <li><a href="kitchen.html">เครื่องครัว IH</a></li>
+                <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
-            <a href="cart.html" class="cart-btn">🛒 ตะกร้าสินค้า <span id="cart-count">0</span></a>
+            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
         </div>
     </header>
 
     <div class="container">
-        <div class="section-title">
-            <h2>นวัตกรรมและเทคโนโลยีแห่งอนาคต</h2>
+        <div class="category-banner">
+            <h1 id="page-title">หมวดหมู่เทคโนโลยี</h1>
+            <p>อุปกรณ์ไอทีและเครื่องใช้ไฟฟ้าเกรดพรีเมียม</p>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-            <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-                <h3>🌿 Eco-Friendly & Inverter</h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">เครื่องใช้ไฟฟ้าทุกชิ้นของเราได้รับการออกแบบมาเพื่อประหยัดพลังงานสูงสุด ลดการปล่อยก๊าซเรือนกระจก และช่วยคุณประหยัดค่าไฟในบ้านได้มากกว่า 40% ต่อเดือน</p>
-            </div>
-            <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-                <h3>📱 IoT Smart Ecosystem</h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">เชื่อมต่อทุกอุปกรณ์เข้ากับสมาร์ทโฟนของคุณ สั่งการเปิด-ปิด ตั้งเวลา หรือตรวจสอบสถานะการทำงานได้จากทุกมุมโลกผ่านระบบ Cloud อัจฉริยะ</p>
-            </div>
+
+        <!-- กล่องสำหรับให้ระบบดึงการ์ดสินค้ามาแสดงอัตโนมัติ -->
+        <div class="product-grid" id="dynamic-product-grid">
+            <!-- สินค้าจะถูกเรนเดอร์มาแสดงที่นี่โดยอัตโนมัติ -->
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
+        <p>&copy; 2026 SmartTech Electric Store.</p>
     </footer>
 
     <script src="main.js"></script>
