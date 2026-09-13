@@ -1,11 +1,8 @@
-// โหลดข้อมูลตะกร้าจาก localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function updateCartCount() {
     let countElements = document.querySelectorAll('#cart-count');
-    countElements.forEach(el => {
-        el.innerText = cart.length;
-    });
+    countElements.forEach(el => { el.innerText = cart.length; });
 }
 
 function addToCart(name, price) {
@@ -18,7 +15,6 @@ function addToCart(name, price) {
 function renderCart() {
     let listContainer = document.getElementById('cart-items-list');
     let totalPriceEl = document.getElementById('total-price');
-    
     if (!listContainer) return;
 
     if (cart.length === 0) {
@@ -58,14 +54,13 @@ function checkout() {
         alert('ยังไม่มีสินค้าในตะกร้าครับ!');
         return;
     }
-    alert('สั่งซื้อสินค้าสำเร็จ! ขอบคุณที่ใช้บริการ SmartTech ครับ 🎉');
+    alert('สั่งซื้อสินค้าสำเร็จ! ขอบคุณที่ใช้บริการ SmartTech 🎉');
     cart = [];
     localStorage.removeItem('cart');
     updateCartCount();
     renderCart();
 }
 
-// รันฟังก์ชันอัปเดตตัวเลขเมื่อเปิดหน้าเว็บ
 updateCartCount();
 if (window.location.pathname.includes('cart.html')) {
     renderCart();
