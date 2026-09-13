@@ -1,67 +1,57 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function updateCartCount() {
-    let countElements = document.querySelectorAll('#cart-count');
-    countElements.forEach(el => { el.innerText = cart.length; });
+    let countElements = document.querySelectorAll('#cart-count, #cart-badge');
+    let totalQty = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+    countElements.forEach(el => { el.innerText = totalQty; });
 }
 
-function addToCart(name, price) {
-    cart.push({ name, price });
+function addToCart(name, price, image) {
+    let existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.qty = (existingItem.qty || 1) + 1;
+    } else {
+        cart.push({ name: name, price: price, image: image || '', qty: 1 });
+    }
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     alert(`เพิ่ม "${name}" ลงในตะกร้าเรียบร้อยแล้ว! 🛒`);
 }
 
-function renderCart() {
-    let listContainer = document.getElementById('cart-items-list');
-    let totalPriceEl = document.getElementById('total-price');
-    if (!listContainer) return;
-
-    if (cart.length === 0) {
-        listContainer.innerHTML = '<p style="color: var(--text-muted);">ไม่มีสินค้าในตะกร้า</p>';
-        if (totalPriceEl) totalPriceEl.innerText = '฿0';
-        return;
+function changeQty(index, amount) {
+    if (!cart[index].qty) cart[index].qty = 1;
+    cart[index].qty += amount;
+    
+    if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
     }
-
-    let html = '';
-    let total = 0;
-    cart.forEach((item, index) => {
-        total += item.price;
-        html += `
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid #1e293b;">
-                <span>${item.name}</span>
-                <div>
-                    <span style="color: var(--accent-color); margin-right: 1rem;">฿${item.price.toLocaleString()}</span>
-                    <button onclick="removeItem(${index})" style="background: #ef4444; border: none; color: white; padding: 0.2rem 0.6rem; border-radius: 4px; cursor: pointer;">ลบ</button>
-                </div>
-            </div>
-        `;
-    });
-
-    listContainer.innerHTML = html;
-    if (totalPriceEl) totalPriceEl.innerText = `฿${total.toLocaleString()}`;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    if (typeof renderCart === 'function') renderCart();
 }
 
 function removeItem(index) {
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    renderCart();
+    if (typeof renderCart === 'function') renderCart();
 }
 
 function checkout() {
     if (cart.length === 0) {
-        alert('ยังไม่มีสินค้าในตะกร้าครับ!');
+        alert('ไม่มีสินค้าในตะกร้าครับ');
         return;
     }
-    alert('สั่งซื้อสินค้าสำเร็จ! ขอบคุณที่ใช้บริการ SmartTech 🎉');
+    alert('ดำเนินการสั่งซื้อสำเร็จ ขอบคุณที่ใช้บริการ Smart Tech!');
     cart = [];
-    localStorage.removeItem('cart');
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    renderCart();
+    if (typeof renderCart === 'function') renderCart();
 }
 
-updateCartCount();
-if (window.location.pathname.includes('cart.html')) {
-    renderCart();
-}
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+    if (typeof renderCart === 'function') {
+        renderCart();
+    }
+});
