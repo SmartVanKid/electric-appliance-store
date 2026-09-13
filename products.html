@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สินค้าทั้งหมด - Smart Tech</title>
-    <!-- ลิงก์ไอคอนและไฟล์ CSS กลาง -->
+    <title>Smart Tech - Electric Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-    <!-- แถบเมนูด้านบน (ใช้โค้ดชุดเดียวกันทุกหน้า) -->
     <header>
-        <div class="logo">
-            <i class="fa-solid fa-bolt"></i> Smart <span>Tech</span>
-        </div>
-        <nav>
-            <ul>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
+            <ul class="nav-links">
                 <li><a href="index.html">หน้าแรก</a></li>
-                <li><a href="products.html" class="active">สินค้าทั้งหมด</a></li>
+                <li><a href="products.html">สินค้าทั้งหมด</a></li>
                 <li><a href="tv.html">ทีวี</a></li>
                 <li><a href="fridge.html">ตู้เย็น</a></li>
                 <li><a href="ac.html">แอร์</a></li>
@@ -26,34 +21,23 @@
                 <li><a href="kitchen.html">เครื่องครัว IH</a></li>
                 <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
-        </nav>
-        <a href="cart.html" class="cart-btn">
-            <i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart count">0</span>
-        </a>
+            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
+        </div>
     </header>
 
-    <!-- เนื้อหาหลักของหน้า (ต้องอยู่ภายใต้ class="container" เสมอเพื่อให้จัดหน้าสวยงาม) -->
     <div class="container">
-        
-        <div class="section-title">
-            <h2>รายการสินค้าทั้งหมดในร้าน</h2>
-            <span>อุปกรณ์ไอทีและเครื่องใช้ไฟฟ้าเกรดพรีเมียม</span>
+        <div class="category-banner">
+            <h1 id="page-title">รายการสินค้าทั้งหมดในร้าน</h1>
+            <p>อุปกรณ์ไอทีและเครื่องใช้ไฟฟ้าเกรดพรีเมียม</p>
         </div>
 
-        <!-- ใส่รายการสินค้าหรือเนื้อหาของคุณตรงนี้ -->
-        <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-            <!-- ตัวอย่างการ์ดสินค้า -->
-            <div class="product-card" style="padding: 1.5rem;">
-                <h3>Samsung Neo QLED 4K 55"</h3>
-                <p style="color: var(--text-muted); margin: 0.5rem 0 1rem 0;">ทีวี 4K คมชัดสูง</p>
-                <span style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">฿24,900</span>
-            </div>
+        <!-- กล่องสำหรับให้ระบบดึงการ์ดสินค้ามาแสดงอัตโนมัติ -->
+        <div class="product-grid" id="dynamic-product-grid">
+            <!-- สินค้าจะถูกเรนเดอร์มาแสดงที่นี่โดยอัตโนมัติ -->
         </div>
-
     </div>
 
-    <!-- ฟุตเตอร์เว็บไซต์ -->
-    <footer style="text-align: center; padding: 2rem; color: var(--text-muted); border-top: 1px solid var(--border-color); margin-top: 3rem;">
+    <footer>
         <p>&copy; 2026 SmartTech Electric Store.</p>
     </footer>
 
