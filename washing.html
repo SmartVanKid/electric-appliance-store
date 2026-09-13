@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องซักผ้าทุกแบรนด์ - SmartTech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="tv.html">ทีวี</a></li>
+                <li><a href="fridge.html">ตู้เย็น</a></li>
+                <li><a href="ac.html">แอร์</a></li>
+                <li><a href="washing.html" class="active">เครื่องซักผ้า</a></li>
+                <li><a href="kitchen.html">เครื่องครัว IH</a></li>
+            </ul>
+            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="category-banner">
+            <h1>หมวดหมู่เครื่องซักผ้า & เครื่องอบผ้า</h1>
+            <p>ถนอมเนื้อผ้าด้วยระบบไอน้ำ ซักสะอาดล้ำลึก จาก LG, Electrolux, Haier</p>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=500&q=80" alt="LG Washer"></div>
+                <div class="product-info">
+                    <h3>LG AI DD Front Load Washer 10.5kg</h3>
+                    <p>แบรนด์: LG | ระบบ AI คำนวณความนุ่มของเนื้อผ้าอัตโนมัติ</p>
+                    <div class="product-footer">
+                        <span class="price">฿15,900</span>
+                        <button class="btn-sm" onclick="addToCart('LG AI DD Washer 10.5kg', 15900)">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=500&q=80" alt="Electrolux Washer"></div>
+                <div class="product-info">
+                    <h3>Electrolux UltimateCare 11kg</h3>
+                    <p>แบรนด์: Electrolux | ลดสารก่อภูมิแพ้ ถนอมสีผ้าไม่ให้ซีดจาง</p>
+                    <div class="product-footer">
+                        <span class="price">฿17,500</span>
+                        <button class="btn-sm" onclick="addToCart('Electrolux UltimateCare 11kg', 17500)">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=500&q=80" alt="Haier Washer"></div>
+                <div class="product-info">
+                    <h3>Haier Inverter Top Load 15kg</h3>
+                    <p>แบรนด์: Haier | ถังซักขนาดใหญ่ จุผ้าได้สะใจ แรงซักทรงพลัง</p>
+                    <div class="product-footer">
+                        <span class="price">฿9,900</span>
+                        <button class="btn-sm" onclick="addToCart('Haier Top Load 15kg', 9900)">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
+    <script src="main.js"></script>
+</body>
+</html>
