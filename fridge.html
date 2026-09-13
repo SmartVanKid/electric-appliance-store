@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ตู้เย็นทุกแบรนด์ - SmartTech</title>
+    <title>Smart Tech - Electric Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -12,11 +13,13 @@
             <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="products.html">สินค้าทั้งหมด</a></li>
                 <li><a href="tv.html">ทีวี</a></li>
-                <li><a href="fridge.html" class="active">ตู้เย็น</a></li>
+                <li><a href="fridge.html">ตู้เย็น</a></li>
                 <li><a href="ac.html">แอร์</a></li>
                 <li><a href="washing.html">เครื่องซักผ้า</a></li>
                 <li><a href="kitchen.html">เครื่องครัว IH</a></li>
+                <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
             <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
         </div>
@@ -24,48 +27,20 @@
 
     <div class="container">
         <div class="category-banner">
-            <h1>หมวดหมู่ตู้เย็น (Refrigerator)</h1>
-            <p>ตู้เย็นหลายประตู อินเวอร์เตอร์ เก็บความสดได้ยาวนาน จาก Mitsubishi, Samsung, Hitachi</p>
+            <h1 id="page-title">หมวดหมู่ตู้เย็น</h1>
+            <p>อุปกรณ์ไอทีและเครื่องใช้ไฟฟ้าเกรดพรีเมียม</p>
         </div>
 
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80" alt="Mitsubishi Fridge"></div>
-                <div class="product-info">
-                    <h3>Mitsubishi Multi-Door 18 คิว</h3>
-                    <p>แบรนด์: Mitsubishi | ระบบทำความเย็นอัจฉริยะ</p>
-                    <div class="product-footer">
-                        <span class="price">฿21,900</span>
-                        <button class="btn-sm" onclick="addToCart('Mitsubishi Multi-Door 18Q', 21900)">Add</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1571175420322-91a074780418?auto=format&fit=crop&w=500&q=80" alt="Samsung Fridge"></div>
-                <div class="product-info">
-                    <h3>Samsung Bespoke 2 ประตู 14 คิว</h3>
-                    <p>แบรนด์: Samsung | ดีไซน์สวยหรู เปลี่ยนสีได้ตามใจชอบ</p>
-                    <div class="product-footer">
-                        <span class="price">฿16,900</span>
-                        <button class="btn-sm" onclick="addToCart('Samsung Bespoke 14Q', 16900)">Add</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1536353284626-d18ceb2b3a5d?auto=format&fit=crop&w=500&q=80" alt="Hitachi Fridge"></div>
-                <div class="product-info">
-                    <h3>Hitachi Side-by-Side 21 คิว</h3>
-                    <p>แบรนด์: Hitachi | ช่องแช่สุญญากาศ คงความสดระดับพรีเมียม</p>
-                    <div class="product-footer">
-                        <span class="price">฿28,500</span>
-                        <button class="btn-sm" onclick="addToCart('Hitachi Side-by-Side 21Q', 28500)">Add</button>
-                    </div>
-                </div>
-            </div>
+        <!-- กล่องสำหรับให้ระบบดึงการ์ดสินค้ามาแสดงอัตโนมัติ -->
+        <div class="product-grid" id="dynamic-product-grid">
+            <!-- สินค้าจะถูกเรนเดอร์มาแสดงที่นี่โดยอัตโนมัติ -->
         </div>
     </div>
 
-    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
+    <footer>
+        <p>&copy; 2026 SmartTech Electric Store.</p>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
