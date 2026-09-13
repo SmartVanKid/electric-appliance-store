@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="top-banner">
+        ⚡ FLASH SALE! โค้ดส่วนลด SMART2026 ลดเพิ่ม 15% ส่งฟรีทั่วไทย
+    </div>
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> Smart<span>Tech</span></a>
+            <a href="index.html" class="logo"><i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span></a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">หน้าแรก</a></li>
                 <li><a href="products.html">สินค้าทั้งหมด</a></li>
@@ -21,42 +24,43 @@
                 <li><a href="kitchen.html">เครื่องครัว IH</a></li>
                 <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
-            <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
+            <a href="cart.html" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span>1</span>
+            </a>
         </div>
     </header>
-
     <div class="container">
-        <div class="hero-section" style="background: linear-gradient(135deg, #1f2937, #111827); padding: 3rem 2rem; border-radius: 16px; text-align: center; margin-bottom: 2rem; border: 1px solid #30363d;">
-            <h1 style="font-size: 2.5rem; color: #fff; margin-bottom: 1rem;">ยินดีต้อนรับสู่ SmartTech</h1>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์ไอทีล้ำสมัย ครบจบในที่เดียว</p>
-            <a href="products.html" class="btn-sm" style="padding: 0.75rem 1.5rem; font-size: 1rem; text-decoration: none; display: inline-block;">สำรวจสินค้าทั้งหมด →</a>
+        <div style="background: linear-gradient(135deg, #0f172a, #1e293b); padding: 2.5rem; border-radius: 14px; border: 1px solid var(--border-color); margin-bottom: 2rem;">
+            <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">ยกระดับบ้านคุณด้วย <span style="color: var(--accent-color);">Smart Tech</span></h1>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">ศูนย์รวมเครื่องใช้ไฟฟ้าและเทคโนโลยีอัจฉริยะ ส่งตรงถึงบ้านคุณ</p>
+            <a href="products.html" class="btn-add" style="display: inline-block; padding: 0.6rem 1.2rem; text-decoration: none;">สำรวจสินค้าทั้งหมด →</a>
         </div>
-
-        <div class="section-title">
-            <h2 style="color: #fff; border-left: 4px solid #ff6600; padding-left: 10px; margin-bottom: 1.5rem;">หมวดหมู่ยอดฮิต</h2>
-        </div>
-
+        <h2 style="color: #fff; font-size: 1.3rem; border-left: 4px solid var(--accent-color); padding-left: 10px;">สินค้ายอดนิยมประจำสัปดาห์</h2>
         <div class="product-grid">
             <div class="product-card">
                 <div class="product-img"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80" alt="TV"></div>
                 <div class="product-info">
-                    <h3>ทีวี (Smart TV)</h3>
-                    <p>รวมทีวี 4K คมชัดระดับโรงหนัง</p>
-                    <div class="product-footer"><a href="tv.html" class="btn-sm" style="text-decoration: none; display: block; text-align: center;">ดูสินค้า</a></div>
+                    <h3>Samsung Neo QLED 4K 55"</h3>
+                    <p>ทีวี 4K คมชัดระดับโรงหนัง</p>
+                    <div class="product-footer">
+                        <span class="price">฿24,900</span>
+                        <a href="cart.html" class="btn-add">เพิ่มลงตะกร้า</a>
+                    </div>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-img"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80" alt="Fridge"></div>
                 <div class="product-info">
-                    <h3>ตู้เย็นอินเวอร์เตอร์</h3>
-                    <p>ประหยัดไฟ เก็บความสดได้ยาวนาน</p>
-                    <div class="product-footer"><a href="fridge.html" class="btn-sm" style="text-decoration: none; display: block; text-align: center;">ดูสินค้า</a></div>
+                    <h3>Mitsubishi Multi-Door 18 คิว</h3>
+                    <p>ตู้เย็นอินเวอร์เตอร์ ประหยัดไฟ</p>
+                    <div class="product-footer">
+                        <span class="price">฿21,900</span>
+                        <a href="cart.html" class="btn-add">เพิ่มลงตะกร้า</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
-    <script src="main.js"></script>
+    <footer><p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p></footer>
 </body>
 </html>
