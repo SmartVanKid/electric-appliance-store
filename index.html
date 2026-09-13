@@ -3,575 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOLTIX | ศูนย์รวมเครื่องใช้ไฟฟ้านวัตกรรมแห่งอนาคต</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-dark: #0a0c14;
-            --card-glass: rgba(18, 24, 38, 0.85);
-            --card-border: rgba(0, 243, 255, 0.18);
-            --neon-cyan: #00f3ff;
-            --neon-purple: #9d00ff;
-            --text-main: #f0f4f8;
-            --text-muted: #8a99ad;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Top Bar */
-        .top-bar {
-            background: linear-gradient(90deg, #050b14, #121c2e);
-            color: var(--neon-cyan);
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 13px;
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        /* Header */
-        header {
-            background: rgba(10, 12, 20, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--card-border);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo i {
-            color: var(--neon-cyan);
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--neon-cyan);
-        }
-
-        .cart-icon {
-            position: relative;
-            color: #fff;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        .cart-badge {
-            position: absolute;
-            top: -8px;
-            right: -10px;
-            background: var(--neon-purple);
-            color: #fff;
-            font-size: 11px;
-            padding: 2px 6px;
-            border-radius: 10px;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-            flex: 1;
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            padding: 40px 0;
-        }
-
-        .hero-text {
-            max-width: 600px;
-        }
-
-        .badge-tag {
-            display: inline-block;
-            background: rgba(0, 243, 255, 0.1);
-            color: var(--neon-cyan);
-            border: 1px solid var(--neon-cyan);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
-
-        .hero-text h1 {
-            font-size: 44px;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-text p {
-            color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .hero-image-box img {
-            width: 100%;
-            max-width: 450px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.2);
-            border: 1px solid var(--card-border);
-        }
-
-        /* Trust Badges */
-        .trust-badges {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            background: var(--card-glass);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 25px;
-            margin: 40px 0;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .trust-item i {
-            font-size: 30px;
-            color: var(--neon-cyan);
-        }
-
-        .trust-item h4 {
-            font-size: 15px;
-            color: #fff;
-        }
-
-        .trust-item p {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* Section Title */
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .text-neon { color: var(--neon-cyan); }
-        .link-more { color: var(--neon-cyan); text-decoration: none; font-size: 14px; }
-
-        /* Product Cards */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background: var(--card-glass);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 20px;
-            position: relative;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 10px 25px rgba(0, 243, 255, 0.2);
-        }
-
-        .sale-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #ff0055;
-            color: #fff;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 4px 10px;
-            border-radius: 8px;
-            z-index: 2;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 15px;
-        }
-
-        .stars {
-            color: #ffca28;
-            font-size: 12px;
-            margin-bottom: 8px;
-        }
-
-        .stars span { color: var(--text-muted); margin-left: 5px; }
-
-        .product-card h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #fff;
-            height: 44px;
-            overflow: hidden;
-        }
-
-        .price {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--neon-cyan);
-            margin-bottom: 15px;
-        }
-
-        .old-price {
-            font-size: 14px;
-            color: var(--text-muted);
-            text-decoration: line-through;
-            margin-left: 8px;
-        }
-
-        /* Buttons */
-        .btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--neon-cyan), #00a8ff);
-            color: #000;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            border: 1px solid var(--card-border);
-        }
-
-        .btn-block { width: 100%; margin-top: auto; }
-
-        /* Reviews */
-        .reviews-section {
-            margin: 60px 0;
-        }
-
-        .text-center { text-align: center; margin-bottom: 30px; }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .review-card {
-            background: var(--card-glass);
-            border: 1px solid var(--card-border);
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        .review-card p {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin: 10px 0;
-            font-style: italic;
-        }
-
-        .reviewer {
-            font-size: 13px;
-            color: var(--neon-cyan);
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            background: #06080f;
-            border-top: 1px solid var(--card-border);
-            padding: 40px 5% 20px 5%;
-            margin-top: 60px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-col p {
-            color: var(--text-muted);
-            font-size: 13px;
-            margin-top: 10px;
-            line-height: 1.6;
-        }
-
-        .footer-col h4 {
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 8px; }
-        .footer-col ul li a { color: var(--text-muted); text-decoration: none; font-size: 13px; }
-        .footer-col ul li a:hover { color: var(--neon-cyan); }
-
-        .payments {
-            display: flex;
-            gap: 15px;
-            font-size: 24px;
-            color: var(--text-muted);
-            margin-top: 15px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 20px;
-            margin-top: 30px;
-            color: var(--text-muted);
-            font-size: 12px;
-        }
-    </style>
+    <title>SmartTech - ร้านขายอุปกรณ์เครื่องใช้ไฟฟ้าอัจฉริยะ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- แถบโปรโมชันด้านบนสุด -->
-    <div class="top-bar">
-        <p><i class="fa-solid fa-truck-fast"></i> จัดส่งฟรีทั่วไทย เมื่อช็อปครบ 1,500.- | <i class="fa-solid fa-credit-card"></i> ผ่อน 0% นานสูงสุด 10 เดือน</p>
-    </div>
-
-    <!-- Header Navigation -->
     <header>
-        <a href="index.html" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
-        <nav>
-            <a href="index.html" class="active">หน้าแรก</a>
-            <a href="products.html">หมวดหมู่สินค้า</a>
-            <a href="technology.html">นวัตกรรม AI</a>
-        </nav>
-        <a href="cart.html" class="cart-icon">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span class="cart-badge">0</span>
-        </a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">หน้าแรก</a></li>
+                <li><a href="products.html">สินค้าทั้งหมด</a></li>
+                <li><a href="technology.html">เทคโนโลยี</a></li>
+            </ul>
+            <a href="cart.html" class="cart-btn">🛒 ตะกร้าสินค้า <span id="cart-count">0</span></a>
+        </div>
     </header>
 
-    <!-- Main Container -->
-    <div class="container">
-        
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-text">
-                <span class="badge-tag"><i class="fa-solid fa-shield-halved"></i> ประกันศูนย์ไทยแท้ 100%</span>
-                <h1>เปลี่ยนบ้านคุณให้เป็น<br><span class="gradient-text">สมาร์ตโฮมยุคใหม่</span></h1>
-                <p>สัมผัสประสบการณ์เครื่องใช้ไฟฟ้าระดับพรีเมียม นวัตกรรม AI อัจฉริยะ ประหยัดพลังงาน และตอบโจทย์ไลฟ์สไตล์ทันสมัย</p>
-                <div class="hero-buttons">
-                    <a href="products.html" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> เลือกซื้อสินค้าเลย</a>
-                    <a href="technology.html" class="btn btn-secondary"><i class="fa-solid fa-microchip"></i> สำรวจนวัตกรรม</a>
-                </div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>ยกระดับบ้านของคุณ<br>ด้วย <span>AI Smart Appliances</span></h1>
+                <p>ศูนย์รวมเครื่องใช้ไฟฟ้าอัจฉริยะ นวัตกรรมล้ำสมัย ประหยัดพลังงาน ควบคุมผ่านมือถือได้ 24 ชั่วโมง</p>
+                <a href="products.html" class="btn-primary">1ช็อปสินค้าทันที</a>
             </div>
-            <div class="hero-image-box">
-                <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Smart Home Appliance">
+            <div class="hero-image" style="text-align: center; font-size: 6rem;">
+                🏠⚡
             </div>
         </section>
 
-        <!-- Trust Badges Section -->
-        <section class="trust-badges">
-            <div class="trust-item">
-                <i class="fa-solid fa-truck-ramp-box"></i>
-                <div>
-                    <h4>จัดส่งด่วนใน 24 ชม.</h4>
-                    <p>ได้รับของไว ปลอดภัย มีประกัน</p>
-                </div>
-            </div>
-            <div class="trust-item">
-                <i class="fa-solid fa-certificate"></i>
-                <div>
-                    <h4>สินค้าประกันศูนย์ 3 ปี</h4>
-                    <p>เคลมง่าย ได้ของแท้ 100%</p>
-                </div>
-            </div>
-            <div class="trust-item">
-                <i class="fa-solid fa-hand-holding-dollar"></i>
-                <div>
-                    <h4>เก็บเงินปลายทาง</h4>
-                    <p>ตรวจเช็กของก่อนชำระเงินได้</p>
-                </div>
-            </div>
-            <div class="trust-item">
-                <i class="fa-solid fa-headset"></i>
-                <div>
-                    <h4>บริการผู้เชี่ยวชาญ 24/7</h4>
-                    <p>พร้อมปรึกษาและดูแลหลังการขาย</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Products / สินค้าขายดี -->
-        <section class="featured-section">
+        <div class="container">
             <div class="section-title">
-                <h2><i class="fa-solid fa-fire text-neon"></i> สินค้านวัตกรรมขายดีประจำเดือน</h2>
-                <a href="products.html" class="link-more">ดูทั้งหมด <i class="fa-solid fa-arrow-right"></i></a>
+                <h2>สินค้ายอดนิยม</h2>
+                <a href="products.html" style="color: var(--accent-color); text-decoration: none; font-size: 1rem;">ดูทั้งหมด &rarr;</a>
             </div>
-
             <div class="product-grid">
-                <!-- Card 1 -->
                 <div class="product-card">
-                    <span class="sale-badge">-15%</span>
-                    <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80" alt="VOLTIX OLED TV">
-                    <div class="product-details">
-                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span>(128 รีวิว)</span></div>
-                        <h3>VOLTIX Neo OLED 4K Smart TV 65"</h3>
-                        <p class="price">฿32,900 <span class="old-price">฿38,900</span></p>
-                        <button class="btn btn-primary btn-block" onclick="addToCart(1)"><i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า</button>
+                    <div class="product-img">🤖</div>
+                    <div class="product-info">
+                        <h3>Smart Robot Vacuum X10</h3>
+                        <p>หุ่นยนต์ดูดฝุ่นและถูพื้นอัจฉริยะ พร้อมระบบนำทาง Laser</p>
+                        <div class="product-footer">
+                            <span class="price">฿12,900</span>
+                            <button class="btn-sm" onclick="addToCart('Smart Robot Vacuum X10', 12900)">Add</button>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
                 <div class="product-card">
-                    <span class="sale-badge">HOT</span>
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="VOLTIX Smart Refrigerator">
-                    <div class="product-details">
-                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span>(95 รีวิว)</span></div>
-                        <h3>VOLTIX Smart Inverter Refrigerator</h3>
-                        <p class="price">฿24,500 <span class="old-price">฿27,900</span></p>
-                        <button class="btn btn-primary btn-block" onclick="addToCart(3)"><i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า</button>
+                    <div class="product-img">❄️</div>
+                    <div class="product-info">
+                        <h3>Inverter Air Conditioner 12000 BTU</h3>
+                        <p>แอร์ประหยัดไฟเบอร์ 5 อินเวอร์เตอร์ เย็นเร็ว เงียบสนิท</p>
+                        <div class="product-footer">
+                            <span class="price">฿18,500</span>
+                            <button class="btn-sm" onclick="addToCart('Inverter Air Conditioner', 18500)">Add</button>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Card 3 -->
                 <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80" alt="VOLTIX Smart Lock">
-                    <div class="product-details">
-                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> <span>(64 รีวิว)</span></div>
-                        <h3>VOLTIX Smart Lock ดิจิทัลสแกนนิ้ว</h3>
-                        <p class="price">฿8,900</p>
-                        <button class="btn btn-primary btn-block" onclick="addToCart(7)"><i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า</button>
+                    <div class="product-img">☕</div>
+                    <div class="product-info">
+                        <h3>IoT Coffee Maker Pro</h3>
+                        <p>เครื่องชงกาแฟอัตโนมัติ สั่งการผ่านแอปพลิเคชันมือถือ</p>
+                        <div class="product-footer">
+                            <span class="price">฿5,900</span>
+                            <button class="btn-sm" onclick="addToCart('IoT Coffee Maker Pro', 5900)">Add</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </main>
 
-        <!-- Testimonials -->
-        <section class="reviews-section">
-            <h2 class="text-center"><i class="fa-solid fa-comments"></i> ความประทับใจจากลูกค้าจริง</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"สั่ง TV 65 นิ้วไป ส่งไวมากวันเดียวถึง ช่างมาติดตั้งให้อย่างดี ภาพคมชัดสมราคา นวัตกรรม AI ปรับแสงเองตามเวลาประทับใจสุดๆ"</p>
-                    <div class="reviewer">- คุณกิตติศักดิ์ พ. (ผู้ซื้อจริง)</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"สั่งตู้เย็นและกลอนประตูผ่านเว็บ บริการหลังการขายดีมาก มีคอลเซ็นเตอร์ดูแล 24 ชม. สินค้าประกันศูนย์จริง มั่นใจได้เลยครับ"</p>
-                    <div class="reviewer">- คุณศิริพร ม. (ผู้ซื้อจริง)</div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <a href="#" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
-                <p>ผู้นำด้านเครื่องใช้ไฟฟ้าอัจฉริยะ นวัตกรรม AI ยกระดับคุณภาพชีวิตและพลังงานเพื่ออนาคต</p>
-                <div class="payments">
-                    <i class="fa-brands fa-cc-visa"></i>
-                    <i class="fa-brands fa-cc-mastercard"></i>
-                    <i class="fa-solid fa-qrcode"></i>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>บริการลูกค้า</h4>
-                <ul>
-                    <li><a href="#">นโยบายการรับประกันสินค้า</a></li>
-                    <li><a href="#">การจัดส่งและการคืนสินค้า</a></li>
-                    <li><a href="#">ศูนย์บริการใกล้บ้านคุณ</a></li>
-                    <li><a href="#">วิธีชำระเงินและผ่อนชำระ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>ติดต่อเรา</h4>
-                <p><i class="fa-solid fa-phone"></i> Call Center: 02-123-4567 (24 ชม.)</p>
-                <p><i class="fa-solid fa-envelope"></i> Email: support@voltix.co.th</p>
-                <p><i class="fa-solid fa-location-dot"></i> อาคาร VOLTIX Tower กรุงเทพฯ</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 VOLTIX ELECTRONICS CO., LTD. สงวนลิขสิทธิ์ทั้งหมด</p>
-        </div>
+        <p>&copy; 2026 SmartTech Electric Store. All rights reserved. | โครงการวิชาโปรเจกต์</p>
     </footer>
 
     <script src="main.js"></script>
