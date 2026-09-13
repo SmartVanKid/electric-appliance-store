@@ -3,88 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartTech - ร้านขายอุปกรณ์เครื่องใช้ไฟฟ้าอัจฉริยะ</title>
+    <title>SmartTech - ศูนย์รวมเครื่องใช้ไฟฟ้าครบวงจร</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">หน้าแรก</a></li>
                 <li><a href="products.html">สินค้าทั้งหมด</a></li>
-                <li><a href="technology.html">เทคโนโลยี</a></li>
+                <li><a href="tv.html">ทีวี</a></li>
+                <li><a href="fridge.html">ตู้เย็น</a></li>
+                <li><a href="ac.html">แอร์</a></li>
+                <li><a href="washing.html">เครื่องซักผ้า</a></li>
+                <li><a href="kitchen.html">เครื่องครัว IH</a></li>
             </ul>
-            <a href="cart.html" class="cart-btn">🛒 ตะกร้าสินค้า <span id="cart-count">0</span></a>
+            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>ยกระดับบ้านของคุณ<br>ด้วย <span>AI Smart Appliances</span></h1>
-                <p>ศูนย์รวมเครื่องใช้ไฟฟ้าอัจฉริยะ นวัตกรรมล้ำสมัย ประหยัดพลังงาน ควบคุมผ่านมือถือได้ 24 ชั่วโมง</p>
-                <a href="products.html" class="btn-primary">ช็อปสินค้าทันที</a>
-            </div>
-            <div class="hero-image" style="overflow: hidden; border-radius: 12px; border: 1px solid var(--border-color);">
-                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=600&q=80" alt="Smart Home" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-        </section>
+    <div class="container">
+        <div class="category-banner">
+            <h1>มหกรรมเครื่องใช้ไฟฟ้าอัจฉริยะ 2026</h1>
+            <p>เลือกช็อปอุปกรณ์ไฟฟ้าแบรนด์ดังระดับโลก การันตีของแท้ 100% พร้อมบริการติดตั้งฟรี</p>
+        </div>
 
-        <div class="container">
-            <div class="section-title">
-                <h2>สินค้ายอดนิยม</h2>
-                <a href="products.html" style="color: var(--accent-color); text-decoration: none; font-size: 1rem;">ดูทั้งหมด &rarr;</a>
+        <div class="section-title">
+            <h2>หมวดหมู่ยอดฮิต (คลิกเพื่อดูแยกตามแบรนด์)</h2>
+        </div>
+        <div class="product-grid">
+            <div class="product-card" onclick="location.href='tv.html'" style="cursor:pointer;">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80" alt="TV"></div>
+                <div class="product-info">
+                    <h3>ทีวี (Smart TV)</h3>
+                    <p>รวมทีวี 4K, OLED จาก Samsung, LG, Sony</p>
+                </div>
             </div>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80" alt="Robot Vacuum">
-                    </div>
-                    <div class="product-info">
-                        <h3>Smart Robot Vacuum X10</h3>
-                        <p>หุ่นยนต์ดูดฝุ่นและถูพื้นอัจฉริยะ พร้อมระบบนำทาง Laser</p>
-                        <div class="product-footer">
-                            <span class="price">฿12,900</span>
-                            <button class="btn-sm" onclick="addToCart('Smart Robot Vacuum X10', 12900)">Add</button>
-                        </div>
-                    </div>
+            <div class="product-card" onclick="location.href='fridge.html'" style="cursor:pointer;">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80" alt="Fridge"></div>
+                <div class="product-info">
+                    <h3>ตู้เย็น (Refrigerator)</h3>
+                    <p>ตู้เย็นหลายประตู ประหยัดไฟ อินเวอร์เตอร์</p>
                 </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1615873968403-89e0676297c6?auto=format&fit=crop&w=500&q=80" alt="Air Conditioner">
-                    </div>
-                    <div class="product-info">
-                        <h3>Inverter Air Conditioner 12000 BTU</h3>
-                        <p>แอร์ประหยัดไฟเบอร์ 5 อินเวอร์เตอร์ เย็นเร็ว เงียบสนิท</p>
-                        <div class="product-footer">
-                            <span class="price">฿18,500</span>
-                            <button class="btn-sm" onclick="addToCart('Inverter Air Conditioner', 18500)">Add</button>
-                        </div>
-                    </div>
+            </div>
+            <div class="product-card" onclick="location.href='ac.html'" style="cursor:pointer;">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1615873968403-89e0676297c6?auto=format&fit=crop&w=500&q=80" alt="AC"></div>
+                <div class="product-info">
+                    <h3>เครื่องปรับอากาศ (Air Con)</h3>
+                    <p>แอร์บ้าน เย็นเร็ว ประหยัดไฟเบอร์ 5</p>
                 </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" alt="Coffee Maker">
-                    </div>
-                    <div class="product-info">
-                        <h3>IoT Coffee Maker Pro</h3>
-                        <p>เครื่องชงกาแฟอัตโนมัติ สั่งการผ่านแอปพลิเคชันมือถือ</p>
-                        <div class="product-footer">
-                            <span class="price">฿5,900</span>
-                            <button class="btn-sm" onclick="addToCart('IoT Coffee Maker Pro', 5900)">Add</button>
-                        </div>
-                    </div>
+            </div>
+            <div class="product-card" onclick="location.href='kitchen.html'" style="cursor:pointer;">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80" alt="Kitchen"></div>
+                <div class="product-info">
+                    <h3>หม้อหุงข้าว IH & ไมโครเวฟ</h3>
+                    <p>เครื่องครัวอัจฉริยะ เตาแม่เหล็กไฟฟ้า</p>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <footer>
-        <p>&copy; 2026 SmartTech Electric Store. All rights reserved. | โครงการวิชาโปรเจกต์</p>
-    </footer>
-
+    <footer><p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p></footer>
     <script src="main.js"></script>
 </body>
 </html>
