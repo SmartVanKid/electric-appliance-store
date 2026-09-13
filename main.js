@@ -1,28 +1,72 @@
-const productsData = [
-    { id: 1, name: 'VOLTIX Neo OLED 4K Smart TV 65"', category: 'tv', price: 32900, img: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600' },
-    { id: 2, name: 'VOLTIX Cinema Soundbar 5.1ch', category: 'tv', price: 8900, img: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600' },
-    { id: 3, name: 'VOLTIX Smart Inverter Refrigerator', category: 'coffee', price: 24500, img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600' },
-    { id: 4, name: 'VOLTIX CyberMouse Gaming RGB', category: 'mouse', price: 2590, img: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600' },
-    { id: 5, name: 'VOLTIX Silent Ergonomic Mouse', category: 'mouse', price: 1290, img: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600' },
-    { id: 6, name: 'Quantum Espresso เครื่องชงกาแฟสด', category: 'coffee', price: 15900, img: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600' },
-    { id: 7, name: 'VOLTIX Smart Lock ดิจิทัลสแกนนิ้ว', category: 'smart', price: 8900, img: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600' }
-];
-
-let cart = JSON.parse(localStorage.getItem('voltix_cart')) || [];
+// โหลดข้อมูลตะกร้าจาก localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function updateCartCount() {
-    const badges = document.querySelectorAll('.cart-badge');
-    badges.forEach(b => b.innerText = cart.length);
+    let countElements = document.querySelectorAll('#cart-count');
+    countElements.forEach(el => {
+        el.innerText = cart.length;
+    });
 }
 
-function addToCart(productId) {
-    const item = productsData.find(p => p.id === productId);
-    if(item) {
-        cart.push(item);
-        localStorage.setItem('voltix_cart', JSON.stringify(cart));
-        updateCartCount();
-        alert(`เพิ่ม "${item.name}" ลงในตะกร้าเรียบร้อยแล้ว!`);
+function addToCart(name, price) {
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`เพิ่ม "${name}" ลงในตะกร้าเรียบร้อยแล้ว! 🛒`);
+}
+
+function renderCart() {
+    let listContainer = document.getElementById('cart-items-list');
+    let totalPriceEl = document.getElementById('total-price');
+    
+    if (!listContainer) return;
+
+    if (cart.length === 0) {
+        listContainer.innerHTML = '<p style="color: var(--text-muted);">ไม่มีสินค้าในตะกร้า</p>';
+        if (totalPriceEl) totalPriceEl.innerText = '฿0';
+        return;
     }
+
+    let html = '';
+    let total = 0;
+    cart.forEach((item, index) => {
+        total += item.price;
+        html += `
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid #1e293b;">
+                <span>${item.name}</span>
+                <div>
+                    <span style="color: var(--accent-color); margin-right: 1rem;">฿${item.price.toLocaleString()}</span>
+                    <button onclick="removeItem(${index})" style="background: #ef4444; border: none; color: white; padding: 0.2rem 0.6rem; border-radius: 4px; cursor: pointer;">ลบ</button>
+                </div>
+            </div>
+        `;
+    });
+
+    listContainer.innerHTML = html;
+    if (totalPriceEl) totalPriceEl.innerText = `฿${total.toLocaleString()}`;
 }
 
-document.addEventListener('DOMContentLoaded', updateCartCount);
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    renderCart();
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert('ยังไม่มีสินค้าในตะกร้าครับ!');
+        return;
+    }
+    alert('สั่งซื้อสินค้าสำเร็จ! ขอบคุณที่ใช้บริการ SmartTech ครับ 🎉');
+    cart = [];
+    localStorage.removeItem('cart');
+    updateCartCount();
+    renderCart();
+}
+
+// รันฟังก์ชันอัปเดตตัวเลขเมื่อเปิดหน้าเว็บ
+updateCartCount();
+if (window.location.pathname.includes('cart.html')) {
+    renderCart();
+}
