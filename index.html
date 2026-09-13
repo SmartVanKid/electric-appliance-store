@@ -3,68 +3,410 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartTech - ศูนย์รวมเครื่องใช้ไฟฟ้าครบวงจร</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Smart Tech - มหกรรมเครื่องใช้ไฟฟ้าอัจฉริยะ 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --card-hover: rgba(30, 41, 59, 0.8);
+            --accent-color: #f97316;
+            --accent-glow: rgba(249, 115, 22, 0.4);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(249, 115, 22, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+        }
+
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--accent-color);
+            filter: drop-shadow(0 0 8px var(--accent-glow));
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .cart-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .cart-btn:hover {
+            border-color: var(--accent-color);
+            background: rgba(249, 115, 22, 0.1);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 2%;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.6));
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            margin-bottom: 3rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, #f97316, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(249, 115, 22, 0.6);
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Grid Categories */
+        .grid-cats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(249, 115, 22, 0.4);
+            background: var(--card-hover);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(249, 115, 22, 0.1);
+        }
+
+        .cat-img-wrap {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cat-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .cat-card:hover .cat-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        .cat-info {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .cat-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #fff;
+        }
+
+        .cat-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .cat-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .cat-footer i {
+            transition: transform 0.3s;
+        }
+
+        .cat-card:hover .cat-footer i {
+            transform: translateX(4px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding: 2.5rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">หน้าแรก</a></li>
-                <li><a href="products.html">สินค้าทั้งหมด</a></li>
-                <li><a href="tv.html">ทีวี</a></li>
-                <li><a href="fridge.html">ตู้เย็น</a></li>
-                <li><a href="ac.html">แอร์</a></li>
-                <li><a href="washing.html">เครื่องซักผ้า</a></li>
-                <li><a href="kitchen.html">เครื่องครัว IH</a></li>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-bolt"></i> Smart Tech
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">หน้าแรก</a></li>
+                <li><a href="#">สินค้าทั้งหมด</a></li>
+                <li><a href="#">ทีวี</a></li>
+                <li><a href="#">ตู้เย็น</a></li>
+                <li><a href="#">แอร์</a></li>
+                <li><a href="#">เครื่องซักผ้า</a></li>
+                <li><a href="#">เครื่องครัว IH</a></li>
             </ul>
-            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
-        </div>
+        </nav>
+        <a href="#" class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span style="background: var(--accent-color); color: #fff; padding: 2px 6px; border-radius: 10px; font-size: 0.75rem;">0</span>
+        </a>
     </header>
 
+    <!-- Main Content -->
     <div class="container">
-        <div class="category-banner">
-            <h1>มหกรรมเครื่องใช้ไฟฟ้าอัจฉริยะ 2026</h1>
-            <p>เลือกช็อปอุปกรณ์ไฟฟ้าแบรนด์ดังระดับโลก การันตีของแท้ 100% พร้อมบริการติดตั้งฟรี</p>
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>มหกรรมเครื่องใช้ไฟฟ้าอัจฉริยะ <span>2026</span></h1>
+                <p>เลือกช้อปอุปกรณ์ไฟฟ้าแบรนด์ดังระดับโลก การันตีของแท้ 100% พร้อมบริการติดตั้งฟรีถึงบ้านคุณ</p>
+                <a href="#" class="btn-primary">สำรวจสินค้าทั้งหมด <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <div class="section-title">
+            หมวดหมู่ยอดฮิต <span>(คลิกเพื่อดูแยกตามแบรนด์)</span>
         </div>
 
-        <div class="section-title">
-            <h2>หมวดหมู่ยอดฮิต (คลิกเพื่อดูแยกตามแบรนด์)</h2>
-        </div>
-        <div class="product-grid">
-            <div class="product-card" onclick="location.href='tv.html'" style="cursor:pointer;">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80" alt="TV"></div>
-                <div class="product-info">
-                    <h3>ทีวี (Smart TV)</h3>
-                    <p>รวมทีวี 4K, OLED จาก Samsung, LG, Sony</p>
+        <div class="grid-cats">
+            <!-- Card 1 -->
+            <a href="#" class="cat-card">
+                <div class="cat-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80" alt="Smart TV">
                 </div>
-            </div>
-            <div class="product-card" onclick="location.href='fridge.html'" style="cursor:pointer;">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80" alt="Fridge"></div>
-                <div class="product-info">
-                    <h3>ตู้เย็น (Refrigerator)</h3>
-                    <p>ตู้เย็นหลายประตู ประหยัดไฟ อินเวอร์เตอร์</p>
+                <div class="cat-info">
+                    <div>
+                        <h3>ทีวี (Smart TV)</h3>
+                        <p>รวมทีวี 4K, OLED จาก Samsung, LG, Sony ภาพเสียงคมชัดระดับโรงหนัง</p>
+                    </div>
+                    <div class="cat-footer">
+                        <span>ดูสินค้าทั้งหมด</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="product-card" onclick="location.href='ac.html'" style="cursor:pointer;">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1615873968403-89e0676297c6?auto=format&fit=crop&w=500&q=80" alt="AC"></div>
-                <div class="product-info">
-                    <h3>เครื่องปรับอากาศ (Air Con)</h3>
-                    <p>แอร์บ้าน เย็นเร็ว ประหยัดไฟเบอร์ 5</p>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="#" class="cat-card">
+                <div class="cat-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Refrigerator">
                 </div>
-            </div>
-            <div class="product-card" onclick="location.href='kitchen.html'" style="cursor:pointer;">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=500&q=80" alt="Kitchen"></div>
-                <div class="product-info">
-                    <h3>หม้อหุงข้าว IH & ไมโครเวฟ</h3>
-                    <p>เครื่องครัวอัจฉริยะ เตาแม่เหล็กไฟฟ้า</p>
+                <div class="cat-info">
+                    <div>
+                        <h3>ตู้เย็น (Refrigerator)</h3>
+                        <p>ตู้เย็นหลายประตู ประหยัดไฟ อินเวอร์เตอร์ ดีไซน์เรียบหรูเข้ากับห้องครัว</p>
+                    </div>
+                    <div class="cat-footer">
+                        <span>ดูสินค้าทั้งหมด</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
                 </div>
-            </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="#" class="cat-card">
+                <div class="cat-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Air Conditioner">
+                </div>
+                <div class="cat-info">
+                    <div>
+                        <h3>เครื่องปรับอากาศ (Air Con)</h3>
+                        <p>แอร์บ้าน เย็นเร็ว ประหยัดไฟเบอร์ 5 ระบบฟอกอากาศบริสุทธิ์ PM 2.5</p>
+                    </div>
+                    <div class="cat-footer">
+                        <span>ดูสินค้าทั้งหมด</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="#" class="cat-card">
+                <div class="cat-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Kitchen Appliances">
+                </div>
+                <div class="cat-info">
+                    <div>
+                        <h3>หม้อหุงข้าว IH & ไมโครเวฟ</h3>
+                        <p>เครื่องครัวอัจฉริยะ เตาแม่เหล็กไฟฟ้า และอุปกรณ์ทำอาหารอัจฉริยะครบวงจร</p>
+                    </div>
+                    <div class="cat-footer">
+                        <span>ดูสินค้าทั้งหมด</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 
-    <footer><p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p></footer>
-    <script src="main.js"></script>
 </body>
 </html>
