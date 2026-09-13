@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Tech - Electric Store</title>
+    <title>เครื่องครัว IH - Smart Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
+            <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> Smart<span>Tech</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">หน้าแรก</a></li>
                 <li><a href="products.html">สินค้าทั้งหมด</a></li>
@@ -18,29 +18,31 @@
                 <li><a href="fridge.html">ตู้เย็น</a></li>
                 <li><a href="ac.html">แอร์</a></li>
                 <li><a href="washing.html">เครื่องซักผ้า</a></li>
-                <li><a href="kitchen.html">เครื่องครัว IH</a></li>
+                <li><a href="kitchen.html" class="active">เครื่องครัว IH</a></li>
                 <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
-            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
+            <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
         </div>
     </header>
 
     <div class="container">
-        <div class="category-banner">
-            <h1 id="page-title">หมวดหมู่เครื่องครัว</h1>
-            <p>อุปกรณ์ไอทีและเครื่องใช้ไฟฟ้าเกรดพรีเมียม</p>
+        <div class="section-title">
+            <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">หมวดหมู่เครื่องครัว IH</h1>
+            <p style="color: var(--text-muted);">เครื่องใช้ไฟฟ้าในครัวเรือนและหม้อหุงข้าวระบบเหนี่ยวนำความร้อน</p>
         </div>
-
-        <!-- กล่องสำหรับให้ระบบดึงการ์ดสินค้ามาแสดงอัตโนมัติ -->
-        <div class="product-grid" id="dynamic-product-grid">
-            <!-- สินค้าจะถูกเรนเดอร์มาแสดงที่นี่โดยอัตโนมัติ -->
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&w=500&q=80" alt="Rice Cooker"></div>
+                <div class="product-info">
+                    <h3>Zojirushi หม้อหุงข้าวระบบ IH</h3>
+                    <p>หม้อหุงข้าวพรีเมียมจากญี่ปุ่น</p>
+                    <div class="product-footer"><span class="price">฿8,900</span><button class="btn-sm" onclick="addToCart('Zojirushi IH Rice Cooker', 8900)">Add</button></div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 SmartTech Electric Store.</p>
-    </footer>
-
+    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
     <script src="main.js"></script>
 </body>
 </html>
