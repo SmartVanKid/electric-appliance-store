@@ -3,25 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Tech - เครื่องใช้ไฟฟ้าและเทคโนโลยีอัจฉริยะ</title>
+    <title>KICKOFFPRO - Soccer Equipment Store</title>
+    <!-- FontAwesome สำหรับไอคอน -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- เชื่อมโยงไฟล์ CSS หลัก -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="top-banner">⚡ FLASH SALE! โค้ดส่วนลด SMART2026 ลดเพิ่ม 15% ส่งฟรีทั่วไทย</div>
-    
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        ⚡ FLASH SALE! โค้ดส่วนลด KICKOFF2026 ลดเพิ่ม 15% สตั๊ดรุ่นใหม่ส่งฟรีทั่วไทย <span>จำกัดเวลา</span>
+    </div>
+
+    <!-- Navigation Bar -->
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo"><i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span></a>
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-futbol" style="color:var(--accent-color);"></i> KICKOFF<span>PRO</span>
+                <small style="display: block; font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px;">SOCCER EQUIPMENT STORE</small>
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">หน้าแรก</a></li>
-                <li><a href="products.html">สินค้าทั้งหมด</a></li>
-                <li><a href="tv.html">ทีวี</a></li>
-                <li><a href="fridge.html">ตู้เย็น</a></li>
-                <li><a href="ac.html">แอร์</a></li>
-                <li><a href="washing.html">เครื่องซักผ้า</a></li>
-                <li><a href="kitchen.html">เครื่องครัว IH</a></li>
-                <li><a href="technology.html">เทคโนโลยี</a></li>
+                <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                <li><a href="products.html"><i class="fa-solid fa-shoe-prints"></i> สตั๊ด</a></li>
+                <li><a href="jerseys.html"><i class="fa-solid fa-shirt"></i> เสื้อแข่ง</a></li>
+                <li><a href="gloves.html"><i class="fa-solid fa-hand"></i> ถุงมือ&ซ้อม</a></li>
+                <li><a href="promotions.html"><i class="fa-solid fa-tags"></i> โปรโมชั่น</a></li>
+                <li><a href="guide.html"><i class="fa-solid fa-book"></i> คู่มือเลือก</a></li>
+                <li><a href="blog.html"><i class="fa-solid fa-blog"></i> บล็อก</a></li>
+                <li><a href="branches.html"><i class="fa-solid fa-store"></i> สาขา</a></li>
             </ul>
             <a href="cart.html" class="cart-btn">
                 <i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span>
@@ -29,47 +39,211 @@
         </div>
     </header>
 
-    <div class="container" style="padding-top: 3rem;">
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <h1 style="font-size: 2.5rem; color: #fff; margin-bottom: 1rem;">ยินดีต้อนรับสู่ Smart Tech</h1>
-            <p style="color: var(--text-muted); font-size: 1.1rem;">ศูนย์รวมเครื่องใช้ไฟฟ้าและนวัตกรรมอัจฉริยะล้ำอนาคต เพื่อชีวิตที่สะดวกสบายยิ่งขึ้น</p>
-        </div>
-
-        <h2 style="color: #fff; margin-bottom: 1.5rem; border-left: 4px solid var(--accent-color); padding-left: 10px;">สินค้าแนะนำยอดฮิต</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
-            <!-- สินค้าที่ 1: ทีวี -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 1.2rem;">
-                <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80" alt="Samsung TV" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
-                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.4rem;">Samsung Neo QLED 4K 55"</h3>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">ทีวี 4K คมชัดระดับโรงหนัง</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--accent-color); font-weight: 800; font-size: 1.2rem;">฿24,900</span>
-                    <button onclick="addToCart('Samsung Neo QLED 4K 55', 24900, 'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80')" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #030508; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 700; cursor: pointer;">
-                        <i class="fa-solid fa-cart-plus"></i> เพิ่ม
-                    </button>
+    <!-- Hero Section -->
+    <section class="hero-section" style="padding: 3rem 0; background: radial-gradient(circle at 80% 50%, #152238 0%, #0a0d14 70%); border-bottom: 1px solid var(--border-color);">
+        <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center;">
+            <div>
+                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(204,255,0,0.1); border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 20px; color: var(--accent-color); font-size: 0.85rem; font-weight: 700; margin-bottom: 1.5rem;">
+                    <i class="fa-solid fa-shield-halved"></i> ของแท้ 100% รับประกันคืนเงิน 10 เท่า
+                </div>
+                <h1 style="font-size: 3rem; color: #fff; line-height: 1.2; margin-bottom: 1rem;">
+                    ปลดล็อกทุกความเร็ว <br><span style="color: var(--accent-color);">สัมผัสระดับโปรในสนาม</span>
+                </h1>
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem;">
+                    คัดสรรรองเท้าสตั๊ด เสื้อแข่งสโมสรลิขสิทธิ์แท้ และอุปกรณ์ฝึกซ้อมมาตรฐานลีกระดับโลก ส่งตรงถึงมือคุณพร้อมบริการวัดไซส์แบบดิจิทัล
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="products.html" style="background: var(--accent-color); color: #030508; padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        เลือกช้อปรองเท้าสตั๊ด <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="guide.html" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #fff; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-shirt" style="color: var(--accent-color);"></i> พรีวิวสกรีนเสื้อแข่ง
+                    </a>
                 </div>
             </div>
+            <div style="background: rgba(10, 13, 20, 0.8); border: 1px solid var(--border-color); border-radius: 20px; padding: 1.5rem; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                <span style="position: absolute; top: 20px; left: 20px; background: #000; color: var(--accent-color); border: 1px solid var(--accent-color); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 800;">NEW ARRIVAL 2026</span>
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Speed Pro Ultra FG" style="width: 100%; height: 280px; object-fit: contain; margin: 1rem 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.2rem;">SPEED PRO ULTRA FG</h3>
+                        <p style="color: var(--text-muted); font-size: 0.8rem;">รองเท้าฟุตบอลสายสปีด น้ำหนักเบาพิเศษ</p>
+                    </div>
+                    <span style="color: var(--accent-color); font-weight: 800; font-size: 1.3rem;">฿5,000</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- สินค้าที่ 2: ตู้เย็น -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 1.2rem;">
-                <img src="https://images.unsplash.com/photo-1584568694244-14fbdf82bdfe?auto=format&fit=crop&w=500&q=80" alt="Fridge" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
-                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.4rem;">Mitsubishi Multi-Door 18 คิว</h3>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">ตู้เย็นอินเวอร์เตอร์ ประหยัดไฟ</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--accent-color); font-weight: 800; font-size: 1.2rem;">฿21,900</span>
-                    <button onclick="addToCart('Mitsubishi Multi-Door 18 คิว', 21900, 'https://images.unsplash.com/photo-1584568694244-14fbdf82bdfe?auto=format&fit=crop&w=500&q=80')" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #030508; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 700; cursor: pointer;">
-                        <i class="fa-solid fa-cart-plus"></i> เพิ่ม
-                    </button>
+    <!-- Features Banner -->
+    <div class="container" style="margin: 3rem auto;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+            <div style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; display: flex; align-items: center; gap: 1rem;">
+                <i class="fa-solid fa-award" style="font-size: 2rem; color: var(--accent-color);"></i>
+                <div>
+                    <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 0.2rem;">การันตีแท้ 100%</h4>
+                    <p style="color: var(--text-muted); font-size: 0.75rem;">จากแบรนด์ระดับโลก</p>
+                </div>
+            </div>
+            <div style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; display: flex; align-items: center; gap: 1rem;">
+                <i class="fa-solid fa-rotate-left" style="font-size: 2rem; color: var(--accent-color);"></i>
+                <div>
+                    <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 0.2rem;">เปลี่ยนไซส์ได้ใน 7 วัน</h4>
+                    <p style="color: var(--text-muted); font-size: 0.75rem;">ใส่ไม่พอดีส่งเปลี่ยนฟรี</p>
+                </div>
+            </div>
+            <div style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; display: flex; align-items: center; gap: 1rem;">
+                <i class="fa-solid fa-truck-fast" style="font-size: 2rem; color: var(--accent-color);"></i>
+                <div>
+                    <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 0.2rem;">ส่งด่วนถึงในวัน</h4>
+                    <p style="color: var(--text-muted); font-size: 0.75rem;">เขตกทม. & ปริมณฑล</p>
+                </div>
+            </div>
+            <div style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; display: flex; align-items: center; gap: 1rem;">
+                <i class="fa-solid fa-headset" style="font-size: 2rem; color: var(--accent-color);"></i>
+                <div>
+                    <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 0.2rem;">ปรึกษาทรงเท้า</h4>
+                    <p style="color: var(--text-muted); font-size: 0.75rem;">โดยผู้เชี่ยวชาญรองเท้า</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer style="margin-top: 4rem;">
-        <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
+    <!-- Categories Section -->
+    <div class="container" style="margin-bottom: 4rem;">
+        <div style="margin-bottom: 1.5rem;">
+            <span style="color: var(--accent-color); font-size: 0.8rem; font-weight: 800; letter-spacing: 1px;">CATEGORIES</span>
+            <h2 style="font-size: 1.8rem; color: #fff; margin-top: 0.2rem;">เลือกช้อปตามหมวดหมู่</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+            <a href="products.html" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem 1.5rem; text-decoration: none; display: block; transition: 0.3s;">
+                <i class="fa-solid fa-shoe-prints" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.4rem;">รองเท้าฟุตบอล / สตั๊ด</h3>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.2rem;">Speed, Control, Agility, Touch (FG/AG/TF)</p>
+                <span style="color: var(--accent-color); font-size: 0.85rem; font-weight: 700;">ดูสินค้าทั้งหมด <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+            <a href="jerseys.html" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem 1.5rem; text-decoration: none; display: block; transition: 0.3s;">
+                <i class="fa-solid fa-shirt" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.4rem;">เสื้อแข่งสโมสร</h3>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.2rem;">พรีเมียร์ลีก, ลาลีกา, ไทยลีก + สกรีนชื่อเบอร์</p>
+                <span style="color: var(--accent-color); font-size: 0.85rem; font-weight: 700;">กดลองสกรีนชื่อ <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+            <a href="gloves.html" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem 1.5rem; text-decoration: none; display: block; transition: 0.3s;">
+                <i class="fa-solid fa-hand-holding-medical" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.4rem;">อุปกรณ์ผู้รักษาประตู</h3>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.2rem;">ถุงมือโฟมเยอรมัน, สนับแข้ง, กางเกงเซฟティー</p>
+                <span style="color: var(--accent-color); font-size: 0.85rem; font-weight: 700;">ดูสินค้าทั้งหมด <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+            <a href="promotions.html" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem 1.5rem; text-decoration: none; display: block; transition: 0.3s;">
+                <i class="fa-solid fa-tags" style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.4rem;">อุปกรณ์ฝึกซ้อม & ลดราคา</h3>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.2rem;">ลูกฟุตบอลมาตรฐาน FIFA, กรวยซ้อม, Clearance</p>
+                <span style="color: var(--accent-color); font-size: 0.85rem; font-weight: 700;">ดูดีลพิเศษ <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hot Items Section -->
+    <div class="container" style="margin-bottom: 5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem;">
+            <div>
+                <span style="color: var(--accent-color); font-size: 0.8rem; font-weight: 800; letter-spacing: 1px;">HOT ITEMS</span>
+                <h2 style="font-size: 1.8rem; color: #fff; margin-top: 0.2rem;">สินค้ายอดนิยมประจำสัปดาห์</h2>
+            </div>
+            <a href="products.html" style="color: var(--accent-color); text-decoration: none; font-weight: 700; font-size: 0.9rem;">ดูสินค้าทั้งหมด <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+            <!-- สินค้าที่ 1 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 1rem; position: relative;">
+                <span style="position: absolute; top: 15px; left: 15px; background: #222; color: var(--accent-color); border: 1px solid var(--accent-color); font-size: 0.7rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px;">NEW 2026</span>
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80" alt="Speed Pro Ultra FG" style="width: 100%; height: 180px; object-fit: contain; margin: 1rem 0;">
+                <h3 style="color: #fff; font-size: 1rem; margin-bottom: 0.3rem;">Speed Pro Ultra FG</h3>
+                <p style="color: var(--accent-color); font-weight: 800; font-size: 1.2rem; margin-bottom: 1rem;">฿5,000</p>
+                <button onclick="addToCart('Speed Pro Ultra FG', 5000, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80')" style="width: 100%; background: #1a1f2c; border: 1px solid var(--border-color); color: #fff; padding: 0.6rem; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s;">
+                    <i class="fa-solid fa-cart-plus" style="color: var(--accent-color);"></i> เพิ่มลงตะกร้า
+                </button>
+            </div>
+
+            <!-- สินค้าที่ 2 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 1rem; position: relative;">
+                <span style="position: absolute; top: 15px; left: 15px; background: #eab308; color: #000; font-size: 0.7rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px;">BESTSELLER</span>
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=400&q=80" alt="KELME Master 1.5 AG" style="width: 100%; height: 180px; object-fit: contain; margin: 1rem 0;">
+                <h3 style="color: #fff; font-size: 1rem; margin-bottom: 0.3rem;">KELME Master 1.5 AG</h3>
+                <p style="color: var(--accent-color); font-weight: 800; font-size: 1.2rem; margin-bottom: 1rem;">฿2,500</p>
+                <button onclick="addToCart('KELME Master 1.5 AG', 2500, 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=400&q=80')" style="width: 100%; background: #1a1f2c; border: 1px solid var(--border-color); color: #fff; padding: 0.6rem; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s;">
+                    <i class="fa-solid fa-cart-plus" style="color: var(--accent-color);"></i> เพิ่มลงตะกร้า
+                </button>
+            </div>
+
+            <!-- สินค้าที่ 3 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 1rem; position: relative; border-color: var(--accent-color);">
+                <span style="position: absolute; top: 15px; left: 15px; background: var(--accent-color); color: #000; font-size: 0.7rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px;">POPULAR</span>
+                <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=400&q=80" alt="FUTBOLX Striker TF" style="width: 100%; height: 180px; object-fit: contain; margin: 1rem 0;">
+                <h3 style="color: #fff; font-size: 1rem; margin-bottom: 0.3rem;">FUTBOLX Striker TF</h3>
+                <p style="color: var(--accent-color); font-weight: 800; font-size: 1.2rem; margin-bottom: 1rem;">฿1,090</p>
+                <button onclick="addToCart('FUTBOLX Striker TF', 1090, 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=400&q=80')" style="width: 100%; background: #1a1f2c; border: 1px solid var(--border-color); color: #fff; padding: 0.6rem; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s;">
+                    <i class="fa-solid fa-cart-plus" style="color: var(--accent-color);"></i> เพิ่มลงตะกร้า
+                </button>
+            </div>
+
+            <!-- สินค้าที่ 4 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 1rem; position: relative;">
+                <span style="position: absolute; top: 15px; left: 15px; background: #3b82f6; color: #fff; font-size: 0.7rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px;">PREMIUM</span>
+                <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=400&q=80" alt="Nike Zoom Mercurial Vapor 15" style="width: 100%; height: 180px; object-fit: contain; margin: 1rem 0;">
+                <h3 style="color: #fff; font-size: 1rem; margin-bottom: 0.3rem;">Nike Zoom Mercurial Vapor 15</h3>
+                <p style="color: var(--accent-color); font-weight: 800; font-size: 1.2rem; margin-bottom: 1rem;">฿10,386</p>
+                <button onclick="addToCart('Nike Zoom Mercurial Vapor 15', 10386, 'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=400&q=80')" style="width: 100%; background: #1a1f2c; border: 1px solid var(--border-color); color: #fff; padding: 0.6rem; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s;">
+                    <i class="fa-solid fa-cart-plus" style="color: var(--accent-color);"></i> เพิ่มลงตะกร้า
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #030508; border-top: 1px solid var(--border-color); padding: 3rem 0 1.5rem 0; color: var(--text-muted);">
+        <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+            <div>
+                <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;">
+                    <i class="fa-solid fa-futbol" style="color:var(--accent-color);"></i> KICKOFF<span>PRO</span>
+                </a>
+                <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
+                    ศูนย์รวมรองเท้าสตั๊ด เสื้อแข่งสโมสร และอุปกรณ์กีฬาฟุตบอลแท้ 100% พร้อมบริการเปลี่ยนไซส์ภายใน 7 วัน
+                </p>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">หมวดสินค้า</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                    <li><a href="products.html" style="color: var(--text-muted); text-decoration: none;">รองเท้าสตั๊ดสายสปีด & คอนโทรล</a></li>
+                    <li><a href="jerseys.html" style="color: var(--text-muted); text-decoration: none;">เสื้อแข่งสโมสรยุโรป & ไทยลีก</a></li>
+                    <li><a href="gloves.html" style="color: var(--text-muted); text-decoration: none;">ถุงมือประตูโฟมเยอรมัน</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">บริการลูกค้า</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                    <li><a href="guide.html" style="color: var(--text-muted); text-decoration: none;">ตารางวัดไซส์ & ประเภทปุ่ม</a></li>
+                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ติดตามพัสดุเรียลไทม์</a></li>
+                    <li><a href="branches.html" style="color: var(--text-muted); text-decoration: none;">ที่ตั้งสาขาหน้าร้าน</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">ติดต่อเรา</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> 082-642-8156</p>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> b8tl3eyi@gmail.com</p>
+                <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
+                    <a href="#" style="color: #fff;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" style="color: #fff;"><i class="fa-brands fa-line"></i></a>
+                    <a href="#" style="color: #fff;"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.8rem;">
+            <p>&copy; 2026 KICKOFF PRO SOCCER. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- เชื่อมโยง JavaScript สำหรับจัดการตะกร้าสินค้า -->
     <script src="main.js"></script>
 </body>
 </html>
