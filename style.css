@@ -1,27 +1,22 @@
 :root {
-    --bg-color: #07090e;
-    --card-bg: #0f1623;
+    --bg-color: #05070a;
+    --card-bg: #0d1322;
     --border-color: #1e293b;
     --text-main: #ffffff;
     --text-muted: #94a3b8;
     --accent-color: #00f2fe;
-    --accent-glow: rgba(0, 242, 254, 0.3);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* เพิ่มแสงเรืองแสงให้สว่างเด่นขึ้น */
+    --accent-glow: rgba(0, 242, 254, 0.4);
 }
 
 body {
     background-color: var(--bg-color);
-    /* ปรับลายตารางให้เข้มและตัดขอบชัดเจนยิ่งขึ้น */
+    /* เพิ่มแสงเรืองแสง (Radial Gradient) ไว้ตรงกลางฉากหลัง ให้ดูสว่างมีมิติแบบรูปแรก */
     background-image: 
-        linear-gradient(rgba(0, 242, 254, 0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 242, 254, 0.07) 1px, transparent 1px);
-    background-size: 40px 40px;
+        radial-gradient(circle at 50% 20%, rgba(0, 242, 254, 0.12) 0%, transparent 60%),
+        linear-gradient(rgba(0, 242, 254, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.12) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
     color: var(--text-main);
     min-height: 100vh;
     display: flex;
