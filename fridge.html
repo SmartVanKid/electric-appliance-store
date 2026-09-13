@@ -85,9 +85,65 @@
         </div>
     </div>
 
-    <footer style="background: #030508; border-top: 1px solid var(--border-color); padding: 3rem 0 1.5rem 0; color: var(--text-muted);">
-        <div class="container" style="text-align: center; font-size: 0.8rem;"><p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p></div>
-    </footer>
+   <header>
+    <div class="nav-container">
+        <a href="index.html" class="logo"><i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span> <span style="font-size: 11px; letter-spacing: 1px; color: #aaa;">ELECTRIC & SMART HOME STORE</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+            <li><a href="products.html"><i class="fa-solid fa-box-open"></i> สินค้าทั้งหมด</a></li>
+            <li><a href="tv.html"><i class="fa-solid fa-tv"></i> ทีวี</a></li>
+            <li><a href="fridge.html" class="active"><i class="fa-solid fa-snowflake"></i> ตู้เย็น</a></li>
+            <li><a href="ac.html"><i class="fa-solid fa-wind"></i> แอร์</a></li>
+            <li><a href="washing.html"><i class="fa-solid fa-shirt"></i> เครื่องซักผ้า</a></li>
+            <li><a href="kitchen.html"><i class="fa-solid fa-fire-burner"></i> เครื่องครัว IH</a></li>
+            <li><a href="technology.html"><i class="fa-solid fa-microchip"></i> เทคโนโลยี</a></li>
+        </ul>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
+    </div>
+</header>
+
+<!-- Footer -->
+<footer style="background: #030508; border-top: 1px solid var(--border-color); padding: 3rem 0 1.5rem 0; color: var(--text-muted);">
+    <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+        <div>
+            <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;">
+                <i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span>
+            </a>
+            <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
+                ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ทโฮมแท้ 100% พร้อมบริการติดตั้งและรับประกันศูนย์ไทย
+            </p>
+        </div>
+        <div>
+            <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">หมวดสินค้า</h4>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                <li><a href="ac.html" style="color: var(--text-muted); text-decoration: none;">เครื่องปรับอากาศ (แอร์)</a></li>
+                <li><a href="washing.html" style="color: var(--text-muted); text-decoration: none;">เครื่องซักผ้าฝาหน้า & ฝาบน</a></li>
+                <li><a href="kitchen.html" style="color: var(--text-muted); text-decoration: none;">เครื่องครัวเตาแม่เหล็กไฟฟ้า IH</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">บริการลูกค้า</h4>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ตรวจสอบสถานะการจัดส่ง</a></li>
+                <li><a href="#" style="color: var(--text-muted); text-decoration: none;">เงื่อนไขการรับประกัน</a></li>
+                <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ติดต่อศูนย์บริการและติดตั้ง</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">ติดต่อเรา</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> 091-856-8317</p>
+            <p style="font-size: 0.85rem; margin-bottom: 1rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> frame3053@gmail.com</p>
+            <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
+                <a href="#" style="color: #fff;"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" style="color: #fff;"><i class="fa-brands fa-line"></i></a>
+                <a href="#" style="color: #fff;"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.8rem;">
+        <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
+    </div>
+</footer>
     <script src="main.js"></script>
 </body>
 </html>
