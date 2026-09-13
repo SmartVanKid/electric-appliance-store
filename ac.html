@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องปรับอากาศทุกแบรนด์ - SmartTech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="tv.html">ทีวี</a></li>
+                <li><a href="fridge.html">ตู้เย็น</a></li>
+                <li><a href="ac.html" class="active">แอร์</a></li>
+                <li><a href="washing.html">เครื่องซักผ้า</a></li>
+                <li><a href="kitchen.html">เครื่องครัว IH</a></li>
+            </ul>
+            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
+        </div>
+    </header>
 
+    <div class="container">
+        <div class="category-banner">
+            <h1>หมวดหมู่เครื่องปรับอากาศ (Air Conditioner)</h1>
+            <p>แอร์อินเวอร์เตอร์ เย็นไว ทนทาน ประหยัดไฟ จาก Daikin, Carrier, Panasonic</p>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1615873968403-89e0676297c6?auto=format&fit=crop&w=500&q=80" alt="Daikin AC"></div>
+                <div class="product-info">
+                    <h3>Daikin Inverter 12000 BTU</h3>
+                    <p>แบรนด์: Daikin | เย็นเร็ว ทนทาน แผ่นกรองฝุ่น PM2.5</p>
+                    <div class="product-footer">
+                        <span class="price">฿18,900</span>
+                        <button class="btn-sm" onclick="addToCart('Daikin Inverter 12000 BTU', 18900)">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1631545465948-43d920556f4d?auto=format&fit=crop&w=500&q=80" alt="Carrier AC"></div>
+                <div class="product-info">
+                    <h3>Carrier X-Inverter Plus 18000 BTU</h3>
+                    <p>แบรนด์: Carrier | ระบบฟอกอากาศอัตโนมัติ ประหยัดไฟสูงสุด</p>
+                    <div class="product-footer">
+                        <span class="price">฿24,500</span>
+                        <button class="btn-sm" onclick="addToCart('Carrier X-Inverter 18000 BTU', 24500)">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1517646277262-5fab2140fd26?auto=format&fit=crop&w=500&q=80" alt="Panasonic AC"></div>
+                <div class="product-info">
+                    <h3>Panasonic Nanoe-G 12000 BTU</h3>
+                    <p>แบรนด์: Panasonic | ยับยั้งเชื้อโรคและแบคทีเรียในอากาศ</p>
+                    <div class="product-footer">
+                        <span class="price">฿17,900</span>
+                        <button class="btn-sm" onclick="addToCart('Panasonic Nanoe-G 12000 BTU', 17900)">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
+    <script src="main.js"></script>
+</body>
+</html>
