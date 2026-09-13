@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ตะกร้าสินค้า - SmartTech</title>
+    <title>Smart Tech - Electric Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -18,25 +19,28 @@
                 <li><a href="ac.html">แอร์</a></li>
                 <li><a href="washing.html">เครื่องซักผ้า</a></li>
                 <li><a href="kitchen.html">เครื่องครัว IH</a></li>
+                <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
-            <a href="cart.html" class="cart-btn active">🛒 ตะกร้า <span id="cart-count">0</span></a>
+            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
         </div>
     </header>
 
     <div class="container">
-        <div class="section-title"><h2>ตะกร้าสินค้าของคุณ</h2></div>
-        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
-            <div id="cart-items-list" style="margin-bottom: 2rem;">
-                <p style="color: var(--text-muted);">ไม่มีสินค้าในตะกร้า</p>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
-                <h3>ยอดรวมทั้งหมด: <span id="total-price" style="color: var(--accent-color);">฿0</span></h3>
-                <button class="btn-sm" style="background: var(--accent-color); color: white; padding: 0.75rem 2rem; border: none; font-weight: bold; cursor: pointer;" onclick="checkout()">ยืนยันการสั่งซื้อ</button>
-            </div>
+        <div class="category-banner">
+            <h1 id="page-title">ตะกร้าสินค้าของคุณ</h1>
+            <p>อุปกรณ์ไอทีและเครื่องใช้ไฟฟ้าเกรดพรีเมียม</p>
+        </div>
+
+        <!-- กล่องสำหรับให้ระบบดึงการ์ดสินค้ามาแสดงอัตโนมัติ -->
+        <div class="product-grid" id="dynamic-product-grid">
+            <!-- สินค้าจะถูกเรนเดอร์มาแสดงที่นี่โดยอัตโนมัติ -->
         </div>
     </div>
 
-    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
+    <footer>
+        <p>&copy; 2026 SmartTech Electric Store.</p>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
