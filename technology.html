@@ -3,268 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOLTIX | นวัตกรรม AI เทคโนโลยีแห่งอนาคต</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-dark: #0a0c14;
-            --card-glass: rgba(18, 24, 38, 0.85);
-            --card-border: rgba(0, 243, 255, 0.25);
-            --neon-cyan: #00f3ff;
-            --neon-purple: #9d00ff;
-            --text-main: #f0f4f8;
-            --text-muted: #8a99ad;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .top-bar {
-            background: linear-gradient(90deg, #050b14, #121c2e);
-            color: var(--neon-cyan);
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 13px;
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        header {
-            background: rgba(10, 12, 20, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--card-border);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo i { color: var(--neon-cyan); }
-
-        nav { display: flex; gap: 25px; }
-        nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: 0.3s; }
-        nav a:hover, nav a.active { color: var(--neon-cyan); }
-
-        .cart-icon { position: relative; color: #fff; font-size: 20px; text-decoration: none; }
-        .cart-badge {
-            position: absolute; top: -8px; right: -10px;
-            background: var(--neon-purple); color: #fff;
-            font-size: 11px; padding: 2px 6px; border-radius: 10px; font-weight: bold;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-            flex: 1;
-            width: 100%;
-        }
-
-        .hero-tech {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .hero-tech h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-tech p {
-            color: var(--text-muted);
-            font-size: 16px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .tech-card {
-            background: var(--card-glass);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.2);
-        }
-
-        .tech-icon {
-            font-size: 40px;
-            color: var(--neon-cyan);
-            margin-bottom: 20px;
-        }
-
-        .tech-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .tech-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .tech-list {
-            list-style: none;
-        }
-
-        .tech-list li {
-            color: var(--text-main);
-            font-size: 14px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .tech-list li i {
-            color: var(--neon-cyan);
-        }
-
-        footer {
-            background: #06080f;
-            border-top: 1px solid var(--card-border);
-            padding: 40px 5% 20px 5%;
-            margin-top: 60px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-col p { color: var(--text-muted); font-size: 13px; margin-top: 10px; }
-        .footer-col h4 { color: #fff; margin-bottom: 15px; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 8px; }
-        .footer-col ul li a { color: var(--text-muted); text-decoration: none; font-size: 13px; }
-        .footer-col ul li a:hover { color: var(--neon-cyan); }
-        .footer-bottom { text-align: center; padding-top: 20px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 12px; }
-    </style>
+    <title>เทคโนโลยี - SmartTech</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="top-bar">
-        <p><i class="fa-solid fa-microchip"></i> VOLTIX Smart Tech - นวัตกรรมเพื่อชีวิตที่สมาร์ตกว่าเดิม</p>
-    </div>
-
     <header>
-        <a href="index.html" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
-        <nav>
-            <a href="index.html">หน้าแรก</a>
-            <a href="products.html">หมวดหมู่สินค้า</a>
-            <a href="technology.html" class="active">นวัตกรรม AI</a>
-        </nav>
-        <a href="cart.html" class="cart-icon">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span class="cart-badge">0</span>
-        </a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="products.html">สินค้าทั้งหมด</a></li>
+                <li><a href="technology.html" class="active">เทคโนโลยี</a></li>
+            </ul>
+            <a href="cart.html" class="cart-btn">🛒 ตะกร้าสินค้า <span id="cart-count">0</span></a>
+        </div>
     </header>
 
     <div class="container">
-        <div class="hero-tech">
-            <h1><i class="fa-solid fa-brain"></i> นวัตกรรมเทคโนโลยี VOLTIX 2026</h1>
-            <p>ก้าวข้ามขีดจำกัดเครื่องใช้ไฟฟ้าแบบเดิมด้วยระบบ AI อัจฉริยะ ปลอดภัย และประหยัดพลังงานระดับโลก</p>
+        <div class="section-title">
+            <h2>นวัตกรรมและเทคโนโลยีแห่งอนาคต</h2>
         </div>
-
-        <div class="tech-grid">
-            <div class="tech-card">
-                <div class="tech-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Neural Energy™ AI</h3>
-                <p>ระบบประมวลผลพฤติกรรมการใช้งานในบ้านแบบ Real-time วิเคราะห์และปรับการใช้พลังงานอัตโนมัติ ช่วยลดค่าไฟฟ้าได้สูงสุดถึง 40%</p>
-                <ul class="tech-list">
-                    <li><i class="fa-solid fa-check"></i> เรียนรู้เวลาเปิด-ปิดตามกิจวัตร</li>
-                    <li><i class="fa-solid fa-check"></i> ตัดไฟอัตโนมัติเมื่อไม่มีคนอยู่</li>
-                </ul>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+            <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                <h3>🌿 Eco-Friendly & Inverter</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">เครื่องใช้ไฟฟ้าทุกชิ้นของเราได้รับการออกแบบมาเพื่อประหยัดพลังงานสูงสุด ลดการปล่อยก๊าซเรือนกระจก และช่วยคุณประหยัดค่าไฟในบ้านได้มากกว่า 40% ต่อเดือน</p>
             </div>
-
-            <div class="tech-card">
-                <div class="tech-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h3>Quantum Sync 2.0</h3>
-                <p>การเชื่อมต่อไร้สายความเร็วสูง ไร้รอยต่อระหว่าง Smart TV, เครื่องใช้ไฟฟ้า และสมาร์ตโฟน สั่งงานได้ผ่านแอปเดียว</p>
-                <ul class="tech-list">
-                    <li><i class="fa-solid fa-check"></i> ควบคุมผ่าน iOS / Android / Voice Assistant</li>
-                    <li><i class="fa-solid fa-check"></i> ระบบแจ้งเตือนบำรุงรักษาล่วงหน้า</li>
-                </ul>
-            </div>
-
-            <div class="tech-card">
-                <div class="tech-icon"><i class="fa-solid fa-shield-virus"></i></div>
-                <h3>EcoClean & Pure Air</h3>
-                <p>เทคโนโลยีปล่อยไอออนล้างเชื้อโรคและฆ่าเชื้อแบคทีเรียในอากาศได้ 99.9% ที่มีอยู่ในตู้เย็นและเครื่องใช้ไฟฟ้า VOLTIX</p>
-                <ul class="tech-list">
-                    <li><i class="fa-solid fa-check"></i> ยับยั้งไวรัสและกลิ่นอับชื้น</li>
-                    <li><i class="fa-solid fa-check"></i> มาตรฐานรับรองความปลอดภัยระดับสากล</li>
-                </ul>
+            <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                <h3>📱 IoT Smart Ecosystem</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">เชื่อมต่อทุกอุปกรณ์เข้ากับสมาร์ทโฟนของคุณ สั่งการเปิด-ปิด ตั้งเวลา หรือตรวจสอบสถานะการทำงานได้จากทุกมุมโลกผ่านระบบ Cloud อัจฉริยะ</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <a href="#" class="logo"><i class="fa-solid fa-bolt-lightning"></i> VOLTIX</a>
-                <p>ผู้นำด้านเครื่องใช้ไฟฟ้าอัจฉริยะ นวัตกรรม AI ยกระดับคุณภาพชีวิต</p>
-            </div>
-            <div class="footer-col">
-                <h4>บริการลูกค้า</h4>
-                <ul>
-                    <li><a href="#">การรับประกันสินค้า</a></li>
-                    <li><a href="#">นโยบายการจัดส่ง</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>ติดต่อเรา</h4>
-                <p><i class="fa-solid fa-phone"></i> Call Center: 02-123-4567</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 VOLTIX ELECTRONICS CO., LTD.</p>
-        </div>
+        <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
     </footer>
 
+    <script src="main.js"></script>
 </body>
 </html>
