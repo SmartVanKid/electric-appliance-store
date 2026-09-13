@@ -25,7 +25,7 @@
                 <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
             <a href="cart.html" class="cart-btn active">
-                <i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span>1</span>
+                <i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-badge">1</span>
             </a>
         </div>
     </header>
@@ -35,8 +35,9 @@
         <p style="color: var(--text-muted); margin-bottom: 2rem;">ตรวจสอบรายการสินค้าและดำเนินการชำระเงินได้อย่างปลอดภัย</p>
 
         <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-            <!-- รายการสินค้าในตะกร้า -->
-            <div style="padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-color); gap: 1rem; flex-wrap: wrap;">
+            
+            <!-- กล่องรายการสินค้าที่จะให้หายไปเมื่อกดลบ/ซื้อ -->
+            <div id="cart-item-row" style="padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-color); gap: 1rem; flex-wrap: wrap;">
                 <div style="display: flex; align-items: center; gap: 1.2rem;">
                     <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=200&q=80" alt="Samsung TV" style="width: 80px; height: 80px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border-color);">
                     <div>
@@ -46,17 +47,23 @@
                 </div>
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
                     <span style="color: var(--accent-color); font-weight: 800; font-size: 1.2rem;">฿24,900</span>
-                    <button onclick="alert('ลบสินค้าเรียบร้อย')" style="background-color: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); padding: 0.5rem 0.9rem; border-radius: 8px; cursor: pointer; font-weight: 600; transition: background 0.2s;"><i class="fa-solid fa-trash"></i> ลบ</button>
+                    <button onclick="removeItem()" style="background-color: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); padding: 0.5rem 0.9rem; border-radius: 8px; cursor: pointer; font-weight: 600; transition: background 0.2s;"><i class="fa-solid fa-trash"></i> ลบ</button>
                 </div>
+            </div>
+
+            <!-- ข้อความเมื่อตะกร้าว่างเปล่า -->
+            <div id="empty-cart-msg" style="display: none; padding: 3rem; text-align: center; color: var(--text-muted);">
+                <i class="fa-solid fa-cart-shopping" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+                <p style="font-size: 1.1rem;">ไม่มีสินค้าในตะกร้าของคุณ</p>
             </div>
 
             <!-- ส่วนสรุปยอดเงินและชำระเงิน -->
             <div style="padding: 2rem; background-color: rgba(15, 22, 35, 0.7); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
                 <div>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">ยอดรวมทั้งสิ้น (รวมภาษีและค่าจัดส่งแล้ว)</p>
-                    <h2 style="color: var(--accent-color); font-size: 2rem; font-weight: 800; text-shadow: 0 0 12px var(--accent-glow);">฿24,900</h2>
+                    <h2 id="total-price" style="color: var(--accent-color); font-size: 2rem; font-weight: 800; text-shadow: 0 0 12px var(--accent-glow);">฿24,900</h2>
                 </div>
-                <button onclick="alert('ดำเนินการสั่งซื้อสำเร็จ ขอบคุณที่ไว้วางใจ Smart Tech!')" class="btn-add" style="padding: 0.9rem 2rem; font-size: 1rem; border-radius: 10px; cursor: pointer;">
+                <button onclick="checkout()" class="btn-add" style="padding: 0.9rem 2rem; font-size: 1rem; border-radius: 10px; cursor: pointer;">
                     <i class="fa-solid fa-shield-check"></i> 100% ยืนยันการสั่งซื้อ
                 </button>
             </div>
@@ -66,5 +73,23 @@
     <footer>
         <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
     </footer>
+
+    <script>
+        function removeItem() {
+            document.getElementById('cart-item-row').style.display = 'none';
+            document.getElementById('empty-cart-msg').style.display = 'block';
+            document.getElementById('total-price').innerText = '฿0';
+            document.getElementById('cart-badge').innerText = '0';
+            alert('ลบสินค้าออกจากตะกร้าเรียบร้อย');
+        }
+
+        function checkout() {
+            document.getElementById('cart-item-row').style.display = 'none';
+            document.getElementById('empty-cart-msg').style.display = 'block';
+            document.getElementById('total-price').innerText = '฿0';
+            document.getElementById('cart-badge').innerText = '0';
+            alert('ดำเนินการสั่งซื้อสำเร็จ ขอบคุณที่ไว้วางใจ Smart Tech!');
+        }
+    </script>
 </body>
 </html>
