@@ -1,198 +1,222 @@
+/* ==========================================
+   Smart Tech - Ultimate Cyber Neon Design System
+   ================================---------- */
 :root {
-    --bg-color: #0b0f19;
-    --card-bg: #131c2e;
+    --bg-color: #060913;
+    --bg-grid: rgba(249, 115, 22, 0.03);
+    --card-bg: rgba(13, 19, 33, 0.75);
+    --card-hover: rgba(22, 32, 54, 0.85);
     --accent-color: #f97316;
-    --accent-glow: rgba(249, 115, 22, 0.4);
-    --secondary-color: #3b82f6;
+    --accent-glow: rgba(249, 115, 22, 0.45);
+    --accent-cyan: #06b6d4;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
-    --border-color: #1e293b;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(249, 115, 22, 0.5);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 
+/* พื้นหลังเว็บแบบ Cyber Dark Grid ขยับได้นิดๆ ให้ดูมีมิติ */
 body {
     background-color: var(--bg-color);
+    background-image: 
+        linear-gradient(to right, var(--bg-grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--bg-grid) 1px, transparent 1px);
+    background-size: 40px 40px;
     color: var(--text-main);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    overflow-x: hidden;
 }
 
+/* Navbar ดีไซน์กระจกใสเรืองแสง */
 header {
-    background: rgba(11, 15, 25, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+    background: rgba(6, 9, 19, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 5%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-main);
-    text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-}
-
-.logo span { color: var(--accent-color); }
-
-.nav-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-}
-
-.nav-links a {
-    color: var(--text-muted);
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+    letter-spacing: 0.5px;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.logo i {
     color: var(--accent-color);
+    filter: drop-shadow(0 0 12px var(--accent-glow));
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 0.5rem 0.9rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #fff;
+    background: rgba(249, 115, 22, 0.12);
+    border-color: rgba(249, 115, 22, 0.3);
+    text-shadow: 0 0 10px var(--accent-glow);
+    box-shadow: inset 0 0 15px rgba(249, 115, 22, 0.1);
 }
 
 .cart-btn {
-    background: var(--card-bg);
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
     border: 1px solid var(--border-color);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
     color: var(--text-main);
-    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
 }
 
 .cart-btn:hover {
     border-color: var(--accent-color);
-    box-shadow: 0 0 10px var(--accent-glow);
+    background: rgba(249, 115, 22, 0.15);
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-2px);
 }
 
+/* Container */
 .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
-    flex: 1;
-    width: 100%;
+    padding: 2.5rem 2%;
 }
 
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-}
-
-.product-card {
+/* กรอบการ์ดและคอนเทนต์ต่างๆ (Glassmorphism สุดเฟี้ยว) */
+.card-box, .product-card, .cat-card, .hero {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ฮีโร่แบนเนอร์สุดอลัง */
+.hero {
+    background: linear-gradient(135deg, rgba(13, 19, 33, 0.9), rgba(22, 32, 54, 0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80') center/cover;
+    padding: 5rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.1);
+    position: relative;
     overflow: hidden;
-    transition: transform 0.3s, border-color 0.3s;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--secondary-color);
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(249,115,22,0.15) 0%, transparent 70%);
+    pointer-events: none;
 }
 
-.product-img {
-    height: 200px;
-    width: 100%;
-    overflow: hidden;
-    background: #1e293b;
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+    position: relative;
+    z-index: 1;
 }
 
-.product-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.product-card:hover .product-img img {
-    transform: scale(1.05);
-}
-
-.product-info {
-    padding: 1.5rem;
-}
-
-.product-info h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
-.product-info p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
-
-.product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.price {
-    font-size: 1.2rem;
-    font-weight: bold;
+.hero h1 span {
     color: var(--accent-color);
+    text-shadow: 0 0 25px var(--accent-glow);
 }
 
-.btn-sm {
-    background: transparent;
-    border: 1px solid var(--secondary-color);
-    color: var(--secondary-color);
-    padding: 0.4rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.btn-sm:hover {
-    background: var(--secondary-color);
-    color: white;
-}
-
-.category-banner {
-    background: linear-gradient(135deg, var(--card-bg), var(--bg-color));
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 3rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.category-banner h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--secondary-color); }
-.category-banner p { color: var(--text-muted); }
-
-footer {
-    background: var(--card-bg);
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-    padding: 2rem;
+.hero p {
     color: var(--text-muted);
-    margin-top: auto;
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ปุ่มกดสไตล์นีออนเรืองแสง */
+.btn-primary, .btn-buy, .btn-checkout {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: white;
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 20px var(--accent-glow);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover, .btn-buy:hover, .btn-checkout:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.7);
+    filter: brightness(1.1);
+}
+
+/* หัวข้อหมวดหมู่ */
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 14px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.section-title span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Responsive เมนูมือถือ */
+@media (max-width: 1024px) {
+    nav ul { display: none; }
 }
