@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Tech - มหกรรมเครื่องใช้ไฟฟ้าอัจฉริยะ 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Smart Tech - Electric Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- แถบเมนูด้านบนเชื่อมทุกหน้า -->
     <header>
-        <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> Smart Tech</a>
-        <nav>
-            <ul>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> Smart<span>Tech</span></a>
+            <ul class="nav-links">
                 <li><a href="index.html" class="active">หน้าแรก</a></li>
                 <li><a href="products.html">สินค้าทั้งหมด</a></li>
                 <li><a href="tv.html">ทีวี</a></li>
@@ -24,57 +21,42 @@
                 <li><a href="kitchen.html">เครื่องครัว IH</a></li>
                 <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
-        </nav>
-        <a href="cart.html" class="cart-btn">
-            <i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span style="background: var(--accent-color); color: #fff; padding: 2px 7px; border-radius: 10px; font-size: 0.75rem;">1</span>
-        </a>
+            <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
+        </div>
     </header>
 
     <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>มหกรรมเครื่องใช้ไฟฟ้าอัจฉริยะ <span>2026</span></h1>
-                <p>สัมผัสประสบการณ์ช้อปปิ้งยุคใหม่กับอุปกรณ์ไอทีและเครื่องใช้ไฟฟ้าแบรนด์ดังระดับโลก การันตีของแท้ 100% พร้อมบริการติดตั้งด่วน</p>
-                <a href="products.html" class="btn-primary">สำรวจสินค้าทั้งหมด <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-        </section>
-
-        <!-- หมวดหมู่ยอดฮิต กดแล้ววิ่งไปไฟล์ของหมวดหมู่นั้นๆ จริง -->
-        <div class="section-title">
-            หมวดหมู่ยอดฮิต <span>(คลิกเพื่อดูสินค้าแยกตามประเภท)</span>
+        <div class="hero-section" style="background: linear-gradient(135deg, #1f2937, #111827); padding: 3rem 2rem; border-radius: 16px; text-align: center; margin-bottom: 2rem; border: 1px solid #30363d;">
+            <h1 style="font-size: 2.5rem; color: #fff; margin-bottom: 1rem;">ยินดีต้อนรับสู่ SmartTech</h1>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์ไอทีล้ำสมัย ครบจบในที่เดียว</p>
+            <a href="products.html" class="btn-sm" style="padding: 0.75rem 1.5rem; font-size: 1rem; text-decoration: none; display: inline-block;">สำรวจสินค้าทั้งหมด →</a>
         </div>
 
-        <div class="grid-cats">
-            <a href="tv.html" class="cat-card">
-                <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80" alt="Smart TV"></div>
-                <div class="cat-info">
-                    <div><h3>ทีวี (Smart TV)</h3><p>รวมทีวี 4K, OLED ภาพเสียงคมชัดระดับโรงหนัง</p></div>
-                    <div class="cat-footer"><span>ดูสินค้าทีวี</span><i class="fa-solid fa-chevron-right"></i></div>
+        <div class="section-title">
+            <h2 style="color: #fff; border-left: 4px solid #ff6600; padding-left: 10px; margin-bottom: 1.5rem;">หมวดหมู่ยอดฮิต</h2>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80" alt="TV"></div>
+                <div class="product-info">
+                    <h3>ทีวี (Smart TV)</h3>
+                    <p>รวมทีวี 4K คมชัดระดับโรงหนัง</p>
+                    <div class="product-footer"><a href="tv.html" class="btn-sm" style="text-decoration: none; display: block; text-align: center;">ดูสินค้า</a></div>
                 </div>
-            </a>
-            <a href="fridge.html" class="cat-card">
-                <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Refrigerator"></div>
-                <div class="cat-info">
-                    <div><h3>ตู้เย็น (Refrigerator)</h3><p>ตู้เย็นอินverter ประหยัดไฟ ดีไซน์เรียบหรูล้ำสมัย</p></div>
-                    <div class="cat-footer"><span>ดูตู้เย็นทั้งหมด</span><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80" alt="Fridge"></div>
+                <div class="product-info">
+                    <h3>ตู้เย็นอินเวอร์เตอร์</h3>
+                    <p>ประหยัดไฟ เก็บความสดได้ยาวนาน</p>
+                    <div class="product-footer"><a href="fridge.html" class="btn-sm" style="text-decoration: none; display: block; text-align: center;">ดูสินค้า</a></div>
                 </div>
-            </a>
-            <a href="ac.html" class="cat-card">
-                <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Air Conditioner"></div>
-                <div class="cat-info">
-                    <div><h3>เครื่องปรับอากาศ</h3><p>แอร์บ้าน เย็นเร็ว ทนทาน ระบบกรองอากาศบริสุทธิ์</p></div>
-                    <div class="cat-footer"><span>ดูแอร์ทั้งหมด</span><i class="fa-solid fa-chevron-right"></i></div>
-                </div>
-            </a>
-            <a href="kitchen.html" class="cat-card">
-                <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Kitchen"></div>
-                <div class="cat-info">
-                    <div><h3>เครื่องครัว IH</h3><p>เตาแม่เหล็กไฟฟ้า และเครื่องครัวอัจฉริยะครบวงจร</p></div>
-                    <div class="cat-footer"><span>ดูเครื่องครัว</span><i class="fa-solid fa-chevron-right"></i></div>
-                </div>
-            </a>
+            </div>
         </div>
     </div>
+
+    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
+    <script src="main.js"></script>
 </body>
 </html>
