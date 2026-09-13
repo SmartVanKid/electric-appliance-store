@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Tech - Electric Store</title>
+    <title>ตะกร้าสินค้า - Smart Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
+            <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> Smart<span>Tech</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">หน้าแรก</a></li>
                 <li><a href="products.html">สินค้าทั้งหมด</a></li>
@@ -21,26 +21,28 @@
                 <li><a href="kitchen.html">เครื่องครัว IH</a></li>
                 <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
-            <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
+            <a href="cart.html" class="cart-btn active"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
         </div>
     </header>
 
     <div class="container">
-        <div class="category-banner">
-            <h1 id="page-title">ตะกร้าสินค้าของคุณ</h1>
-            <p>อุปกรณ์ไอทีและเครื่องใช้ไฟฟ้าเกรดพรีเมียม</p>
+        <div class="section-title">
+            <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">ตะกร้าสินค้าของคุณ</h1>
+            <p style="color: var(--text-muted);">ตรวจสอบรายการสินค้าและดำเนินการชำระเงิน</p>
         </div>
 
-        <!-- กล่องสำหรับให้ระบบดึงการ์ดสินค้ามาแสดงอัตโนมัติ -->
-        <div class="product-grid" id="dynamic-product-grid">
-            <!-- สินค้าจะถูกเรนเดอร์มาแสดงที่นี่โดยอัตโนมัติ -->
+        <div class="cart-container" style="background: #161b22; padding: 2rem; border-radius: 12px; border: 1px solid #30363d; margin-top: 2rem;">
+            <div id="cart-items-list" style="color: #fff; margin-bottom: 1.5rem;">
+                <p style="color: var(--text-muted);">ไม่มีสินค้าในตะกร้าของคุณ</p>
+            </div>
+            <div class="cart-summary" style="border-top: 1px solid #30363d; padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="color: #fff;">ยอดรวมทั้งหมด: <span id="cart-total" style="color: #ff6600;">฿0</span></h3>
+                <button class="btn-sm" onclick="alert('ระบบชำระเงินยังไม่เปิดใช้งาน')" style="padding: 0.75rem 1.5rem; font-size: 1rem;">100% ยืนยันการสั่งซื้อ</button>
+            </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 SmartTech Electric Store.</p>
-    </footer>
-
+    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
     <script src="main.js"></script>
 </body>
 </html>
