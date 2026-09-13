@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เครื่องครัว IH และเครื่องใช้ไฟฟ้าในบ้าน - SmartTech</title>
+    <title>Smart Tech - Electric Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -12,11 +13,13 @@
             <a href="index.html" class="logo">⚡ Smart<span>Tech</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="products.html">สินค้าทั้งหมด</a></li>
                 <li><a href="tv.html">ทีวี</a></li>
                 <li><a href="fridge.html">ตู้เย็น</a></li>
                 <li><a href="ac.html">แอร์</a></li>
                 <li><a href="washing.html">เครื่องซักผ้า</a></li>
-                <li><a href="kitchen.html" class="active">เครื่องครัว IH</a></li>
+                <li><a href="kitchen.html">เครื่องครัว IH</a></li>
+                <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
             <a href="cart.html" class="cart-btn">🛒 ตะกร้า <span id="cart-count">0</span></a>
         </div>
@@ -24,48 +27,20 @@
 
     <div class="container">
         <div class="category-banner">
-            <h1>หมวดหมู่หม้อหุงข้าว IH, ไมโครเวฟ และเครื่องดูดฝุ่น</h1>
-            <p>ยกระดับการทำอาหารและความสะอาด ด้วยนวัตกรรมล้ำสมัยจาก Zojirushi, Panasonic, Dyson</p>
+            <h1 id="page-title">หมวดหมู่เครื่องครัว</h1>
+            <p>อุปกรณ์ไอทีและเครื่องใช้ไฟฟ้าเกรดพรีเมียม</p>
         </div>
 
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&w=500&q=80" alt="IH Rice Cooker"></div>
-                <div class="product-info">
-                    <h3>Zojirushi หม้อหุงข้าวระบบ IH อัจฉริยะ</h3>
-                    <p>แบรนด์: Zojirushi | ข้าวสุกนุ่ม หอมอร่อยทุกเม็ดด้วยระบบความร้อนรอบทิศทาง</p>
-                    <div class="product-footer">
-                        <span class="price">฿8,900</span>
-                        <button class="btn-sm" onclick="addToCart('Zojirushi IH Rice Cooker', 8900)">Add</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?auto=format&fit=crop&w=500&q=80" alt="Microwave"></div>
-                <div class="product-info">
-                    <h3>Panasonic Inverter Microwave 27L</h3>
-                    <p>แบรนด์: Panasonic | อุ่น ย่าง ทอด ในเครื่องเดียว ควบคุมความร้อนแม่นยำ</p>
-                    <div class="product-footer">
-                        <span class="price">฿4,500</span>
-                        <button class="btn-sm" onclick="addToCart('Panasonic Inverter Microwave 27L', 4500)">Add</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-img"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=500&q=80" alt="Vacuum Cleaner"></div>
-                <div class="product-info">
-                    <h3>Dyson V12 Detect Slim Vacuum</h3>
-                    <p>แบรนด์: Dyson | เครื่องดูดฝุ่นไร้สาย พลังดูดสูง พร้อมเลเซอร์ส่องฝุ่น</p>
-                    <div class="product-footer">
-                        <span class="price">฿21,900</span>
-                        <button class="btn-sm" onclick="addToCart('Dyson V12 Detect Slim', 21900)">Add</button>
-                    </div>
-                </div>
-            </div>
+        <!-- กล่องสำหรับให้ระบบดึงการ์ดสินค้ามาแสดงอัตโนมัติ -->
+        <div class="product-grid" id="dynamic-product-grid">
+            <!-- สินค้าจะถูกเรนเดอร์มาแสดงที่นี่โดยอัตโนมัติ -->
         </div>
     </div>
 
-    <footer><p>&copy; 2026 SmartTech Electric Store.</p></footer>
+    <footer>
+        <p>&copy; 2026 SmartTech Electric Store.</p>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
