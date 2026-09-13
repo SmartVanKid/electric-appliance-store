@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หมวดหมู่เครื่องซักผ้า - Smart Tech</title>
+    <title>หมวดหมู่เครื่องซักผ้า - SmartTech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="top-banner">⚡ FLASH SALE! โค้ดส่วนลด SMART2026 ลดเพิ่ม 15% ส่งฟรีทั่วไทย</div>
+    <div class="top-banner">⚡ FLASH SALE! โค้ดส่วนลด SMART2026 ลดเพิ่ม 15% ส่งฟรีเครื่องใช้ไฟฟ้าทั่วไทย <span>จำกัดเวลา</span></div>
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo"><i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span></a>
@@ -22,74 +22,71 @@
                 <li><a href="kitchen.html">เครื่องครัว IH</a></li>
                 <li><a href="technology.html">เทคโนโลยี</a></li>
             </ul>
-            <a href="cart.html" class="cart-btn">
-                <i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span>
-            </a>
+            <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
         </div>
     </header>
 
-    <div class="container">
-        <div style="margin-bottom: 2rem;">
-            <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">หมวดหมู่เครื่องซักผ้า</h1>
-            <p style="color: var(--text-muted);">เครื่องซักผ้าฝาหน้าและฝาบน ระบบ AI ถนอมเนื้อผ้าอย่างเหนือระดับ</p>
-        </div>
+    <section class="container" style="padding: 3rem 0 2rem 0;">
+        <span style="color: var(--accent-color); font-size: 0.8rem; font-weight: 800;">WASHING CATEGORY</span>
+        <h1 style="font-size: 2.2rem; color: #fff; margin-top: 0.2rem;">หมวดหมู่เครื่องซักผ้า</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">รวมเครื่องซักผ้าแบรนด์ชั้นนำ LG, Samsung, Electrolux, Bosch, Haier, Panasonic ระบบ AI ถนอมเนื้อผ้า</p>
+    </section>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; padding: 1.2rem;">
-                <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=500&q=80" alt="Washing Machine" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
-                <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.4rem;">LG AI DD Washer 10.5kg</h3>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">เครื่องซักผ้าฝาหน้าอัจฉริยะ</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--accent-color); font-weight: 800; font-size: 1.2rem;">฿15,900</span>
-                    <button onclick="addToCart('LG AI DD Washer 10.5kg', 15900, 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=500&q=80')" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #030508; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 700; cursor: pointer;">
-                        <i class="fa-solid fa-cart-plus"></i> เพิ่ม
-                    </button>
-                </div>
+    <div class="container" style="margin-bottom: 5rem;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+            <!-- 1 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
+                <h3 style="color:#fff; font-size:1rem;">LG AI DD Washer 10.5kg</h3>
+                <p style="color:var(--text-muted); font-size:0.75rem;">ระบบ AI ตรวจจับเนื้อผ้า ถนอมผ้าอัจฉริยะ</p>
+                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿15,900</p>
+                <button onclick="addToCart('LG AI DD Washer 10.5kg', 15900, 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
+            </div>
+            <!-- 2 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
+                <h3 style="color:#fff; font-size:1rem;">Samsung Ecobubble 11kg</h3>
+                <p style="color:var(--text-muted); font-size:0.75rem;">ซักสะอาดล้ำลึกด้วยฟองอากาศ ประหยัดไฟ</p>
+                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿13,900</p>
+                <button onclick="addToCart('Samsung Ecobubble 11kg', 13900, 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
+            </div>
+            <!-- 3 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
+                <h3 style="color:#fff; font-size:1rem;">Electrolux UltimateCare 10kg</h3>
+                <p style="color:var(--text-muted); font-size:0.75rem;">ลดรอยยับ ถนอมสีผ้าให้สดใสยาวนาน</p>
+                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿16,900</p>
+                <button onclick="addToCart('Electrolux UltimateCare 10kg', 16900, 'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
+            </div>
+            <!-- 4 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
+                <h3 style="color:#fff; font-size:1rem;">Bosch Serie 4 Front Load 9kg</h3>
+                <p style="color:var(--text-muted); font-size:0.75rem;">มาตรฐานเยอรมัน เงียบ ทนทาน ปลอดภัย</p>
+                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿18,500</p>
+                <button onclick="addToCart('Bosch Serie 4 Front Load 9kg', 18500, 'https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
+            </div>
+            <!-- 5 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
+                <h3 style="color:#fff; font-size:1rem;">Haier Top Load Inverter 12kg</h3>
+                <p style="color:var(--text-muted); font-size:0.75rem;">เครื่องซักผ้าฝาบน ถังซักสแตนเลส ทนทาน</p>
+                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿8,990</p>
+                <button onclick="addToCart('Haier Top Load 12kg', 8990, 'https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
+            </div>
+            <!-- 6 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
+                <h3 style="color:#fff; font-size:1rem;">Panasonic Inverter 10kg</h3>
+                <p style="color:var(--text-muted); font-size:0.75rem;">ระบบซักน้ำร้อน ขจัดคราบและแบคทีเรีย</p>
+                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿11,900</p>
+                <button onclick="addToCart('Panasonic Inverter 10kg', 11900, 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
             </div>
         </div>
     </div>
 
-    <!-- Footer แบบเดียวกันทุกหน้า -->
     <footer style="background: #030508; border-top: 1px solid var(--border-color); padding: 3rem 0 1.5rem 0; color: var(--text-muted);">
-        <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-            <div>
-                <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;">
-                    <i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span>
-                </a>
-                <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
-                    ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ทโฮมแท้ 100% พร้อมบริการติดตั้งและรับประกันศูนย์ไทย
-                </p>
-            </div>
-            <div>
-                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">หมวดสินค้า</h4>
-                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
-                    <li><a href="ac.html" style="color: var(--text-muted); text-decoration: none;">เครื่องปรับอากาศ (แอร์)</a></li>
-                    <li><a href="washing.html" style="color: var(--text-muted); text-decoration: none;">เครื่องซักผ้าฝาหน้า & ฝาบน</a></li>
-                    <li><a href="kitchen.html" style="color: var(--text-muted); text-decoration: none;">เครื่องครัวเตาแม่เหล็กไฟฟ้า IH</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">บริการลูกค้า</h4>
-                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
-                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ตรวจสอบสถานะการจัดส่ง</a></li>
-                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">เงื่อนไขการรับประกัน</a></li>
-                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ติดต่อศูนย์บริการและติดตั้ง</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">ติดต่อเรา</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> 091-856-8317</p>
-                <p style="font-size: 0.85rem; margin-bottom: 1rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> frame3053@gmail.com</p>
-                <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
-                    <a href="#" style="color: #fff;"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" style="color: #fff;"><i class="fa-brands fa-line"></i></a>
-                    <a href="#" style="color: #fff;"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.8rem;">
-            <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
-        </div>
+        <div class="container" style="text-align: center; font-size: 0.8rem;"><p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p></div>
     </footer>
     <script src="main.js"></script>
 </body>
