@@ -30,8 +30,9 @@
     <div class="container" style="padding: 4rem 0; min-height: 50vh;">
         <h1 style="color: #fff; margin-bottom: 2rem;"><i class="fa-solid fa-cart-shopping" style="color: var(--accent-color);"></i> ตะกร้าสินค้าของคุณ</h1>
         
-        <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; text-align: center;">
-            <div id="cart-items-container">
+        <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem;">
+            <!-- รายการสินค้าในตะกร้าจะแสดงที่นี่โดยอัตโนมัติ -->
+            <div id="cart-items-container" style="text-align: center;">
                 <i class="fa-solid fa-cart-shopping" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
                 <p style="color: var(--text-muted); font-size: 1rem;">ไม่มีสินค้าในตะกร้าของคุณ</p>
             </div>
@@ -41,9 +42,11 @@
                 <span id="cart-total" style="color: var(--accent-color); font-size: 1.5rem; font-weight: 800;">฿0</span>
             </div>
             
-            <button onclick="checkout()" style="margin-top: 1.5rem; background: var(--accent-color); color: #000; border: none; padding: 0.8rem 2rem; border-radius: 8px; font-weight: 800; cursor: pointer; font-size: 1rem;">
-                ยืนยันการสั่งซื้อ
-            </button>
+            <div style="text-align: right;">
+                <button onclick="checkout()" style="margin-top: 1.5rem; background: var(--accent-color); color: #000; border: none; padding: 0.8rem 2rem; border-radius: 8px; font-weight: 800; cursor: pointer; font-size: 1rem;">
+                    ยืนยันการสั่งซื้อ
+                </button>
+            </div>
         </div>
     </div>
 
