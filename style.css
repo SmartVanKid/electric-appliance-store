@@ -275,22 +275,23 @@ footer a:hover {
     text-shadow: 0 0 8px var(--accent-glow);
 }
 
-/* --- จัดระเบียบหน้าตู้เย็นและแอร์ให้เรียงสวยเหมือนหน้าแรก --- */
-.product-grid, 
-.container .product-grid, 
-.row, 
-div[style*="display: flex"], 
-div[class*="container"] > div {
+/* --- แก้ไขเฉพาะหน้าตู้เย็น (fridge.html) และหน้าแอร์ (ac.html) เท่านั้น --- */
+body:has(body[class*="fridge"]) .product-grid,
+body:has(body[class*="ac"]) .product-grid,
+html:has(a[href="fridge.html"]) .product-grid,
+html:has(a[href="ac.html"]) .product-grid,
+.container .fridge-grid, 
+.container .ac-grid,
+body[id="fridge-page"] .product-grid,
+body[id="ac-page"] .product-grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
     gap: 2rem !important;
 }
 
-/* บังคับกล่องสินค้าด้านในให้ตั้งตรงสวยงาม */
-.product-card, 
-.card, 
-div[class*="product-card"], 
-div[class*="card-item"],
+/* จัดรูปแบบการ์ดเฉพาะในหน้าหมวดหมู่สินค้า */
+body:has(a[href="fridge.html"]) .product-card,
+body:has(a[href="ac.html"]) .product-card,
 .fridge-item, .ac-item {
     background: var(--card-bg) !important;
     border: 1px solid rgba(0, 255, 128, 0.2) !important;
@@ -300,11 +301,4 @@ div[class*="card-item"],
     flex-direction: column !important;
     position: relative !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease !important;
-}
-
-.product-card:hover, .card:hover, div[class*="product-card"]:hover {
-    transform: translateY(-8px) !important;
-    border-color: var(--accent-color) !important;
-    box-shadow: 0 12px 30px rgba(0, 255, 128, 0.25), 0 0 15px rgba(0, 255, 128, 0.15) !important;
 }
