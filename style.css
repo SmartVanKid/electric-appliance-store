@@ -232,27 +232,39 @@ footer {
     background-color: rgba(7, 9, 14, 0.8);
 }
 
+/* จัดแต่งการ์ดสินค้าสไตล์พรีเมียม ธีมสีเขียวเรืองแสงแบบเว็บตัวอย่าง */
 .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
     overflow: visible !important;
 }
 
 div[class*="product-card"], .product-card {
+    background: #0d1117 !important;
+    border: 1px solid rgba(0, 255, 128, 0.2) !important;
+    border-radius: 16px !important;
+    padding: 1.25rem !important;
     position: relative !important;
     z-index: 1 !important;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
+/* เอฟเฟกต์เวลาเอาเมาส์ชี้ (Hover) จะยกตัวขึ้นและมีแสงนีออนสีเขียวเรืองรอง */
 div[class*="product-card"]:hover, .product-card:hover {
     transform: translateY(-8px) !important;
-    box-shadow: 0 15px 30px rgba(0, 243, 255, 0.25) !important;
-    border-color: var(--accent-color) !important;
+    border-color: #00ff80 !important;
+    box-shadow: 0 12px 30px rgba(0, 255, 128, 0.25), 0 0 15px rgba(0, 255, 128, 0.15) !important;
     z-index: 999 !important;
 }
 
+/* จัดการรูปภาพข้างในให้ซูมเข้าเล็กน้อยเมื่อเอาเมาส์ชี้ */
 div[class*="product-card"] img, .product-card img {
-    transition: transform 0.3s ease !important;
+    border-radius: 10px !important;
+    transition: transform 0.35s ease !important;
 }
 
 div[class*="product-card"]:hover img, .product-card:hover img {
-    transform: scale(1.03) !important;
+    transform: scale(1.04) !important;
 }
