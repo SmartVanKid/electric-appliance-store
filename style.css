@@ -136,7 +136,7 @@ header {
     overflow: hidden;
 }
 
-/* จัดแต่งการ์ดสินค้าสไตล์พรีเมียม ธีมสีเขียวเรืองแสงแบบเว็บตัวอย่าง (ครอบคลุมทุกหน้า) */
+/* จัดแต่งการ์ดสินค้าสไตล์พรีเมียม ธีมสีเขียวเรืองแสง */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -160,7 +160,6 @@ div[class*="card-item"] {
     flex-direction: column !important;
 }
 
-/* เอฟเฟกต์เวลาเอาเมาส์ชี้ (Hover) จะยกตัวขึ้นและมีแสงนีออนสีเขียวเรืองรอง */
 .product-card:hover, 
 .card:hover, 
 div[class*="product-card"]:hover, 
@@ -248,20 +247,21 @@ div[class*="product-card"]:hover img {
     box-shadow: 0 0 12px var(--accent-glow);
 }
 
-/* ปรับแต่งส่วน Footer ให้ตัวหนังสือสว่าง อ่านง่าย ไม่กลืนกับพื้นหลัง */
+/* --- จัดแต่งส่วน Footer ให้ถูกต้องและเป็นระเบียบ --- */
 footer {
-    text-align: center;
-    padding: 2.5rem 2rem;
+    background-color: rgba(7, 9, 14, 0.95);
     color: #c9d1d9 !important;
     border-top: 1px solid rgba(0, 255, 128, 0.2);
     margin-top: auto;
+    padding: 3rem 0 1.5rem 0;
     font-size: 0.88rem;
-    background-color: rgba(7, 9, 14, 0.95);
+    width: 100%;
 }
 
 footer h4 {
     color: var(--accent-color) !important;
     margin-bottom: 1rem;
+    font-size: 0.95rem;
 }
 
 footer a {
@@ -275,20 +275,25 @@ footer a:hover {
     text-shadow: 0 0 8px var(--accent-glow);
 }
 
-/* --- จัด Footer ให้กลับมาเป็นแนวนอนหลายคอลัมน์เหมือนเดิม --- */
-footer {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    align-items: flex-start !important;
+/* บังคับให้ Grid ข้างใน Footer แสดงผล 4 คอลัมน์และจัดกึ่งกลางสวยงาม */
+footer > div:first-of-type,
+footer .container {
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 0 auto 2rem auto !important;
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 1fr !important;
+    gap: 2rem !important;
     text-align: left !important;
-    padding: 3rem 2rem !important;
 }
 
-footer > div, footer > * {
-    flex: 1;
-    min-width: 220px;
-    margin: 0.5rem 1rem;
+footer > div:last-child {
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-top: 1.5rem !important;
+    text-align: center !important;
 }
 
 /* --- จัดการเฉพาะหน้าตู้เย็นและแอร์ให้เป็นกริดการ์ดสินค้า --- */
@@ -298,35 +303,4 @@ body:has(a[href="ac.html"].active) .product-grid,
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
     gap: 2rem !important;
-}
-/* --- แก้ไข Footer ทุกหน้าให้แสดงผลแบบ 4 คอลัมน์และจัดกึ่งกลางอัตโนมัติ --- */
-footer {
-    background: #030508 !important;
-    border-top: 1px solid var(--border-color) !important;
-    padding: 3rem 0 1.5rem 0 !important;
-    color: var(--text-muted) !important;
-    position: relative !important;
-    z-index: 10 !important;
-    clear: both !important;
-    width: 100% !important;
-}
-
-footer .container,
-footer > div:first-of-type {
-    width: 90% !important;
-    max-width: 1200px !important;
-    margin: 0 auto 2rem auto !important;
-    display: grid !important;
-    grid-template-columns: 2fr 1fr 1fr 1fr !important;
-    gap: 2rem !important;
-}
-
-footer div:last-child {
-    width: 90% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding-top: 1.5rem !important;
-    text-align: center !important;
-    font-size: 0.8rem !important;
 }
