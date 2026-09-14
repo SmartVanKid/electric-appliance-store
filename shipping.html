@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตรวจสอบสถานะการจัดส่ง - SmartTech</title>
+    <link rel="stylesheet" href="style.css"> <!-- ลิงก์ไฟล์ CSS หลักของคุณ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- แถบบนสุด (ถ้ามี) -->
+    <div class="top-banner">จัดส่งฟรีทั่วประเทศ เมื่อซื้อสินค้าครบ 1,000 บาทขึ้นไป!</div>
+
+    <!-- เมนูบาร์ด้านบน (Header) -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt"></i> Smart<span>Tech</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="ac.html">แอร์</a></li>
+                <li><a href="washing.html">เครื่องซักผ้า</a></li>
+                <li><a href="kitchen.html">เครื่องครัว</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- เนื้อหาหลักของหน้า -->
+    <div class="container">
+        <div class="hero-section">
+            <h1 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fa-solid fa-truck-fast"></i> ตรวจสอบสถานะการจัดส่ง</h1>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">กรอกหมายเลขคำสั่งซื้อของคุณเพื่อตรวจสอบสถานะการจัดส่งสินค้า</p>
+            
+            <!-- ช่องค้นหาตัวอย่าง -->
+            <div style="display: flex; gap: 10px; max-width: 500px;">
+                <input type="text" placeholder="ระบุหมายเลขคำสั่งซื้อ (เช่น ST-10025)" style="flex: 1; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: #fff;">
+                <button class="btn-add" style="padding: 0.75rem 1.5rem;">ค้นหา</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- สคริปต์เรียก Footer อัตโนมัติและระบบ -->
+    <script src="main.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>
