@@ -231,3 +231,22 @@ footer {
     font-size: 0.88rem;
     background-color: rgba(7, 9, 14, 0.8);
 }
+
+/* เอฟเฟกต์การ์ดขยับและยกตัวขึ้นเมื่อเอาเมาส์ชี้ */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 243, 255, 0.15);
+    border-color: var(--accent-color);
+}
+
+.product-card img {
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.03);
+}
