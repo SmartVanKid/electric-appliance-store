@@ -299,3 +299,34 @@ body:has(a[href="ac.html"].active) .product-grid,
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
     gap: 2rem !important;
 }
+/* --- แก้ไข Footer ทุกหน้าให้แสดงผลแบบ 4 คอลัมน์และจัดกึ่งกลางอัตโนมัติ --- */
+footer {
+    background: #030508 !important;
+    border-top: 1px solid var(--border-color) !important;
+    padding: 3rem 0 1.5rem 0 !important;
+    color: var(--text-muted) !important;
+    position: relative !important;
+    z-index: 10 !important;
+    clear: both !important;
+    width: 100% !important;
+}
+
+footer .container,
+footer > div:first-of-type {
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 0 auto 2rem auto !important;
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 1fr !important;
+    gap: 2rem !important;
+}
+
+footer div:last-child {
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-top: 1.5rem !important;
+    text-align: center !important;
+    font-size: 0.8rem !important;
+}
