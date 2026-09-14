@@ -4,32 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ติดต่อศูนย์บริการและติดตั้ง - SmartTech</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="top-banner">บริการติดตั้งฟรีโดยช่างผู้เชี่ยวชาญ</div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        ⚡ FLASH SALE! โค้ดส่วนลด SMART2026 ลดเพิ่ม 15% ส่งฟรีเครื่องใช้ไฟฟ้าทั่วไทย <span>จำกัดเวลา</span>
+    </div>
+
+    <!-- Navigation Bar -->
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> Smart<span>Tech</span></a>
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span>
+                <small style="display: block; font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px;">ELECTRIC & SMART HOME STORE</small>
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">หน้าแรก</a></li>
-                <li><a href="ac.html">แอร์</a></li>
-                <li><a href="washing.html">เครื่องซักผ้า</a></li>
-                <li><a href="kitchen.html">เครื่องครัว</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                <li><a href="products.html"><i class="fa-solid fa-box-open"></i> สินค้าทั้งหมด</a></li>
+                <li><a href="tv.html"><i class="fa-solid fa-tv"></i> ทีวี</a></li>
+                <li><a href="fridge.html"><i class="fa-solid fa-snowflake"></i> ตู้เย็น</a></li>
+                <li><a href="ac.html"><i class="fa-solid fa-wind"></i> แอร์</a></li>
+                <li><a href="washing.html"><i class="fa-solid fa-shirt"></i> เครื่องซักผ้า</a></li>
+                <li><a href="kitchen.html"><i class="fa-solid fa-fire-burner"></i> เครื่องครัว IH</a></li>
+                <li><a href="technology.html"><i class="fa-solid fa-microchip"></i> เทคโนโลยี</a></li>
             </ul>
+            <a href="cart.html" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span>
+            </a>
         </div>
     </header>
 
-    <div class="container">
-        <div class="hero-section">
-            <h1 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fa-solid fa-screwdriver-wrench"></i> ติดต่อศูนย์บริการและติดตั้ง</h1>
-            <p style="color: var(--text-muted); margin-bottom: 1rem;">หากพบปัญหาการใช้งานหรือต้องการนัดหมายคิวติดตั้ง สามารถติดต่อเราได้ที่:</p>
-            <p style="color: #fff; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> เบอร์โทรศัพท์: 091-856-8317</p>
-            <p style="color: #fff; margin-bottom: 0.5rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> อีเมล: frame3053@gmail.com</p>
-            <p style="color: #fff;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> เฟซบุ๊ค: <a href="https://www.facebook.com/pha.nu.wichy.suwrrn.ratn" target="_blank" style="color: var(--accent-color); text-decoration: underline;">คลิกที่นี่เพื่อทักแชท</a></p>
+    <!-- Contact Section -->
+    <div class="container" style="padding: 4rem 0 5rem 0; max-width: 800px;">
+        <div class="card-hover" style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2.5rem; text-align: left;">
+            <span style="color: var(--accent-color); font-size: 0.8rem; font-weight: 800; letter-spacing: 1px;">SUPPORT & SERVICE</span>
+            <h1 style="color: #fff; font-size: 2rem; margin-top: 0.2rem; margin-bottom: 1rem;"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent-color);"></i> ติดต่อศูนย์บริการและติดตั้ง</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.6;">หากพบปัญหาการใช้งาน ขัดข้อง หรือต้องการนัดหมายคิวติดตั้งเครื่องใช้ไฟฟ้าจากทีมช่างผู้เชี่ยวชาญ สามารถติดต่อเราได้ผ่านช่องทางด้านล่างนี้:</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 1.05rem;">
+                <p style="color: #fff; display: flex; align-items: center; gap: 1rem;">
+                    <i class="fa-solid fa-phone" style="color: var(--accent-color); font-size: 1.2rem; width: 24px;"></i> 
+                    <span>เบอร์โทรศัพท์: <strong style="color: var(--accent-color);">091-856-8317</strong></span>
+                </p>
+                <p style="color: #fff; display: flex; align-items: center; gap: 1rem;">
+                    <i class="fa-solid fa-envelope" style="color: var(--accent-color); font-size: 1.2rem; width: 24px;"></i> 
+                    <span>อีเมล: <a href="mailto:frame3053@gmail.com" style="color: #fff; text-decoration: none;">frame3053@gmail.com</a></span>
+                </p>
+                <p style="color: #fff; display: flex; align-items: center; gap: 1rem;">
+                    <i class="fa-brands fa-facebook" style="color: #1877f2; font-size: 1.2rem; width: 24px;"></i> 
+                    <span>เฟซบุ๊ค: <a href="https://www.facebook.com/pha.nu.wichy.suwrrn.ratn" target="_blank" style="color: var(--accent-color); text-decoration: underline;">คลิกที่นี่เพื่อทักแชท</a></span>
+                </p>
+            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer style="background: #030508; border-top: 1px solid var(--border-color); padding: 3rem 0 1.5rem 0; color: var(--text-muted); position: relative; z-index: 10; clear: both; width: 100%;">
+        <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 1rem;">
+            <div>
+                <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;">
+                    <i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span>
+                </a>
+                <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
+                    ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ทโฮมแท้ 100% พร้อมบริการติดตั้งและรับประกันศูนย์ไทย
+                </p>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">หมวดสินค้า</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                    <li><a href="ac.html" style="color: var(--text-muted); text-decoration: none;">เครื่องปรับอากาศ (แอร์)</a></li>
+                    <li><a href="washing.html" style="color: var(--text-muted); text-decoration: none;">เครื่องซักผ้าฝาหน้า & ฝาบน</a></li>
+                    <li><a href="kitchen.html" style="color: var(--text-muted); text-decoration: none;">เครื่องครัวเตาแม่เหล็กไฟฟ้า IH</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">บริการลูกค้า</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ตรวจสอบสถานะการจัดส่ง</a></li>
+                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">เงื่อนไขการรับประกัน</a></li>
+                    <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">ติดต่อศูนย์บริการและติดตั้ง</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">ติดต่อเรา</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> 091-856-8317</p>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> frame3053@gmail.com</p>
+                <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
+                    <a href="https://www.facebook.com/pha.nu.wichy.suwrrn.ratn" target="_blank" style="color: #fff; text-decoration: none;" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.8rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+            <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
     <script src="footer.js"></script>
