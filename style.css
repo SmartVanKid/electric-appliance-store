@@ -304,11 +304,12 @@ body:has(a[href="ac.html"].active) .product-grid,
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
     gap: 2rem !important;
 }
-/* เอฟเฟกต์การ์ดลอยเมื่อเอาเมาส์ชี้ */
+/* เอฟเฟกต์การ์ดลอยเรืองแสงอัตโนมัติทุกหน้า */
 .card-hover {
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .card-hover:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0, 255, 128, 0.2);
+    border-color: #38bdf8 !important; /* เปลี่ยนเป็นสีฟ้าเรืองแสงตอนชี้ (หรือแก้เป็น #00ff80 ถ้าชอบสีเขียว) */
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
 }
