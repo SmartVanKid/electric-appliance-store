@@ -121,29 +121,3 @@ function checkout() {
     localStorage.removeItem('cart');
     location.reload();
 }
-// สคริปต์เสริมช่วยบังคับเพิ่มเอฟเฟกต์การ์ดสินค้าทุกหน้า
-document.addEventListener("DOMContentLoaded", function() {
-    const allCards = document.querySelectorAll('.product-card, .card, [class*="product"], [class*="item"]');
-    
-    allCards.forEach(card => {
-        card.classList.add('product-card');
-        card.style.setProperty('background', '#0d1117', 'important');
-        card.style.setProperty('border', '1px solid rgba(0, 255, 128, 0.2)', 'important');
-        card.style.setProperty('border-radius', '16px', 'important');
-        card.style.setProperty('transition', 'transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease', 'important');
-        
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-8px)';
-            card.style.borderColor = '#00ff80';
-            card.style.boxShadow = '0 12px 30px rgba(0, 255, 128, 0.25), 0 0 15px rgba(0, 255, 128, 0.15)';
-            card.style.zIndex = '999';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-            card.style.borderColor = 'rgba(0, 255, 128, 0.2)';
-            card.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
-            card.style.zIndex = '1';
-        });
-    });
-});
