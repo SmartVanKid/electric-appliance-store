@@ -9,214 +9,82 @@
 </head>
 <body>
     <div class="top-banner">⚡ FLASH SALE! โค้ดส่วนลด SMART2026 ลดเพิ่ม 15% ส่งฟรีเครื่องใช้ไฟฟ้าทั่วไทย <span>จำกัดเวลา</span></div>
-   <header>
-    <div class="nav-container">
-        <a href="index.html" class="logo"><i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span> <span style="font-size: 11px; letter-spacing: 1px; color: #aaa;">ELECTRIC & SMART HOME STORE</span></a>
-        <ul class="nav-links">
-            <li><a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
-            <li><a href="products.html"><i class="fa-solid fa-box-open"></i> สินค้าทั้งหมด</a></li>
-            <li><a href="tv.html"><i class="fa-solid fa-tv"></i> ทีวี</a></li>
-            <li><a href="fridge.html"><i class="fa-solid fa-snowflake"></i> ตู้เย็น</a></li>
-            <li><a href="ac.html" class="active"><i class="fa-solid fa-wind"></i> แอร์</a></li>
-            <li><a href="washing.html"><i class="fa-solid fa-shirt"></i> เครื่องซักผ้า</a></li>
-            <li><a href="kitchen.html"><i class="fa-solid fa-fire-burner"></i> เครื่องครัว IH</a></li>
-            <li><a href="technology.html"><i class="fa-solid fa-microchip"></i> เทคโนโลยี</a></li>
-        </ul>
-        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
-    </div>
-</header>
-
-    <section class="container" style="padding: 3rem 0 2rem 0;">
-        <span style="color: var(--accent-color); font-size: 0.8rem; font-weight: 800;">AC CATEGORY</span>
-        <h1 style="font-size: 2.2rem; color: #fff; margin-top: 0.2rem;">หมวดหมู่แอร์ (เครื่องปรับอากาศ)</h1>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">รวมแอร์แบรนด์ชั้นนำ Daikin, Mitsubishi Electric, Panasonic, Carrier, LG, Haier ประหยัดไฟเบอร์ 5</p>
-    </section>
-
-    <div class="container" style="margin-bottom: 5rem;">
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-            <!-- 1 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Daikin Inverter 12,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">เย็นเร็ว ทนทาน กรองฝุ่น PM 2.5</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿18,900</p>
-                <button onclick="addToCart('Daikin Inverter 12,000 BTU', 18900, 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 2 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Mitsubishi Electric Super Inverter 15,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">เงียบสนิท ไร้เสียงรบกวน ประหยัดไฟเยี่ยม</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿22,500</p>
-                <button onclick="addToCart('Mitsubishi Electric 15,000 BTU', 22500, 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 3 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Panasonic Nanoe-G Inverter 12,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">เทคโนโลยีฟอกอากาศยับยั้งเชื้อโรค</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿17,500</p>
-                <button onclick="addToCart('Panasonic Inverter 12,000 BTU', 17500, 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 4 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Carrier X-Inverter Plus 12,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">ระบบฟอกอากาศอัตโนมัติ ประหยัดไฟ</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿16,900</p>
-                <button onclick="addToCart('Carrier X-Inverter 12,000 BTU', 16900, 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 5 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">LG Dual Cool Inverter 12,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">คอมเพรสเซอร์คู่ เย็นเร็วทันใจ</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿16,500</p>
-                <button onclick="addToCart('LG Dual Cool 12,000 BTU', 16500, 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 6 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f8?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Haier Clean Cool Inverter 9,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">ระบบล้างคอยล์เย็นอัตโนมัติ สะอาดไรกลิ่น</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿11,900</p>
-                <button onclick="addToCart('Haier Clean Cool 9,000 BTU', 11900, 'https://images.unsplash.com/photo-1541888946425-d0fbb18f86f8?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-        </div>
-    </div>
-
-
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หมวดหมู่แอร์ - SmartTech</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="top-banner">⚡ FLASH SALE! โค้ดส่วนลด SMART2026 ลดเพิ่ม 15% ส่งฟรีเครื่องใช้ไฟฟ้าทั่วไทย <span>จำกัดเวลา</span></div>
-   <header>
-    <div class="nav-container">
-        <a href="index.html" class="logo"><i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span> <span style="font-size: 11px; letter-spacing: 1px; color: #aaa;">ELECTRIC & SMART HOME STORE</span></a>
-        <ul class="nav-links">
-            <li><a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
-            <li><a href="products.html"><i class="fa-solid fa-box-open"></i> สินค้าทั้งหมด</a></li>
-            <li><a href="tv.html"><i class="fa-solid fa-tv"></i> ทีวี</a></li>
-            <li><a href="fridge.html"><i class="fa-solid fa-snowflake"></i> ตู้เย็น</a></li>
-            <li><a href="ac.html" class="active"><i class="fa-solid fa-wind"></i> แอร์</a></li>
-            <li><a href="washing.html"><i class="fa-solid fa-shirt"></i> เครื่องซักผ้า</a></li>
-            <li><a href="kitchen.html"><i class="fa-solid fa-fire-burner"></i> เครื่องครัว IH</a></li>
-            <li><a href="technology.html"><i class="fa-solid fa-microchip"></i> เทคโนโลยี</a></li>
-        </ul>
-        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
-    </div>
-</header>
-
-    <section class="container" style="padding: 3rem 0 2rem 0;">
-        <span style="color: var(--accent-color); font-size: 0.8rem; font-weight: 800;">AC CATEGORY</span>
-        <h1 style="font-size: 2.2rem; color: #fff; margin-top: 0.2rem;">หมวดหมู่แอร์ (เครื่องปรับอากาศ)</h1>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">รวมแอร์แบรนด์ชั้นนำ Daikin, Mitsubishi Electric, Panasonic, Carrier, LG, Haier ประหยัดไฟเบอร์ 5</p>
-    </section>
-
-    <div class="container" style="margin-bottom: 5rem;">
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-            <!-- 1 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Daikin Inverter 12,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">เย็นเร็ว ทนทาน กรองฝุ่น PM 2.5</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿18,900</p>
-                <button onclick="addToCart('Daikin Inverter 12,000 BTU', 18900, 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 2 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Mitsubishi Electric Super Inverter 15,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">เงียบสนิท ไร้เสียงรบกวน ประหยัดไฟเยี่ยม</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿22,500</p>
-                <button onclick="addToCart('Mitsubishi Electric 15,000 BTU', 22500, 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 3 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Panasonic Nanoe-G Inverter 12,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">เทคโนโลยีฟอกอากาศยับยั้งเชื้อโรค</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿17,500</p>
-                <button onclick="addToCart('Panasonic Inverter 12,000 BTU', 17500, 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 4 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Carrier X-Inverter Plus 12,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">ระบบฟอกอากาศอัตโนมัติ ประหยัดไฟ</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿16,900</p>
-                <button onclick="addToCart('Carrier X-Inverter 12,000 BTU', 16900, 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 5 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">LG Dual Cool Inverter 12,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">คอมเพรสเซอร์คู่ เย็นเร็วทันใจ</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿16,500</p>
-                <button onclick="addToCart('LG Dual Cool 12,000 BTU', 16500, 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-            <!-- 6 -->
-            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem;">
-                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f8?auto=format&fit=crop&w=400&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem;">
-                <h3 style="color:#fff; font-size:1rem;">Haier Clean Cool Inverter 9,000 BTU</h3>
-                <p style="color:var(--text-muted); font-size:0.75rem;">ระบบล้างคอยล์เย็นอัตโนมัติ สะอาดไรกลิ่น</p>
-                <p style="color:var(--accent-color); font-weight:800; font-size:1.2rem; margin:1rem 0;">฿11,900</p>
-                <button onclick="addToCart('Haier Clean Cool 9,000 BTU', 11900, 'https://images.unsplash.com/photo-1541888946425-d0fbb18f86f8?auto=format&fit=crop&w=400&q=80')" style="width:100%; background:#1a1f2c; border:1px solid var(--border-color); color:#fff; padding:0.6rem; border-radius:8px; font-weight:700; cursor:pointer;"><i class="fa-solid fa-cart-plus" style="color:var(--accent-color);"></i> เพิ่มลงตะกร้า</button>
-            </div>
-        </div>
-    </div>
-
-
-<!-- Footer ที่แก้ไขและจัดระเบียบเรียบร้อยแล้ว -->
-<footer style="background: #030508; border-top: 1px solid var(--border-color); padding: 3rem 0 1.5rem 0; color: var(--text-muted); position: relative; z-index: 10; clear: both; width: 100%;">
-    <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 1rem;">
-        <div>
-            <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;">
-                <i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span>
-            </a>
-            <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
-                ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ทโฮมแท้ 100% พร้อมบริการติดตั้งและรับประกันศูนย์ไทย
-            </p>
-        </div>
-        <div>
-            <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">หมวดสินค้า</h4>
-            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
-                <li><a href="ac.html" style="color: var(--text-muted); text-decoration: none;">เครื่องปรับอากาศ (แอร์)</a></li>
-                <li><a href="washing.html" style="color: var(--text-muted); text-decoration: none;">เครื่องซักผ้าฝาหน้า & ฝาบน</a></li>
-                <li><a href="kitchen.html" style="color: var(--text-muted); text-decoration: none;">เครื่องครัวเตาแม่เหล็กไฟฟ้า IH</a></li>
+    
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                <li><a href="products.html"><i class="fa-solid fa-box-open"></i> สินค้าทั้งหมด</a></li>
+                <li><a href="tv.html"><i class="fa-solid fa-tv"></i> ทีวี</a></li>
+                <li><a href="fridge.html"><i class="fa-solid fa-snowflake"></i> ตู้เย็น</a></li>
+                <li><a href="ac.html" class="active"><i class="fa-solid fa-wind"></i> แอร์</a></li>
+                <li><a href="washing.html"><i class="fa-solid fa-shirt"></i> เครื่องซักผ้า</a></li>
+                <li><a href="kitchen.html"><i class="fa-solid fa-fire-burner"></i> เครื่องครัว IH</a></li>
+                <li><a href="technology.html"><i class="fa-solid fa-microchip"></i> เทคโนโลยี</a></li>
             </ul>
+            <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
         </div>
-        <div>
-            <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">บริการลูกค้า</h4>
-            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
-                <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ตรวจสอบสถานะการจัดส่ง</a></li>
-                <li><a href="#" style="color: var(--text-muted); text-decoration: none;">เงื่อนไขการรับประกัน</a></li>
-                <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ติดต่อศูนย์บริการและติดตั้ง</a></li>
-            </ul>
+    </header>
+
+    <div class="container" style="padding: 3rem 0; min-height: 60vh;">
+        <h2 style="color: #fff; margin-bottom: 2rem;"><i class="fa-solid fa-wind" style="color: var(--accent-color);"></i> หมวดหมู่แอร์ (เครื่องปรับอากาศ)</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <!-- ตัวอย่างสินค้าแอร์ 1 -->
+            <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
+                <img src="images/ac1.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" alt="Daikin Inverter">
+                <h4 style="color: #fff; margin-bottom: 0.5rem;">Daikin Inverter 12,000 BTU</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">เย็นเร็ว ทนทาน ประหยัดไฟเบอร์ 5</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">฿18,900</span>
+                    <button onclick="addToCart('Daikin Inverter 12,000 BTU', 18900, 'images/ac1.jpg')" style="background: var(--accent-color); color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer;">เพิ่มลงตะกร้า</button>
+                </div>
+            </div>
+            <!-- สามารถเพิ่มรายการสินค้าแอร์อื่นๆ ต่อตรงนี้ได้ตามต้องการ -->
         </div>
-        <div>
-            <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">ติดต่อเรา</h4>
-            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> 091-856-8317</p>
-            <p style="font-size: 0.85rem; margin-bottom: 1rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> frame3053@gmail.com</p>
-            <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
-                <a href="#" style="color: #fff; text-decoration: none;" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+
+    <!-- Footer สมบูรณ์แบบ (ไม่มีซ้อนทับและมีเฟสบุ๊คอันเดียว) -->
+    <footer style="background: #030508; border-top: 1px solid var(--border-color); padding: 3rem 0 1.5rem 0; color: var(--text-muted); width: 100%; clear: both;">
+        <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 1rem;">
+            <div>
+                <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;">
+                    <i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span>
+                </a>
+                <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
+                    ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ทโฮมแท้ 100% พร้อมบริการติดตั้งและรับประกันศูนย์ไทย
+                </p>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">หมวดสินค้า</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                    <li><a href="ac.html" style="color: var(--text-muted); text-decoration: none;">เครื่องปรับอากาศ (แอร์)</a></li>
+                    <li><a href="washing.html" style="color: var(--text-muted); text-decoration: none;">เครื่องซักผ้าฝาหน้า & ฝาบน</a></li>
+                    <li><a href="kitchen.html" style="color: var(--text-muted); text-decoration: none;">เครื่องครัวเตาแม่เหล็กไฟฟ้า IH</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">บริการลูกค้า</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ตรวจสอบสถานะการจัดส่ง</a></li>
+                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">เงื่อนไขการรับประกัน</a></li>
+                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ติดต่อศูนย์บริการและติดตั้ง</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">ติดต่อเรา</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> 091-856-8317</p>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> frame3053@gmail.com</p>
+                <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
+                    <a href="#" style="color: #fff; text-decoration: none;" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.8rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
-        <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
-    </div>
-</footer>
-    <script src="main.js"></script>
-</body>
-</html>
+        <div class="container" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.8rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+            <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
+        </div>
+    </footer>
     <script src="main.js"></script>
 </body>
 </html>
