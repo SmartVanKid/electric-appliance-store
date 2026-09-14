@@ -275,30 +275,27 @@ footer a:hover {
     text-shadow: 0 0 8px var(--accent-glow);
 }
 
-/* --- แก้ไขเฉพาะหน้าตู้เย็น (fridge.html) และหน้าแอร์ (ac.html) เท่านั้น --- */
-body:has(body[class*="fridge"]) .product-grid,
-body:has(body[class*="ac"]) .product-grid,
-html:has(a[href="fridge.html"]) .product-grid,
-html:has(a[href="ac.html"]) .product-grid,
-.container .fridge-grid, 
-.container .ac-grid,
-body[id="fridge-page"] .product-grid,
-body[id="ac-page"] .product-grid {
+/* --- จัด Footer ให้กลับมาเป็นแนวนอนหลายคอลัมน์เหมือนเดิม --- */
+footer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 3rem 2rem !important;
+}
+
+footer > div, footer > * {
+    flex: 1;
+    min-width: 220px;
+    margin: 0.5rem 1rem;
+}
+
+/* --- จัดการเฉพาะหน้าตู้เย็นและแอร์ให้เป็นกริดการ์ดสินค้า --- */
+body:has(a[href="fridge.html"].active) .product-grid,
+body:has(a[href="ac.html"].active) .product-grid,
+.fridge-grid, .ac-grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
     gap: 2rem !important;
-}
-
-/* จัดรูปแบบการ์ดเฉพาะในหน้าหมวดหมู่สินค้า */
-body:has(a[href="fridge.html"]) .product-card,
-body:has(a[href="ac.html"]) .product-card,
-.fridge-item, .ac-item {
-    background: var(--card-bg) !important;
-    border: 1px solid rgba(0, 255, 128, 0.2) !important;
-    border-radius: 16px !important;
-    padding: 1.25rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    position: relative !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
