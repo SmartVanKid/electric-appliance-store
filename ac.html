@@ -27,115 +27,126 @@
         </div>
     </header>
 
-    <div class="container" style="padding: 3rem 0; min-height: 60vh;">
-        <h2 style="color: #fff; margin-bottom: 2rem;"><i class="fa-solid fa-wind" style="color: var(--accent-color);"></i> หมวดหมู่แอร์ (เครื่องปรับอากาศ)</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+    <main class="container">
+        <div class="category-header">
+            <span class="category-tag">AC CATEGORY</span>
+            <h2>หมวดหมู่แอร์ (เครื่องปรับอากาศ)</h2>
+            <p>เครื่องปรับอากาศระบบ Inverter เย็นเร็ว ประหยัดไฟ พร้อมระบบกรองฝุ่น PM 2.5</p>
+        </div>
+
+        <div class="product-grid">
             <!-- สินค้าแอร์ที่ 1 -->
-            <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
-                <img src="images/ac1.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" alt="Daikin Inverter">
-                <h4 style="color: #fff; margin-bottom: 0.5rem;">Daikin Inverter 12,000 BTU</h4>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">เย็นเร็ว ทนทาน ประหยัดไฟเบอร์ 5</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">฿18,900</span>
-                    <button onclick="addToCart('Daikin Inverter 12,000 BTU', 18900, 'images/ac1.jpg')" style="background: var(--accent-color); color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer;">เพิ่มลงตะกร้า</button>
+            <div class="product-card">
+                <img src="images/ac1.jpg" alt="Daikin Inverter">
+                <h3>Daikin Inverter 12,000 BTU</h3>
+                <p>เย็นเร็ว ทนทาน ประหยัดไฟเบอร์ 5</p>
+                <div class="product-footer">
+                    <span class="price">฿18,900</span>
+                    <button class="add-to-cart" onclick="addToCart('Daikin Inverter 12,000 BTU', 18900, 'images/ac1.jpg')">
+                        <i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
                 </div>
             </div>
 
             <!-- สินค้าแอร์ที่ 2 -->
-            <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
-                <img src="images/ac2.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" alt="Mitsubishi Electric">
-                <h4 style="color: #fff; margin-bottom: 0.5rem;">Mitsubishi Electric Super Inverter 15,000 BTU</h4>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">เงียบสนิท กรองฝุ่นละออง PM 2.5 ได้ดีเยี่ยม</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">฿22,500</span>
-                    <button onclick="addToCart('Mitsubishi Electric Super Inverter 15,000 BTU', 22500, 'images/ac2.jpg')" style="background: var(--accent-color); color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer;">เพิ่มลงตะกร้า</button>
+            <div class="product-card">
+                <img src="images/ac2.jpg" alt="Mitsubishi Electric">
+                <h3>Mitsubishi Electric Super Inverter 15,000 BTU</h3>
+                <p>เงียบสนิท กรองฝุ่นละออง PM 2.5 ได้ดีเยี่ยม</p>
+                <div class="product-footer">
+                    <span class="price">฿22,500</span>
+                    <button class="add-to-cart" onclick="addToCart('Mitsubishi Electric Super Inverter 15,000 BTU', 22500, 'images/ac2.jpg')">
+                        <i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
                 </div>
             </div>
 
             <!-- สินค้าแอร์ที่ 3 -->
-            <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
-                <img src="images/ac3.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" alt="Panasonic Nanoe-G">
-                <h4 style="color: #fff; margin-bottom: 0.5rem;">Panasonic Nanoe-G Inverter 12,000 BTU</h4>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">เทคโนโลยีฟอกอากาศยับยั้งเชื้อโรคในอากาศ</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">฿17,500</span>
-                    <button onclick="addToCart('Panasonic Nanoe-G Inverter 12,000 BTU', 17500, 'images/ac3.jpg')" style="background: var(--accent-color); color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer;">เพิ่มลงตะกร้า</button>
+            <div class="product-card">
+                <img src="images/ac3.jpg" alt="Panasonic Nanoe-G">
+                <h3>Panasonic Nanoe-G Inverter 12,000 BTU</h3>
+                <p>เทคโนโลยีฟอกอากาศยับยั้งเชื้อโรคในอากาศ</p>
+                <div class="product-footer">
+                    <span class="price">฿17,500</span>
+                    <button class="add-to-cart" onclick="addToCart('Panasonic Nanoe-G Inverter 12,000 BTU', 17500, 'images/ac3.jpg')">
+                        <i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
                 </div>
             </div>
 
             <!-- สินค้าแอร์ที่ 4 -->
-            <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
-                <img src="images/ac4.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" alt="Carrier X-Inverter Plus">
-                <h4 style="color: #fff; margin-bottom: 0.5rem;">Carrier X-Inverter Plus 12,000 BTU</h4>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">ระบบฟอกอากาศอัตโนมัติ ประหยัดไฟ</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">฿16,900</span>
-                    <button onclick="addToCart('Carrier X-Inverter Plus 12,000 BTU', 16900, 'images/ac4.jpg')" style="background: var(--accent-color); color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer;">เพิ่มลงตะกร้า</button>
+            <div class="product-card">
+                <img src="images/ac4.jpg" alt="Carrier X-Inverter Plus">
+                <h3>Carrier X-Inverter Plus 12,000 BTU</h3>
+                <p>ระบบฟอกอากาศอัตโนมัติ ประหยัดไฟ</p>
+                <div class="product-footer">
+                    <span class="price">฿16,900</span>
+                    <button class="add-to-cart" onclick="addToCart('Carrier X-Inverter Plus 12,000 BTU', 16900, 'images/ac4.jpg')">
+                        <i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
                 </div>
             </div>
 
             <!-- สินค้าแอร์ที่ 5 -->
-            <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
-                <img src="images/ac5.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" alt="LG Dual Cool Inverter">
-                <h4 style="color: #fff; margin-bottom: 0.5rem;">LG Dual Cool Inverter 12,000 BTU</h4>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">คอมเพรสเซอร์คู่ เย็นเร็วขึ้น ทนทานยิ่งขึ้น</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">฿16,500</span>
-                    <button onclick="addToCart('LG Dual Cool Inverter 12,000 BTU', 16500, 'images/ac5.jpg')" style="background: var(--accent-color); color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer;">เพิ่มลงตะกร้า</button>
+            <div class="product-card">
+                <img src="images/ac5.jpg" alt="LG Dual Cool Inverter">
+                <h3>LG Dual Cool Inverter 12,000 BTU</h3>
+                <p>คอมเพรสเซอร์คู่ เย็นเร็วขึ้น ทนทานยิ่งขึ้น</p>
+                <div class="product-footer">
+                    <span class="price">฿16,500</span>
+                    <button class="add-to-cart" onclick="addToCart('LG Dual Cool Inverter 12,000 BTU', 16500, 'images/ac5.jpg')">
+                        <i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
                 </div>
             </div>
 
             <!-- สินค้าแอร์ที่ 6 -->
-            <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem;">
-                <img src="images/ac6.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" alt="Haier Clean Cool Inverter">
-                <h4 style="color: #fff; margin-bottom: 0.5rem;">Haier Clean Cool Inverter 9,000 BTU</h4>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">ระบบล้างคอยล์เย็นอัตโนมัติ สะอาด ปลอดภัย</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: var(--accent-color); font-weight: bold; font-size: 1.2rem;">฿11,900</span>
-                    <button onclick="addToCart('Haier Clean Cool Inverter 9,000 BTU', 11900, 'images/ac6.jpg')" style="background: var(--accent-color); color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; cursor: pointer;">เพิ่มลงตะกร้า</button>
+            <div class="product-card">
+                <img src="images/ac6.jpg" alt="Haier Clean Cool Inverter">
+                <h3>Haier Clean Cool Inverter 9,000 BTU</h3>
+                <p>ระบบล้างคอยล์เย็นอัตโนมัติ สะอาด ปลอดภัย</p>
+                <div class="product-footer">
+                    <span class="price">฿11,900</span>
+                    <button class="add-to-cart" onclick="addToCart('Haier Clean Cool Inverter 9,000 BTU', 11900, 'images/ac6.jpg')">
+                        <i class="fa-solid fa-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Footer -->
-    <footer style="background: #030508; border-top: 1px solid var(--border-color); padding: 3rem 0 1.5rem 0; color: var(--text-muted); width: 100%; clear: both;">
-        <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 1rem;">
-            <div>
-                <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;">
-                    <i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span>
-                </a>
-                <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
-                    ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ทโฮมแท้ 100% พร้อมบริการติดตั้งและรับประกันศูนย์ไทย
-                </p>
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <a href="index.html" class="logo"><i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span></a>
+                <p>ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ทโฮมแท้ 100% พร้อมบริการติดตั้งและรับประกันศูนย์ไทย</p>
             </div>
-            <div>
-                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">หมวดสินค้า</h4>
-                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
-                    <li><a href="ac.html" style="color: var(--text-muted); text-decoration: none;">เครื่องปรับอากาศ (แอร์)</a></li>
-                    <li><a href="washing.html" style="color: var(--text-muted); text-decoration: none;">เครื่องซักผ้าฝาหน้า & ฝาบน</a></li>
-                    <li><a href="kitchen.html" style="color: var(--text-muted); text-decoration: none;">เครื่องครัวเตาแม่เหล็กไฟฟ้า IH</a></li>
+            <div class="footer-col">
+                <h4>หมวดสินค้า</h4>
+                <ul>
+                    <li><a href="ac.html">เครื่องปรับอากาศ (แอร์)</a></li>
+                    <li><a href="washing.html">เครื่องซักผ้าฝาหน้า & ฝาบน</a></li>
+                    <li><a href="kitchen.html">เครื่องครัวเตาแม่เหล็กไฟฟ้า IH</a></li>
                 </ul>
             </div>
-            <div>
-                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">บริการลูกค้า</h4>
-                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
-                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ตรวจสอบสถานะการจัดส่ง</a></li>
-                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">เงื่อนไขการรับประกัน</a></li>
-                    <li><a href="#" style="color: var(--text-muted); text-decoration: none;">ติดต่อศูนย์บริการและติดตั้ง</a></li>
+            <div class="footer-col">
+                <h4>บริการลูกค้า</h4>
+                <ul>
+                    <li><a href="#">ตรวจสอบสถานะการจัดส่ง</a></li>
+                    <li><a href="#">เงื่อนไขการรับประกัน</a></li>
+                    <li><a href="#">ติดต่อศูนย์บริการและติดตั้ง</a></li>
                 </ul>
             </div>
-            <div>
-                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">ติดต่อเรา</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> 091-856-8317</p>
-                <p style="font-size: 0.85rem; margin-bottom: 1rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> frame3053@gmail.com</p>
-                <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
-                    <a href="#" style="color: #fff; text-decoration: none;" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <div class="footer-col">
+                <h4>ติดต่อเรา</h4>
+                <p><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> 091-856-8317</p>
+                <p><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> frame3053@gmail.com</p>
+                <div class="social-icons" style="margin-top: 1rem;">
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
                 </div>
             </div>
         </div>
-        <div class="container" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.8rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+        <div class="footer-bottom">
             <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
         </div>
     </footer>
