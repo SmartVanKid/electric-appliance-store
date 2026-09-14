@@ -4,33 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>เงื่อนไขการรับประกัน - SmartTech</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="top-banner">ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ทโฮมแท้ 100%</div>
+    
+    <!-- Top Banner -->
+    <div class="top-banner">⚡ FLASH SALE! โค้ดส่วนลด SMART2026 ลดเพิ่ม 15% ส่งฟรีเครื่องใช้ไฟฟ้าทั่วไทย <span>จำกัดเวลา</span></div>
+    
+    <!-- Header -->
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo"><i class="fa-solid fa-bolt"></i> Smart<span>Tech</span></a>
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span> 
+                <span style="font-size: 11px; letter-spacing: 1px; color: #aaa; display: block;">ELECTRIC & SMART HOME STORE</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">หน้าแรก</a></li>
-                <li><a href="ac.html">แอร์</a></li>
-                <li><a href="washing.html">เครื่องซักผ้า</a></li>
-                <li><a href="kitchen.html">เครื่องครัว</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                <li><a href="products.html"><i class="fa-solid fa-box-open"></i> สินค้าทั้งหมด</a></li>
+                <li><a href="tv.html"><i class="fa-solid fa-tv"></i> ทีวี</a></li>
+                <li><a href="fridge.html"><i class="fa-solid fa-snowflake"></i> ตู้เย็น</a></li>
+                <li><a href="ac.html"><i class="fa-solid fa-wind"></i> แอร์</a></li>
+                <li><a href="washing.html"><i class="fa-solid fa-shirt"></i> เครื่องซักผ้า</a></li>
+                <li><a href="kitchen.html"><i class="fa-solid fa-fire-burner"></i> เครื่องครัว IH</a></li>
+                <li><a href="technology.html"><i class="fa-solid fa-microchip"></i> เทคโนโลยี</a></li>
             </ul>
+            <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> ตะกร้า <span id="cart-count">0</span></a>
         </div>
     </header>
 
-    <div class="container">
-        <div class="hero-section">
-            <h1 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fa-solid fa-shield-halved"></i> เงื่อนไขการรับประกันสินค้า</h1>
-            <p style="color: var(--text-muted); line-height: 1.8;">
-                1. สินค้าทุกชิ้นในร้าน SmartTech เป็นของแท้ 100% รับประกันศูนย์ไทย<br>
-                2. ระยะเวลาการรับประกันเริ่มต้นตั้งแต่วันที่ลูกค้าได้รับสินค้า (ระบุตามประเภทสินค้า 1 - 3 ปี)<br>
-                3. การรับประกันครอบคลุมความเสียหายที่เกิดจากความผิดพลาดในการผลิต แต่ไม่รวมถึงอุบัติเหตุหรือการใช้งานผิดวิธี
+    <!-- Main Content -->
+    <div class="container" style="padding: 3rem 0 5rem 0;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span style="color: var(--accent-color); font-size: 0.8rem; font-weight: 800;">WARRANTY POLICY</span>
+            <h1 style="font-size: 2.2rem; color: #fff; margin-top: 0.2rem;"><i class="fa-solid fa-shield-halved" style="color: var(--accent-color);"></i> เงื่อนไขการรับประกันสินค้า</h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">มั่นใจในคุณภาพสินค้าทุกชิ้นจาก SmartTech พร้อมศูนย์บริการมาตรฐานรับรองศูนย์ไทย 100%</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+            <!-- Card 1 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem;">
+                <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-circle-check" style="color: var(--accent-color);"></i> ระยะเวลาและการคุ้มครอง
+                </h3>
+                <ul style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; padding-left: 1.2rem;">
+                    <li><strong>สินค้าทุกชิ้นเป็นของแท้ 100%</strong> มีใบรับประกันศูนย์ไทยอย่างเป็นทางการ</li>
+                    <li><strong>ระยะเวลาเริ่มต้น:</strong> นับตั้งแต่วันที่ลูกค้าเซ็นรับสินค้าตามระบบขนส่ง</li>
+                    <li><strong>ประเภททั่วไป:</strong> รับประกันความผิดพลาดจากการผลิต (Hardware/Factory Defect) 1 - 3 ปี ตามเงื่อนไขของแต่ละแบรนด์</li>
+                    <li><strong>คอมเพรสเซอร์ / มอเตอร์หลัก:</strong> มีเงื่อนไขรับประกันพิเศษยาวนานสูงสุด 5 - 10 ปี (ระบุในใบรับประกันสินค้า)</li>
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem;">
+                <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: #e74c3c;"></i> ข้อยกเว้นการรับประกัน (ไม่อยู่ในเงื่อนไข)
+                </h3>
+                <ul style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; padding-left: 1.2rem;">
+                    <li>ความเสียหายอันเกิดจากอุบัติเหตุ ภัยธรรมชาติ (เช่น น้ำท่วม ฟ้าผ่า ไฟตก/ไฟกระชากเกินกำหนด)</li>
+                    <li>การใช้งานผิดประเภท ดัดแปลงสภาพสินค้า หรือซ่อมแซมโดยช่างที่ไม่ใช่ศูนย์บริการแต่งตั้ง</li>
+                    <li>รอยขีดข่วน บุบ หรือความเสียหายทางกายภาพที่เกิดหลังจากการส่งมอบสินค้าเรียบร้อยแล้ว</li>
+                    <li>อุปกรณ์เสริมหรือของแถมภายในกล่องที่เสื่อมสภาพไปตามการใช้งานปกติ</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Claim Process Box -->
+        <div style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 2.5rem; text-align: center;">
+            <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem;">ขั้นตอนการส่งเคลมสินค้าหรือแจ้งปัญหา</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 700px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+                หากพบสินค้ามีปัญหาหรือต้องการความช่วยเหลือด้านการใช้งาน สามารถติดต่อทีมงาน SmartTech หรือศูนย์บริการแบรนด์โดยตรง พร้อมเตรียมหลักฐานใบเสร็จหรือเลขออร์เดอร์
             </p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="tracking.html" style="background: #1a1f2c; border: 1px solid var(--border-color); color: #fff; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 700; text-decoration: none;"><i class="fa-solid fa-truck-fast" style="color: var(--accent-color);"></i> ตรวจสอบสถานะการจัดส่ง</a>
+                <a href="contact.html" style="background: var(--accent-color); color: #000; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 700; text-decoration: none;"><i class="fa-solid fa-headset"></i> ติดต่อศูนย์บริการ</a>
+            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer style="background: #030508; border-top: 1px solid var(--border-color); padding: 3rem 0 1.5rem 0; color: var(--text-muted); position: relative; z-index: 10; clear: both; width: 100%;">
+        <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 1rem;">
+            <div>
+                <a href="index.html" class="logo" style="display: inline-block; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;">
+                    <i class="fa-solid fa-bolt" style="color:var(--accent-color);"></i> Smart<span>Tech</span>
+                </a>
+                <p style="font-size: 0.85rem; line-height: 1.6; max-width: 320px;">
+                    ศูนย์รวมเครื่องใช้ไฟฟ้าและอุปกรณ์สมาร์ทโฮมแท้ 100% พร้อมบริการติดตั้งและรับประกันศูนย์ไทย
+                </p>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">หมวดสินค้า</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                    <li><a href="tv.html" style="color: var(--text-muted); text-decoration: none;">ทีวี (Smart TV / OLED)</a></li>
+                    <li><a href="ac.html" style="color: var(--text-muted); text-decoration: none;">เครื่องปรับอากาศ (แอร์)</a></li>
+                    <li><a href="washing.html" style="color: var(--text-muted); text-decoration: none;">เครื่องซักผ้าฝาหน้า & ฝาบน</a></li>
+                    <li><a href="kitchen.html" style="color: var(--text-muted); text-decoration: none;">เครื่องครัวเตาแม่เหล็กไฟฟ้า IH</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">บริการลูกค้า</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                    <li><a href="tracking.html" style="color: var(--text-muted); text-decoration: none;">ตรวจสอบสถานะการจัดส่ง</a></li>
+                    <li><a href="warranty.html" style="color: var(--text-muted); text-decoration: none;">เงื่อนไขการรับประกัน</a></li>
+                    <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">ติดต่อศูนย์บริการและติดตั้ง</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 1rem;">ติดต่อเรา</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-phone" style="color: var(--accent-color);"></i> 091-856-8317</p>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-color);"></i> frame3053@gmail.com</p>
+                <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
+                    <a href="https://www.facebook.com/pha.nu.wichy.suwrrn.ratn" target="_blank" style="color: #fff; text-decoration: none;" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: center; font-size: 0.8rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+            <p>&copy; 2026 SmartTech Electric Store. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
     <script src="footer.js"></script>
