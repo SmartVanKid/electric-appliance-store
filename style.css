@@ -236,23 +236,23 @@ footer {
     overflow: visible !important;
 }
 
-.product-card {
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
+div[class*="product-card"], .product-card {
+    position: relative !important;
+    z-index: 1 !important;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease !important;
 }
 
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 243, 255, 0.25);
-    border-color: var(--accent-color);
-    z-index: 999;
+div[class*="product-card"]:hover, .product-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 30px rgba(0, 243, 255, 0.25) !important;
+    border-color: var(--accent-color) !important;
+    z-index: 999 !important;
 }
 
-.product-card img {
-    transition: transform 0.3s ease;
+div[class*="product-card"] img, .product-card img {
+    transition: transform 0.3s ease !important;
 }
 
-.product-card:hover img {
-    transform: scale(1.03);
+div[class*="product-card"]:hover img, .product-card:hover img {
+    transform: scale(1.03) !important;
 }
