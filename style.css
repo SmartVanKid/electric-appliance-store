@@ -275,14 +275,23 @@ footer a:hover {
     text-shadow: 0 0 8px var(--accent-glow);
 }
 
-/* --- แก้ไขเฉพาะการแสดงผลหน้าตู้เย็นและแอร์ --- */
-.product-grid, .container .product-grid, .row {
+/* --- จัดระเบียบหน้าตู้เย็นและแอร์ให้เรียงสวยเหมือนหน้าแรก --- */
+.product-grid, 
+.container .product-grid, 
+.row, 
+div[style*="display: flex"], 
+div[class*="container"] > div {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
     gap: 2rem !important;
 }
 
-.product-card, .card, div[class*="product-card"], div[class*="card-item"] {
+/* บังคับกล่องสินค้าด้านในให้ตั้งตรงสวยงาม */
+.product-card, 
+.card, 
+div[class*="product-card"], 
+div[class*="card-item"],
+.fridge-item, .ac-item {
     background: var(--card-bg) !important;
     border: 1px solid rgba(0, 255, 128, 0.2) !important;
     border-radius: 16px !important;
