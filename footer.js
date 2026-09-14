@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <div>
                 <h4 style="color: #00ff80; margin-bottom: 1rem; font-size: 0.95rem;">บริการลูกค้า</h4>
                 <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none;">ตรวจสอบสถานะการจัดส่ง</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none;">เงื่อนไขการรับประกัน</a></li>
-                    <li><a href="#" style="color: #94a3b8; text-decoration: none;">ติดต่อศูนย์บริการและติดตั้ง</a></li>
+                    <li><a href="shipping.html" style="color: #94a3b8; text-decoration: none;">ตรวจสอบสถานะการจัดส่ง</a></li>
+                    <li><a href="warranty.html" style="color: #94a3b8; text-decoration: none;">เงื่อนไขการรับประกัน</a></li>
+                    <li><a href="service.html" style="color: #94a3b8; text-decoration: none;">ติดต่อศูนย์บริการและติดตั้ง</a></li>
                 </ul>
             </div>
             <div>
@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </footer>`;
 
-    // ค้นหาตำแหน่งแท็ก <footer> เดิมในหน้าเว็บ ถ้ามีให้แทนที่ ถ้าไม่มีให้ต่อท้ายสุดของ body
     const existingFooter = document.querySelector('footer');
     if (existingFooter) {
         existingFooter.outerHTML = footerHTML;
