@@ -234,13 +234,15 @@ footer {
 
 /* เอฟเฟกต์การ์ดขยับและยกตัวขึ้นเมื่อเอาเมาส์ชี้ */
 .product-card {
+    position: relative; /* เพิ่มบรรทัดนี้ */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0, 243, 255, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 243, 255, 0.2);
     border-color: var(--accent-color);
+    z-index: 10; /* เพิ่มบรรทัดนี้เพื่อดึงการ์ดขึ้นมาอยู่บนสุด */
 }
 
 .product-card img {
