@@ -346,7 +346,7 @@ body::before {
     pointer-events: none;
     filter: drop-shadow(0 0 50px rgba(0, 255, 128, 0.2));
 }
-/* เส้นสายฟ้าเฉียงพาดผ่านฉากหลังเต็มจอ */
+/* เส้นสายฟ้าพริ้วไหวแบบ Cyberpunk กระจายเต็มจอ */
 body::before {
     content: "";
     position: fixed;
@@ -354,26 +354,22 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%2300ff80' stroke-width='1.5' stroke-opacity='0.4'%3E%3Cpath d='M0 100 L200 50 L400 150 L600 80 L800 200'/%3E%3Cpath d='M0 300 L150 350 L350 280 L550 380 L800 320'/%3E%3Cpath d='M0 500 L250 450 L450 550 L650 480 L800 580'/%3E%3Cpath d='M0 700 L180 750 L380 680 L580 780 L800 720'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: cover;
-    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M20,0 L25,45 L10,60 L35,110 L25,140 L40,200' fill='none' stroke='%2300ff80' stroke-width='1.2' stroke-opacity='0.35'/%3E%3Cpath d='M120,0 L110,50 L130,90 L115,130 L125,200' fill='none' stroke='%2300ff80' stroke-width='1' stroke-opacity='0.25'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 250px 250px;
     z-index: 1;
     pointer-events: none;
-    animation: lightning-glow 2.5s infinite alternate;
+    animation: lightning-glow 2s infinite alternate;
 }
 
 @keyframes lightning-glow {
     0% {
-        opacity: 0.2;
+        opacity: 0.3;
         filter: drop-shadow(0 0 2px rgba(0,255,128,0.2));
     }
-    50% {
-        opacity: 0.7;
-        filter: drop-shadow(0 0 10px rgba(0,255,128,0.8));
-    }
     100% {
-        opacity: 0.4;
-        filter: drop-shadow(0 0 5px rgba(0,255,128,0.4));
+        opacity: 0.8;
+        filter: drop-shadow(0 0 8px rgba(0,255,128,0.8));
     }
 }
 
