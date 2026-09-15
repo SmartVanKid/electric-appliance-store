@@ -346,7 +346,7 @@ body::before {
     pointer-events: none;
     filter: drop-shadow(0 0 50px rgba(0, 255, 128, 0.2));
 }
-/* เส้นสายฟ้ากระจายเต็มฉากหลังทุกหน้าแบบสมบูรณ์ */
+/* เส้นสายฟ้าพริ้วไหว กระจายทั่วฉากหลังแบบสมบูรณ์ */
 body::before {
     content: "";
     position: fixed;
@@ -354,33 +354,30 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cg fill='none' stroke='%2300ff80' stroke-width='2' stroke-opacity='0.3'%3E%3Cpath d='M150 0 L220 250 L180 280 L280 550 L230 580 L350 850 L290 880 L420 1200'/%3E%3Cpath d='M750 0 L680 220 L720 250 L630 520 L680 550 L590 820 L640 850 L550 1100'/%3E%3Cpath d='M900 0 L840 180 L880 210 L790 480 L830 510 L750 780 L800 810 L710 1100'/%3E%3Cpath d='M400 0 L450 200 L420 230 L490 500 L460 530 L530 800 L500 830 L570 1100'/%3E%3Cpath d='M50 200 L120 400 L90 430 L160 650 L130 680 L200 900'/%3E%3Cpath d='M600 100 L670 320 L640 350 L710 600 L680 630 L750 900'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%2300ff80' stroke-width='1.8' stroke-opacity='0.4'%3E%3Cpath d='M80 0 Q120 100 70 200 T130 400 T90 600'/%3E%3Cpath d='M300 0 Q250 120 320 250 T270 450 T330 600'/%3E%3Cpath d='M500 0 Q450 90 520 180 T460 380 T510 600'/%3E%3Cpath d='M180 0 Q220 150 160 300 T210 480 T170 600'/%3E%3Cpath d='M400 0 Q360 140 420 280 T380 460 T430 600'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: repeat;
-    background-size: 1000px 1000px;
-    opacity: 0.9;
-    z-index: 0;
+    background-size: 400px 400px;
+    z-index: 1; /* ดึงขึ้นมาให้อยู่เหนือพื้นหลังดำ แต่ยังอยู่ใต้กล่องสินค้า */
     pointer-events: none;
-    animation: lightning-flash 2.5s infinite alternate;
+    animation: lightning-glow 2s infinite alternate;
 }
 
-@keyframes lightning-flash {
+@keyframes lightning-glow {
     0% {
-        opacity: 0.4;
-        filter: drop-shadow(0 0 2px rgba(0,255,128,0.3));
+        opacity: 0.25;
+        filter: drop-shadow(0 0 2px rgba(0,255,128,0.2));
     }
     50% {
-        opacity: 0.85;
-        filter: drop-shadow(0 0 12px rgba(0,255,128,0.9));
-    }
-    55% {
-        opacity: 0.3;
-    }
-    60% {
-        opacity: 1;
-        filter: drop-shadow(0 0 20px rgba(255,255,255,1));
+        opacity: 0.7;
+        filter: drop-shadow(0 0 8px rgba(0,255,128,0.7));
     }
     100% {
-        opacity: 0.6;
-        filter: drop-shadow(0 0 6px rgba(0,255,128,0.5));
+        opacity: 0.4;
+        filter: drop-shadow(0 0 4px rgba(0,255,128,0.4));
     }
+}
+
+.container, header {
+    position: relative;
+    z-index: 2;
 }
