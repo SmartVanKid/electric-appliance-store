@@ -346,3 +346,33 @@ body::before {
     pointer-events: none;
     filter: drop-shadow(0 0 50px rgba(0, 255, 128, 0.2));
 }
+/* เส้นสายฟ้าเรืองแสงไขว้ไปมาเป็นพื้นหลังทุกหน้า */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+        linear-gradient(135deg, rgba(0, 255, 128, 0.05) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(0, 255, 128, 0.05) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(0, 255, 128, 0.05) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(0, 255, 128, 0.05) 25%, transparent 25%);
+    background-position: 40px 0, 40px 0, 0 0, 0 0;
+    background-size: 80px 80px;
+    background-repeat: repeat;
+    opacity: 0.7;
+    z-index: 0;
+    pointer-events: none;
+    animation: lightning-grid-move 20s linear infinite;
+}
+
+@keyframes lightning-grid-move {
+    0% {
+        background-position: 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 80px 80px, 80px 80px, -80px -80px, -80px -80px;
+    }
+}
