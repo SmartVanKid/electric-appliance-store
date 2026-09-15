@@ -346,33 +346,41 @@ body::before {
     pointer-events: none;
     filter: drop-shadow(0 0 50px rgba(0, 255, 128, 0.2));
 }
-/* เส้นสายฟ้าเรืองแสงไขว้ไปมาเป็นพื้นหลังทุกหน้า */
+/* เอฟเฟกต์สายฟ้าผ่าลงมาเป็นฉากหลังทุกหน้า */
 body::before {
     content: "";
     position: fixed;
-    top: 0;
+    top: -50%;
     left: 0;
     width: 100vw;
-    height: 100vh;
-    background-image: 
-        linear-gradient(135deg, rgba(0, 255, 128, 0.05) 25%, transparent 25%),
-        linear-gradient(225deg, rgba(0, 255, 128, 0.05) 25%, transparent 25%),
-        linear-gradient(45deg, rgba(0, 255, 128, 0.05) 25%, transparent 25%),
-        linear-gradient(315deg, rgba(0, 255, 128, 0.05) 25%, transparent 25%);
-    background-position: 40px 0, 40px 0, 0 0, 0 0;
-    background-size: 80px 80px;
-    background-repeat: repeat;
-    opacity: 0.7;
+    height: 200vh;
+    background: radial-gradient(circle at 50% 20%, rgba(0, 255, 128, 0.25) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(0,255,128,0.1) 0%, transparent 20%, rgba(0,255,128,0.15) 50%, transparent 80%);
+    opacity: 0;
     z-index: 0;
     pointer-events: none;
-    animation: lightning-grid-move 20s linear infinite;
+    animation: lightning-strike 6s infinite;
 }
 
-@keyframes lightning-grid-move {
-    0% {
-        background-position: 0 0, 0 0, 0 0, 0 0;
+@keyframes lightning-strike {
+    0%, 90%, 94%, 100% {
+        opacity: 0;
+        filter: drop-shadow(0 0 0px transparent);
     }
-    100% {
-        background-position: 80px 80px, 80px 80px, -80px -80px, -80px -80px;
+    91% {
+        opacity: 0.9;
+        background-color: rgba(0, 255, 128, 0.15);
+        filter: drop-shadow(0 0 40px rgba(0, 255, 128, 0.8));
+    }
+    92% {
+        opacity: 0.2;
+    }
+    93% {
+        opacity: 1;
+        background-color: rgba(255, 255, 255, 0.2);
+        filter: drop-shadow(0 0 60px rgba(0, 255, 128, 1));
+    }
+    95% {
+        opacity: 0.4;
     }
 }
