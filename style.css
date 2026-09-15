@@ -346,7 +346,7 @@ body::before {
     pointer-events: none;
     filter: drop-shadow(0 0 50px rgba(0, 255, 128, 0.2));
 }
-/* เอฟเฟกต์สายฟ้าฟาดรัวๆ เต็มจอแบบเดือดๆ */
+/* เอฟเฟกต์เส้นสายฟ้าวิ่งทั่วฉากหลังแบบจัดเต็ม */
 body::before {
     content: "";
     position: fixed;
@@ -354,30 +354,33 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at 50% 30%, rgba(0, 255, 128, 0.3) 0%, transparent 70%);
-    opacity: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%2300ff80' stroke-width='1.5' stroke-opacity='0.25'%3E%3Cpath d='M100 0 L150 200 L120 220 L180 400 L140 420 L220 600 L170 620 L250 800'/%3E%3Cpath d='M500 0 L450 180 L480 200 L410 380 L450 400 L380 580 L420 600 L350 800'/%3E%3Cpath d='M700 0 L660 150 L690 170 L630 350 L670 370 L600 550 L640 570 L580 800'/%3E%3Cpath d='M300 0 L330 150 L310 170 L350 350 L330 370 L370 550 L350 570 L390 800'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    opacity: 0.8;
     z-index: 0;
     pointer-events: none;
-    animation: rapid-lightning 1.2s infinite;
+    animation: lightning-flash 2s infinite alternate;
 }
 
-@keyframes rapid-lightning {
-    0%, 10%, 22%, 40%, 55%, 67%, 85%, 100% {
-        opacity: 0.05;
-        background-color: transparent;
+@keyframes lightning-flash {
+    0% {
+        opacity: 0.3;
+        filter: drop-shadow(0 0 2px rgba(0,255,128,0.2));
     }
-    5%, 15% {
-        opacity: 0.85;
-        background-color: rgba(0, 255, 128, 0.25);
-        box-shadow: inset 0 0 100px rgba(0, 255, 128, 0.6);
+    50% {
+        opacity: 0.9;
+        filter: drop-shadow(0 0 10px rgba(0,255,128,0.8));
     }
-    25% {
-        opacity: 0.4;
-        background-color: rgba(255, 255, 255, 0.15);
+    55% {
+        opacity: 0.2;
     }
-    60%, 88% {
-        opacity: 0.95;
-        background-color: rgba(0, 255, 128, 0.35);
-        box-shadow: inset 0 0 150px rgba(0, 255, 128, 0.8);
+    60% {
+        opacity: 1;
+        filter: drop-shadow(0 0 15px rgba(255,255,255,1));
+    }
+    100% {
+        opacity: 0.5;
+        filter: drop-shadow(0 0 5px rgba(0,255,128,0.4));
     }
 }
