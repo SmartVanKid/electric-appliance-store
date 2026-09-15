@@ -1,0 +1,21 @@
+/* แสงนีออนไซเบอร์กระจายทั่วจอแบบสมบูรณ์ */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #070d19;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 128, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 255, 128, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(0, 200, 255, 0.1) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container, header {
+    position: relative;
+    z-index: 2;
+}
