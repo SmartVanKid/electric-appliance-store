@@ -346,7 +346,7 @@ body::before {
     pointer-events: none;
     filter: drop-shadow(0 0 50px rgba(0, 255, 128, 0.2));
 }
-/* เส้นสายฟ้าเรืองแสงสไตล์เดิม ชัดเจนเต็มตา */
+/* เส้นสายฟ้าเรืองแสงเต็มพื้นหลังแบบสมบูรณ์ ไร้รอยต่อ */
 body::before {
     content: "";
     position: fixed;
@@ -354,22 +354,22 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%2300ff80' stroke-width='2' stroke-opacity='0.7'%3E%3Cpath d='M80 0 Q120 100 70 200 T130 400 T90 600'/%3E%3Cpath d='M300 0 Q250 120 320 250 T270 450 T330 600'/%3E%3Cpath d='M500 0 Q450 90 520 180 T460 380 T510 600'/%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 500px 500px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 1200'%3E%3Cg fill='none' stroke='%2300ff80' stroke-width='2' stroke-opacity='0.6'%3E%3Cpath d='M150 0 Q250 300 100 600 T200 1200'/%3E%3Cpath d='M600 0 Q450 400 650 800 T550 1200'/%3E%3Cpath d='M1050 0 Q900 350 1100 750 T1000 1200'/%3E%3Cpath d='M0 300 Q300 450 0 900'/%3E%3Cpath d='M1200 150 Q900 600 1200 1050'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
     z-index: 1;
     pointer-events: none;
-    animation: lightning-glow 1.8s infinite alternate;
+    animation: lightning-glow 2s infinite alternate;
 }
 
 @keyframes lightning-glow {
     0% {
-        opacity: 0.4;
-        filter: drop-shadow(0 0 3px rgba(0,255,128,0.4));
+        opacity: 0.3;
+        filter: drop-shadow(0 0 3px rgba(0,255,128,0.3));
     }
     100% {
-        opacity: 0.9;
-        filter: drop-shadow(0 0 10px rgba(0,255,128,1));
+        opacity: 0.85;
+        filter: drop-shadow(0 0 12px rgba(0,255,128,0.9));
     }
 }
 
