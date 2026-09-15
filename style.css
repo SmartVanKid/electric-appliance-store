@@ -330,3 +330,19 @@ h1 span.lightning-effect {
         text-shadow: 0 0 15px rgba(0, 255, 128, 0.9), 0 0 25px rgba(0, 255, 128, 0.6);
     }
 }
+/* สร้างลายน้ำรูปสายฟ้าเรืองแสงเป็นพื้นหลังทุกหน้า */
+body::before {
+    content: "\f0e7"; /* รหัสไอคอนสายฟ้าของ FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35vw; /* ขนาดใหญ่เต็มจอแบบพอดีๆ */
+    color: var(--accent-color);
+    opacity: 0.03; /* ปรับความจางไม่ให้บังตัวหนังสือ (3%) */
+    z-index: -999; /* อยู่หลังสุด ไม่เกะกะการคลิก */
+    pointer-events: none;
+    filter: drop-shadow(0 0 50px rgba(0, 255, 128, 0.2));
+}
