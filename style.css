@@ -346,7 +346,7 @@ body::before {
     pointer-events: none;
     filter: drop-shadow(0 0 50px rgba(0, 255, 128, 0.2));
 }
-/* เอฟเฟกต์เส้นสายฟ้าวิ่งทั่วฉากหลังแบบจัดเต็ม */
+/* เส้นสายฟ้ากระจายเต็มฉากหลังทุกหน้าแบบสมบูรณ์ */
 body::before {
     content: "";
     position: fixed;
@@ -354,33 +354,33 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%2300ff80' stroke-width='1.5' stroke-opacity='0.25'%3E%3Cpath d='M100 0 L150 200 L120 220 L180 400 L140 420 L220 600 L170 620 L250 800'/%3E%3Cpath d='M500 0 L450 180 L480 200 L410 380 L450 400 L380 580 L420 600 L350 800'/%3E%3Cpath d='M700 0 L660 150 L690 170 L630 350 L670 370 L600 550 L640 570 L580 800'/%3E%3Cpath d='M300 0 L330 150 L310 170 L350 350 L330 370 L370 550 L350 570 L390 800'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cg fill='none' stroke='%2300ff80' stroke-width='2' stroke-opacity='0.3'%3E%3Cpath d='M150 0 L220 250 L180 280 L280 550 L230 580 L350 850 L290 880 L420 1200'/%3E%3Cpath d='M750 0 L680 220 L720 250 L630 520 L680 550 L590 820 L640 850 L550 1100'/%3E%3Cpath d='M900 0 L840 180 L880 210 L790 480 L830 510 L750 780 L800 810 L710 1100'/%3E%3Cpath d='M400 0 L450 200 L420 230 L490 500 L460 530 L530 800 L500 830 L570 1100'/%3E%3Cpath d='M50 200 L120 400 L90 430 L160 650 L130 680 L200 900'/%3E%3Cpath d='M600 100 L670 320 L640 350 L710 600 L680 630 L750 900'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: repeat;
-    background-size: 500px 500px;
-    opacity: 0.8;
+    background-size: 1000px 1000px;
+    opacity: 0.9;
     z-index: 0;
     pointer-events: none;
-    animation: lightning-flash 2s infinite alternate;
+    animation: lightning-flash 2.5s infinite alternate;
 }
 
 @keyframes lightning-flash {
     0% {
-        opacity: 0.3;
-        filter: drop-shadow(0 0 2px rgba(0,255,128,0.2));
+        opacity: 0.4;
+        filter: drop-shadow(0 0 2px rgba(0,255,128,0.3));
     }
     50% {
-        opacity: 0.9;
-        filter: drop-shadow(0 0 10px rgba(0,255,128,0.8));
+        opacity: 0.85;
+        filter: drop-shadow(0 0 12px rgba(0,255,128,0.9));
     }
     55% {
-        opacity: 0.2;
+        opacity: 0.3;
     }
     60% {
         opacity: 1;
-        filter: drop-shadow(0 0 15px rgba(255,255,255,1));
+        filter: drop-shadow(0 0 20px rgba(255,255,255,1));
     }
     100% {
-        opacity: 0.5;
-        filter: drop-shadow(0 0 5px rgba(0,255,128,0.4));
+        opacity: 0.6;
+        filter: drop-shadow(0 0 6px rgba(0,255,128,0.5));
     }
 }
